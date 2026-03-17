@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utah Red Rock Road Trip · June 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --rust:   #C4521A;
+    --amber:  #E07B39;
+    --sand:   #F2DEC4;
+    --clay:   #8B4A2B;
+    --dusk:   #2C1810;
+    --sage:   #7A8C6E;
+    --sky:    #4A7FA5;
+    --cream:  #FBF5ED;
+    --light:  #FBF0E4;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dusk);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dusk);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+  }
+
+  .hero-rocks {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 280px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 280'%3E%3Cpath d='M0,200 L0,280 L1440,280 L1440,160 L1300,80 L1100,180 L900,60 L700,160 L520,40 L340,140 L180,80 L0,200Z' fill='%23C4521A' opacity='0.35'/%3E%3Cpath d='M0,230 L0,280 L1440,280 L1440,200 L1200,140 L950,220 L700,150 L450,210 L200,160 L0,230Z' fill='%23E07B39' opacity='0.25'/%3E%3Cpath d='M0,258 L0,280 L1440,280 L1440,240 L1100,200 L800,255 L500,210 L200,248 L0,258Z' fill='%23F2DEC4' opacity='0.12'/%3E%3C/svg%3E") no-repeat bottom;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 90px);
+    line-height: 1.0;
+    color: var(--sand);
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero h1 em {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(242,222,196,0.6);
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pill {
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(242,222,196,0.25);
+    color: var(--sand);
+    background: rgba(255,255,255,0.06);
+    cursor: default;
+    transition: all 0.2s;
+  }
+  .pill:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
+  .pill.hot { background: var(--rust); border-color: var(--rust); color: white; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s forwards;
+    color: rgba(242,222,196,0.4);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(242,222,196,0.4));
+    animation: scrollPulse 2s infinite;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(44,24,16,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(242,222,196,0.1);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  nav a {
+    padding: 16px 16px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(242,222,196,0.5);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover, nav a.active {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  /* ── SECTION ── */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--dusk);
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+
+  .section-title em { color: var(--rust); font-style: italic; }
+
+  .section-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--clay);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  /* ── MAP ── */
+  #map-section { background: var(--dusk); padding: 0; }
+
+  .map-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px 30px;
+  }
+
+  .map-header .section-tag { color: var(--amber); }
+  .map-header .section-title { color: var(--sand); }
+  .map-header .section-intro { color: rgba(242,222,196,0.6); }
+
+  #map {
+    width: 100%;
+    height: 520px;
+    border-top: 3px solid var(--rust);
+  }
+
+  .map-legend {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(242,222,196,0.7);
+  }
+
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── DAYS ── */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 28px;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(44,24,16,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .day-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(44,24,16,0.14);
+  }
+
+  .day-header {
+    background: var(--rust);
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .day-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: white;
+    flex: 1;
+    padding: 0 12px;
+  }
+
+  .day-date {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+  }
+
+  .day-stops { padding: 8px 0; }
+
+  .stop {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 0;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(44,24,16,0.06);
+    transition: background 0.15s;
+  }
+  .stop:last-child { border-bottom: none; }
+  .stop:hover { background: var(--light); }
+
+  .stop-time {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--clay);
+    padding-top: 2px;
+  }
+
+  .stop-content {}
+
+  .stop-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dusk);
+    margin-bottom: 3px;
+  }
+
+  .stop-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #6B4F40;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .stop-links { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .stop-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .stop-link.alltrails {
+    background: rgba(196,82,26,0.1);
+    color: var(--rust);
+    border: 1px solid rgba(196,82,26,0.2);
+  }
+  .stop-link.alltrails:hover { background: var(--rust); color: white; }
+
+  .stop-link.book {
+    background: rgba(74,127,165,0.1);
+    color: var(--sky);
+    border: 1px solid rgba(74,127,165,0.2);
+  }
+  .stop-link.book:hover { background: var(--sky); color: white; }
+
+  .stop-link.guide {
+    background: rgba(122,140,110,0.1);
+    color: var(--sage);
+    border: 1px solid rgba(122,140,110,0.2);
+  }
+  .stop-link.guide:hover { background: var(--sage); color: white; }
+
+  .stop-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-urgent { background: var(--rust); color: white; }
+  .badge-extreme { background: var(--dusk); color: var(--amber); }
+
+  .day-night {
+    background: rgba(74,127,165,0.08);
+    border-top: 1px solid rgba(74,127,165,0.15);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--sky);
+  }
+
+  /* ── HIKES TABLE ── */
+  .hikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .hike-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 4px solid var(--rust);
+    box-shadow: 0 2px 12px rgba(44,24,16,0.06);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hike-card:hover { transform: translateX(4px); }
+
+  .hike-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dusk);
+  }
+
+  .hike-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hike-chip {
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    background: var(--light);
+    color: var(--clay);
+  }
+
+  .hike-chip.hard { background: rgba(196,82,26,0.1); color: var(--rust); }
+  .hike-chip.mod  { background: rgba(224,123,57,0.1); color: var(--amber); }
+  .hike-chip.easy { background: rgba(122,140,110,0.1); color: var(--sage); }
+
+  /* ── BOOKING ── */
+  #booking { background: var(--dusk); }
+
+  #booking .section-tag { color: var(--amber); }
+  #booking .section-title { color: var(--sand); }
+  #booking .section-intro { color: rgba(242,222,196,0.6); }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .booking-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(242,222,196,0.1);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .booking-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(242,222,196,0.2);
+  }
+
+  .booking-priority {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .booking-priority.urgent { color: var(--rust); }
+  .booking-priority.soon { color: var(--amber); }
+  .booking-priority.when { color: var(--sage); }
+
+  .booking-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+
+  .booking-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(242,222,196,0.55);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .booking-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(196,82,26,0.2);
+    color: var(--amber);
+    border: 1px solid rgba(196,82,26,0.3);
+    transition: all 0.2s;
+  }
+  .booking-link:hover { background: var(--rust); color: white; border-color: var(--rust); }
+
+  /* ── FUTURE TRIPS ── */
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .future-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 20px rgba(44,24,16,0.07);
+    border-top: 3px solid var(--sage);
+    transition: transform 0.2s;
+  }
+  .future-card:hover { transform: translateY(-3px); }
+
+  .future-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+
+  .future-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dusk);
+    margin-bottom: 8px;
+  }
+
+  .future-desc {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--clay);
+    line-height: 1.6;
+  }
+
+  /* ── AIRPORT TOGGLE ── */
+  .airport-toggle {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .airport-card {
+    flex: 1;
+    min-width: 240px;
+    padding: 20px 24px;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
+    background: white;
+    box-shadow: 0 2px 16px rgba(44,24,16,0.07);
+  }
+  .airport-card.selected {
+    border-color: var(--rust);
+    background: rgba(196,82,26,0.04);
+  }
+
+  .airport-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .airport-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dusk);
+    margin-bottom: 6px;
+  }
+
+  .airport-detail {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--clay);
+    line-height: 1.5;
+  }
+
+  /* ── TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44,24,16,0.06);
+    border-bottom: 3px solid var(--amber);
+  }
+
+  .tip-icon { font-size: 24px; margin-bottom: 10px; }
+  .tip-title { font-size: 13px; font-weight: 600; color: var(--dusk); margin-bottom: 5px; }
+  .tip-text { font-size: 12px; font-weight: 300; color: var(--clay); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dusk);
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(242,222,196,0.1);
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(242,222,196,0.35);
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  footer strong { color: var(--amber); font-weight: 600; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── LEAFLET CUSTOM ── */
+  .leaflet-popup-content-wrapper {
+    border-radius: 10px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2) !important;
+    font-family: 'Jost', sans-serif !important;
+  }
+
+  .custom-popup h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--dusk);
+    margin-bottom: 5px;
+  }
+
+  .custom-popup p {
+    font-size: 12px;
+    color: var(--clay);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .custom-popup a {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--rust);
+    color: white;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 4px;
+    margin-top: 2px;
+  }
+
+  .custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  @media (max-width: 600px) {
+    .days-grid { grid-template-columns: 1fr; }
+    .day-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .day-date { display: none; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-rocks"></div>
+  <div class="hero-tag">June 22 – 25, 2025</div>
+  <h1>Utah <em>Red Rock</em><br>Road Trip</h1>
+  <div class="hero-sub">Salt Lake City &nbsp;→&nbsp; Cedar City &nbsp;→&nbsp; Kanarra Falls &nbsp;→&nbsp; Bryce Canyon &nbsp;→&nbsp; Zion &nbsp;→&nbsp; St. George</div>
+  <div class="hero-pills">
+    <div class="pill hot">🎉 Wedding June 27</div>
+    <div class="pill">Kanarra Falls</div>
+    <div class="pill">Bryce Canyon NP</div>
+    <div class="pill">Zion NP</div>
+    <div class="pill">Kolob Canyons</div>
+    <div class="pill">🧗 Canyoneering</div>
+    <div class="pill">⛓️ Angels Landing</div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    Scroll
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="mainnav">
+  <a href="#map-section">Map</a>
+  <a href="#airports">Airports</a>
+  <a href="#itinerary">Itinerary</a>
+  <a href="#hikes">Hikes</a>
+  <a href="#booking">Book Now</a>
+  <a href="#future">Future Trips</a>
+  <a href="#tips">Tips</a>
+</nav>
+
+<!-- MAP -->
+<div id="map-section">
+  <div class="map-header">
+    <div class="section-tag">Interactive Map</div>
+    <h2 class="section-title">Every Stop <em>Pinned</em></h2>
+    <p class="section-intro">Click any pin for details, links, and notes. Green pins = your route. Grey pins = future trips for another time.</p>
+  </div>
+  <div id="map"></div>
+  <div class="map-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#C4521A"></div> Your Route</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4A7FA5"></div> Airport Options</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#7A8C6E"></div> Future Trips (Out of the Way)</div>
+  </div>
+</div>
+
+<!-- AIRPORTS -->
+<section id="airports">
+  <div class="section-tag">Choose Your Gateway</div>
+  <h2 class="section-title">Two <em>Airport</em> Options</h2>
+  <p class="section-intro">You're flexible — here's how the two main airports compare for this specific trip.</p>
+  <div class="airport-toggle fade-in">
+    <div class="airport-card selected" onclick="selectAirport(this)">
+      <div class="airport-code">SLC</div>
+      <div class="airport-name">Salt Lake City International</div>
+      <div class="airport-detail">
+        3.5 hrs to first stop (Kanarra Falls) · More direct flights from Pacific Northwest · Drive <strong>south</strong> through parks to St. George · Great if combining with Yellowstone/Tetons someday
+      </div>
+    </div>
+    <div class="airport-card" onclick="selectAirport(this)">
+      <div class="airport-code">LAS</div>
+      <div class="airport-name">Harry Reid International (Las Vegas)</div>
+      <div class="airport-detail">
+        Closest major airport to Zion (2 hrs) · Cheaper flights + rental cars · Flips route: drive <strong>north</strong> through Zion → Bryce → Kanarra Falls, end in St. George · More airline options
+      </div>
+    </div>
+  </div>
+  <div class="tips-grid fade-in">
+    <div class="tip-card">
+      <div class="tip-icon">💡</div>
+      <div class="tip-title">Pro Move</div>
+      <div class="tip-text">Compare prices for both. Vegas often wins by $100-200+ on flights and rental cars, especially in June.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔄</div>
+      <div class="tip-title">One-Way Option</div>
+      <div class="tip-text">Fly into SLC, out of LAS (or vice versa). You end in St. George either way — check if one-way car rental fees are worth it.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">✈️</div>
+      <div class="tip-title">Also Worth Checking</div>
+      <div class="tip-text">St. George Airport (SGU) is only 1 hr from Zion but very limited flights — could work as a cheap add-on leg from SLC.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary" style="background: var(--light);">
+  <div class="section-tag">Day by Day</div>
+  <h2 class="section-title">The <em>Extreme</em> Itinerary</h2>
+  <p class="section-intro">4 days of slot canyons, hoodoos, rappelling, and exposed ridgelines. Arrive in St. George by midday Friday June 25.</p>
+  <div class="days-grid">
+
+    <!-- DAY 1 -->
+    <div class="day-card fade-in">
+      <div class="day-header">
+        <div class="day-num">Day 1</div>
+        <div class="day-title">Fly In → Cedar City</div>
+        <div class="day-date">Sun Jun 22</div>
+      </div>
+      <div class="day-stops">
+        <div class="stop">
+          <div class="stop-time">3:00 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">✈️ Land at SLC</div>
+            <div class="stop-desc">Grab rental car, hit I-15 south. Easy 3-hr drive with no major turns.</div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">6:30 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🏨 Abbey Inn & Suites</div>
+            <div class="stop-desc">Best-rated hotel in Cedar City. Clean rooms, excellent hot breakfast included.</div>
+            <div class="stop-links">
+              <a class="stop-link book" href="https://www.abbeyinnhotel.com" target="_blank">Book Hotel</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">7:00 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🍽️ The Pub Spirits + Craft Kitchen</div>
+            <div class="stop-desc">Best dinner in Cedar City. 86 W Center St. Closes 9 PM Sundays — don't dawdle after landing!</div>
+            <div class="stop-links">
+              <a class="stop-link book" href="tel:4358671400">📞 435-867-1400</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-night">🌙 Stay: Abbey Inn & Suites, Cedar City</div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card fade-in">
+      <div class="day-header">
+        <div class="day-num">Day 2</div>
+        <div class="day-title">Kanarra Falls → Bryce Sunset</div>
+        <div class="day-date">Mon Jun 23</div>
+      </div>
+      <div class="day-stops">
+        <div class="stop">
+          <div class="stop-time">9:00 AM</div>
+          <div class="stop-content">
+            <div class="stop-name">🌊 Kanarra Falls <span class="stop-badge badge-urgent">BOOK NOW</span></div>
+            <div class="stop-desc">Hike IN the creek through a slot canyon with waterfalls, a 20-ft ladder, and boulder scrambles. 3.7 mi moderate. $12/person, 150/day max — sells out weeks ahead in June.</div>
+            <div class="stop-links">
+              <a class="stop-link book" href="https://kanarrafalls.com" target="_blank">Book Permits</a>
+              <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/kanarra-falls" target="_blank">AllTrails</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">4:30 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🌅 Bryce Canyon Rim Drive</div>
+            <div class="stop-desc">Drive Bryce Point, Inspiration Point, Sunset Point at golden hour. Hoodoos glow orange-red — one of the most spectacular sights in the American West.</div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">7:00 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🍽️ Dinner at Ruby's Inn</div>
+            <div class="stop-desc">On-site at your hotel — no driving needed. Early bed, big hike tomorrow.</div>
+          </div>
+        </div>
+      </div>
+      <div class="day-night">🌙 Stay: Best Western Plus Ruby's Inn &nbsp;<a href="https://www.rubysinn.com" target="_blank" style="color:var(--sky);font-size:11px;">rubysinn.com</a></div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card fade-in">
+      <div class="day-header">
+        <div class="day-num">Day 3</div>
+        <div class="day-title">Bryce Hike → Canyoneering → Zion</div>
+        <div class="day-date">Tue Jun 24</div>
+      </div>
+      <div class="day-stops">
+        <div class="stop">
+          <div class="stop-time">7:00 AM</div>
+          <div class="stop-content">
+            <div class="stop-name">🥾 Peekaboo Loop <span class="stop-badge badge-extreme">EXTREME</span></div>
+            <div class="stop-desc">5.5 mi strenuous — deeper into the hoodoos than the tourist trails, far fewer crowds. OR do Queen's Garden + Navajo Loop for a moderate 3-mile option.</div>
+            <div class="stop-links">
+              <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail" target="_blank">Navajo+Queens AllTrails</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">11:30 AM</div>
+          <div class="stop-content">
+            <div class="stop-name">🐉 Belly of the Dragon</div>
+            <div class="stop-desc">Free 30-min stop on Hwy 89. Drainage tunnel carved into sandstone — looks like a dragon's ribcage. Bring a flashlight! Do NOT enter if raining.</div>
+            <div class="stop-links">
+              <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/the-belly-of-the-dragon" target="_blank">AllTrails</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">4:30 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🧗 Guided Canyoneering <span class="stop-badge badge-urgent">BOOK NOW</span> <span class="stop-badge badge-extreme">EXTREME</span></div>
+            <div class="stop-desc">Private guided slot canyon session near Zion. Rappels up to 80 ft. No experience needed — guides teach everything. Half-day afternoon session. June books up fast.</div>
+            <div class="stop-links">
+              <a class="stop-link guide" href="https://www.zionguru.com/tours/canyoneering" target="_blank">Zion Guru</a>
+              <a class="stop-link guide" href="https://www.allwaysadventure.com" target="_blank">All Ways Adventure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-night">🌙 Stay: Cliffrose Springdale (splurge) or Zion Park Motel (value) &nbsp;<a href="https://www.cliffrosezion.com" target="_blank" style="color:var(--sky);font-size:11px;">cliffrosezion.com</a></div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card fade-in">
+      <div class="day-header">
+        <div class="day-num">Day 4</div>
+        <div class="day-title">Angels Landing → St. George 🎉</div>
+        <div class="day-date">Wed Jun 25</div>
+      </div>
+      <div class="day-stops">
+        <div class="stop">
+          <div class="stop-time">Midnight Jun 24</div>
+          <div class="stop-content">
+            <div class="stop-name">⚡ Angels Landing Permit Lottery <span class="stop-badge badge-urgent">SET ALARM</span></div>
+            <div class="stop-desc">Enter the day-before lottery on recreation.gov. Opens 12:01 AM, closes 3 PM MT. ~31% odds for June. $6 app fee + $3/person if you win. Can't get one? Do Observation Point instead — better views, no permit.</div>
+            <div class="stop-links">
+              <a class="stop-link book" href="https://www.recreation.gov/permits/4675324" target="_blank">Enter Lottery</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">6:30 AM</div>
+          <div class="stop-content">
+            <div class="stop-name">🏔️ Angels Landing <span class="stop-badge badge-extreme">EXTREME</span></div>
+            <div class="stop-desc">4.4 mi hard. Chain-assisted scramble on an exposed 1,500-ft ridge — one of America's most iconic hikes. Start at dawn to beat heat and crowds. Not for those afraid of heights.</div>
+            <div class="stop-links">
+              <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/angels-landing-trail" target="_blank">AllTrails</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">12:00 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🔴 Kolob Canyons</div>
+            <div class="stop-desc">Zion's secret uncrowded side — right off I-15 Exit 40. Massive red canyon walls. Scenic drive or optional Taylor Creek Trail (5 mi moderate) on the way south.</div>
+            <div class="stop-links">
+              <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4" target="_blank">Taylor Creek AllTrails</a>
+            </div>
+          </div>
+        </div>
+        <div class="stop">
+          <div class="stop-time">2:30 PM</div>
+          <div class="stop-content">
+            <div class="stop-name">🎉 Arrive St. George</div>
+            <div class="stop-desc">Wedding June 27. June 26 is your free buffer day — recover, explore St. George, or just relax. You earned it.</div>
+          </div>
+        </div>
+      </div>
+      <div class="day-night">🌙 St. George — Wedding June 27! 🎊</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HIKES -->
+<section id="hikes">
+  <div class="section-tag">Trail Guide</div>
+  <h2 class="section-title">All <em>Hikes</em> + Links</h2>
+  <p class="section-intro">Download AllTrails maps offline before you go — cell service in the canyons is unreliable.</p>
+  <div class="hikes-grid fade-in">
+    <div class="hike-card">
+      <div class="hike-name">🌊 Kanarra Falls</div>
+      <div class="hike-meta">
+        <span class="hike-chip mod">Moderate</span>
+        <span class="hike-chip">3.7 mi</span>
+        <span class="hike-chip">Day 2</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/kanarra-falls" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">🪨 Queen's Garden + Navajo Loop</div>
+      <div class="hike-meta">
+        <span class="hike-chip mod">Moderate</span>
+        <span class="hike-chip">3.0 mi</span>
+        <span class="hike-chip">Day 3</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">🐉 Belly of the Dragon</div>
+      <div class="hike-meta">
+        <span class="hike-chip easy">Easy</span>
+        <span class="hike-chip">1.7 mi</span>
+        <span class="hike-chip">Day 3 en route</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/the-belly-of-the-dragon" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">🌊 The Narrows (Bottom Up)</div>
+      <div class="hike-meta">
+        <span class="hike-chip mod">Moderate</span>
+        <span class="hike-chip">Up to 9.4 mi</span>
+        <span class="hike-chip">Day 4 alt</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">⛓️ Angels Landing</div>
+      <div class="hike-meta">
+        <span class="hike-chip hard">Hard</span>
+        <span class="hike-chip">4.4 mi</span>
+        <span class="hike-chip">Day 4</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/angels-landing-trail" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">🔴 Taylor Creek (Kolob)</div>
+      <div class="hike-meta">
+        <span class="hike-chip mod">Moderate</span>
+        <span class="hike-chip">5.0 mi</span>
+        <span class="hike-chip">Day 4</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">💎 Emerald Pools (easier alt)</div>
+      <div class="hike-meta">
+        <span class="hike-chip mod">Moderate</span>
+        <span class="hike-chip">3.0 mi</span>
+        <span class="hike-chip">Zion</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/emerald-pools-trail" target="_blank">AllTrails →</a>
+    </div>
+    <div class="hike-card">
+      <div class="hike-name">👁️ Observation Point (no permit)</div>
+      <div class="hike-meta">
+        <span class="hike-chip hard">Hard</span>
+        <span class="hike-chip">8.0 mi</span>
+        <span class="hike-chip">Angels Landing alt</span>
+      </div>
+      <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/observation-point-trail" target="_blank">AllTrails →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-tag">Action Required</div>
+  <h2 class="section-title">Book <em>These Now</em></h2>
+  <p class="section-intro">June is peak season. The urgent items will sell out weeks ahead — don't wait.</p>
+  <div class="booking-grid fade-in">
+    <div class="booking-card">
+      <div class="booking-priority urgent">⚠ BOOK IMMEDIATELY</div>
+      <div class="booking-name">Kanarra Falls Permit</div>
+      <div class="booking-desc">$12/person · 150 hikers/day max · Sells out weeks ahead in June. Book as soon as you have your dates.</div>
+      <a class="booking-link" href="https://kanarrafalls.com" target="_blank">kanarrafalls.com →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority urgent">⚠ BOOK IMMEDIATELY</div>
+      <div class="booking-name">Guided Canyoneering (Day 3)</div>
+      <div class="booking-desc">Private guided slot canyon + rappelling session near Zion. Half-day afternoon. June fills up very fast.</div>
+      <a class="booking-link" href="https://www.zionguru.com/tours/canyoneering" target="_blank">Zion Guru →</a>
+      <br><br>
+      <a class="booking-link" href="https://www.allwaysadventure.com" target="_blank">All Ways Adventure →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority urgent">⚠ BOOK IMMEDIATELY</div>
+      <div class="booking-name">Springdale Hotel (Night 3)</div>
+      <div class="booking-desc">Books up fast in June. Cliffrose is the splurge option; Zion Park Motel is the value pick.</div>
+      <a class="booking-link" href="https://www.cliffrosezion.com" target="_blank">Cliffrose (splurge) →</a>
+      <br><br>
+      <a class="booking-link" href="https://www.zionparkmotel.com" target="_blank">Zion Park Motel →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority soon">BOOK SOON</div>
+      <div class="booking-name">Ruby's Inn, Bryce (Night 2)</div>
+      <div class="booking-desc">The classic Bryce Canyon basecamp — right at the park entrance. Breakfast included, general store on-site.</div>
+      <a class="booking-link" href="https://www.rubysinn.com" target="_blank">rubysinn.com →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority soon">BOOK SOON</div>
+      <div class="booking-name">Abbey Inn, Cedar City (Night 1)</div>
+      <div class="booking-desc">Highest-rated hotel in Cedar City. Clean, comfortable, hot breakfast included.</div>
+      <a class="booking-link" href="https://www.abbeyinnhotel.com" target="_blank">abbeyinnhotel.com →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority soon">BOOK SOON</div>
+      <div class="booking-name">America the Beautiful Pass</div>
+      <div class="booking-desc">$80 · Covers entry to ALL national parks for 1 year. Pays for itself with Bryce + Zion alone ($35 each).</div>
+      <a class="booking-link" href="https://store.usgs.gov/america-the-beautiful" target="_blank">Buy Pass →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority when">DAY OF — SET ALARM</div>
+      <div class="booking-name">Angels Landing Permit Lottery</div>
+      <div class="booking-desc">Enter midnight June 24 on recreation.gov. Opens 12:01 AM, closes 3 PM MT. ~31% odds for June. $6 non-refundable app fee.</div>
+      <a class="booking-link" href="https://www.recreation.gov/permits/4675324" target="_blank">recreation.gov →</a>
+    </div>
+    <div class="booking-card">
+      <div class="booking-priority when">OPTIONAL</div>
+      <div class="booking-name">Narrows Gear Rental</div>
+      <div class="booking-desc">Neoprene socks, water shoes, trekking pole ~$45/person. Makes a huge difference on slippery river rocks. Book ahead for June.</div>
+      <a class="booking-link" href="https://www.zionoutfitter.com" target="_blank">Zion Outfitter →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE TRIPS -->
+<section id="future">
+  <div class="section-tag">On the Bucket List</div>
+  <h2 class="section-title">Future <em>Adventures</em></h2>
+  <p class="section-intro">These are too far out of the way for this trip — but they deserve their own dedicated adventure someday.</p>
+  <div class="future-grid fade-in">
+    <div class="future-card">
+      <div class="future-tag">Eastern Utah Loop</div>
+      <div class="future-name">Arches National Park</div>
+      <div class="future-desc">Near Moab, ~4 hrs southeast of SLC. Delicate Arch, Landscape Arch, Balanced Rock. Pair with Canyonlands for a world-class eastern Utah loop. Timed entry permits required.</div>
+    </div>
+    <div class="future-card">
+      <div class="future-tag">Bears Ears Region</div>
+      <div class="future-name">Valley of the Gods</div>
+      <div class="future-desc">Near Mexican Hat in SE Utah. Free 17-mile scenic drive through sandstone buttes and towers — Monument Valley vibes without the crowds or fees. BLM land, no permits needed.</div>
+    </div>
+    <div class="future-card">
+      <div class="future-tag">Utah / Colorado Border</div>
+      <div class="future-name">Dinosaur National Monument</div>
+      <div class="future-desc">~3.5 hrs east of SLC. Over 1,500 dinosaur fossils embedded right in the cliff face at the Quarry Exhibit Hall. Plus stunning Green and Yampa River canyons for rafting.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips" style="background: var(--light);">
+  <div class="section-tag">Be Prepared</div>
+  <h2 class="section-title">June <em>Survival</em> Tips</h2>
+  <p class="section-intro">June in southern Utah is spectacular — and hot. A few things that separate a great trip from a miserable one.</p>
+  <div class="tips-grid fade-in">
+    <div class="tip-card">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-title">Start at Dawn</div>
+      <div class="tip-text">Every hike should start by 7–8 AM. Temps hit 90–95°F by midday and most trails are fully exposed. No shade anywhere.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <div class="tip-title">Bring 2L Water Per Person</div>
+      <div class="tip-text">Minimum. Desert air is dry and you'll sweat more than you think. Electrolyte tablets are a great addition.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">☀️</div>
+      <div class="tip-title">Sunscreen is Non-Negotiable</div>
+      <div class="tip-text">High elevation + reflective red rock + zero shade = brutal UV exposure. SPF 50, reapply every 2 hours.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Download Maps Offline</div>
+      <div class="tip-text">AllTrails offline maps are essential. Cell service in the canyons is basically nonexistent. Download the night before.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚡</div>
+      <div class="tip-title">Flash Flood Warning</div>
+      <div class="tip-text">Late June can see afternoon monsoon storms. Always check NOAA forecast before any slot canyon hike. If storms are anywhere in the watershed — don't go in.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🧦</div>
+      <div class="tip-title">Waterproof Your Feet</div>
+      <div class="tip-text">Kanarra Falls and the Narrows both require wet feet. Neoprene socks + trail runners that dry fast are the move. Rent the Narrows package from Zion Outfitter.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚌</div>
+      <div class="tip-title">Use the Zion Shuttle</div>
+      <div class="tip-text">No personal vehicles in Zion Canyon during peak season. Shuttle runs every 5-10 mins from Springdale. Get on at the first stop for a seat.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎟️</div>
+      <div class="tip-title">Permits = Everything</div>
+      <div class="tip-text">Kanarra Falls and Angels Landing both have hard caps. No permit = no hike. Book Kanarra months ahead; enter Angels Landing lottery the night before.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Utah Red Rock Road Trip</strong> · June 22–25, 2025</p>
+  <p>SLC → Cedar City → Kanarra Falls → Bryce Canyon → Zion → St. George</p>
+  <p style="margin-top:12px;">Wedding June 27 🎉 &nbsp;·&nbsp; Have an incredible trip!</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// ── MAP ──────────────────────────────────────────────────────────────────────
+const tripMap = L.map('map', { zoomControl: true }).setView([38.2, -112.0], 6);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap contributors © CARTO',
+  maxZoom: 18,
+}).addTo(tripMap);
+
+function makeIcon(color, emoji, size=36) {
+  return L.divIcon({
+    html: `<div class="custom-marker" style="width:${size}px;height:${size}px;background:${color}">${emoji}</div>`,
+    className: '',
+    iconSize: [size, size],
+    iconAnchor: [size/2, size/2],
+    popupAnchor: [0, -(size/2+4)],
+  });
+}
+
+const stops = [
+  {
+    lat: 40.7899, lng: -111.9791,
+    icon: makeIcon('#4A7FA5','✈️'), type: 'airport',
+    name: 'Salt Lake City Airport (SLC)',
+    desc: 'Option A — fly in June 22, 3 PM. 3.5 hrs to Kanarra Falls via I-15 south.',
+    links: []
+  },
+  {
+    lat: 36.0831, lng: -115.1482,
+    icon: makeIcon('#4A7FA5','✈️'), type: 'airport',
+    name: 'Las Vegas Airport (LAS)',
+    desc: 'Option B — closest major airport to Zion (2 hrs). Cheaper flights & rental cars. Flips the route north.',
+    links: []
+  },
+  {
+    lat: 37.6775, lng: -113.063,
+    icon: makeIcon('#C4521A','🌙'), type: 'route',
+    name: 'Cedar City, Utah',
+    desc: 'Night 1 stay. Dinner at The Pub Spirits + Craft Kitchen.',
+    links: [{ text: 'Abbey Inn', url: 'https://www.abbeyinnhotel.com' }]
+  },
+  {
+    lat: 37.5371, lng: -113.1755,
+    icon: makeIcon('#C4521A','🌊'), type: 'route',
+    name: 'Kanarra Falls',
+    desc: 'Day 2 — Slot canyon with waterfalls & ladders. Hike IN the creek! Book permits now — sells out weeks ahead.',
+    links: [
+      { text: 'Book Permits', url: 'https://kanarrafalls.com' },
+      { text: 'AllTrails', url: 'https://www.alltrails.com/trail/us/utah/kanarra-falls' }
+    ]
+  },
+  {
+    lat: 37.593, lng: -112.1871,
+    icon: makeIcon('#C4521A','🌅'), type: 'route',
+    name: 'Bryce Canyon National Park',
+    desc: 'Day 2 sunset + Day 3 morning hike. Hoodoos glow red-orange at golden hour. Queen\'s Garden + Navajo Loop.',
+    links: [
+      { text: 'Ruby\'s Inn', url: 'https://www.rubysinn.com' },
+      { text: 'AllTrails', url: 'https://www.alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail' }
+    ]
+  },
+  {
+    lat: 37.2115, lng: -112.6851,
+    icon: makeIcon('#E07B39','🐉'), type: 'route',
+    name: 'Belly of the Dragon',
+    desc: 'Day 3 en route — free 30-min stop. Drainage tunnel carved into sandstone. Bring a flashlight!',
+    links: [{ text: 'AllTrails', url: 'https://www.alltrails.com/trail/us/utah/the-belly-of-the-dragon' }]
+  },
+  {
+    lat: 37.2982, lng: -113.0263,
+    icon: makeIcon('#C4521A','🏔️'), type: 'route',
+    name: 'Zion National Park',
+    desc: 'Day 3 PM canyoneering + Day 4 Angels Landing. Stay in Springdale right outside the park.',
+    links: [
+      { text: 'Zion Guru', url: 'https://www.zionguru.com/tours/canyoneering' },
+      { text: 'Angels Landing Lottery', url: 'https://www.recreation.gov/permits/4675324' }
+    ]
+  },
+  {
+    lat: 37.4534, lng: -113.2254,
+    icon: makeIcon('#E07B39','🔴'), type: 'route',
+    name: 'Kolob Canyons',
+    desc: 'Day 4 — Zion\'s secret uncrowded side. Right off I-15 Exit 40. Scenic drive or Taylor Creek Trail.',
+    links: [{ text: 'AllTrails', url: 'https://www.alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4' }]
+  },
+  {
+    lat: 37.0965, lng: -113.5684,
+    icon: makeIcon('#C4521A','🎉'), type: 'route',
+    name: 'St. George, Utah',
+    desc: 'Final destination. Arrive June 25 by 2 PM. Buffer day June 26. Wedding June 27! 🎊',
+    links: []
+  },
+  // Future
+  {
+    lat: 38.7328, lng: -109.5746,
+    icon: makeIcon('#7A8C6E','⬅️'), type: 'future',
+    name: 'Arches National Park (Future)',
+    desc: 'OUT OF THE WAY for this trip. ~4 hrs SE of SLC. Save for a dedicated eastern Utah loop with Canyonlands.',
+    links: []
+  },
+  {
+    lat: 37.3149, lng: -109.853,
+    icon: makeIcon('#7A8C6E','⬅️'), type: 'future',
+    name: 'Valley of the Gods (Future)',
+    desc: 'OUT OF THE WAY. Near Mexican Hat, SE Utah. Free 17-mile scenic drive through sandstone buttes.',
+    links: []
+  },
+  {
+    lat: 40.4381, lng: -109.307,
+    icon: makeIcon('#7A8C6E','🦕'), type: 'future',
+    name: 'Dinosaur National Monument (Future)',
+    desc: 'OUT OF THE WAY. Utah/Colorado border, 3.5 hrs E of SLC. 1,500+ fossils in the cliff face.',
+    links: []
+  },
+];
+
+stops.forEach(s => {
+  const linksHTML = s.links.map(l =>
+    `<a href="${l.url}" target="_blank">${l.text}</a>`
+  ).join(' ');
+
+  const popup = `
+    <div class="custom-popup">
+      <h3>${s.name}</h3>
+      <p>${s.desc}</p>
+      ${linksHTML}
+    </div>`;
+
+  L.marker([s.lat, s.lng], { icon: s.icon })
+    .addTo(tripMap)
+    .bindPopup(popup, { maxWidth: 260 });
+});
+
+// Draw route line
+const routeCoords = stops
+  .filter(s => s.type === 'route')
+  .map(s => [s.lat, s.lng]);
+
+L.polyline(routeCoords, {
+  color: '#C4521A',
+  weight: 3,
+  opacity: 0.6,
+  dashArray: '8, 6',
+}).addTo(tripMap);
+
+// ── AIRPORT TOGGLE ───────────────────────────────────────────────────────────
+function selectAirport(el) {
+  document.querySelectorAll('.airport-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// ── SCROLL ANIMATIONS ────────────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── NAV ACTIVE STATE ─────────────────────────────────────────────────────────
+const navSections = document.querySelectorAll('section[id], #map-section');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  navSections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
