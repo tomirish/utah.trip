@@ -111,8 +111,9 @@
     border: 1px solid rgba(242,222,196,0.25);
     color: var(--sand);
     background: rgba(255,255,255,0.06);
-    cursor: default;
+    cursor: pointer;
     transition: all 0.2s;
+    text-decoration: none;
   }
   .pill:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
   .pill.hot { background: var(--rust); border-color: var(--rust); color: white; }
@@ -723,13 +724,13 @@
   <h1>Utah <em>Red Rock</em><br>Road Trip</h1>
   <div class="hero-sub">Salt Lake City &nbsp;→&nbsp; Cedar City &nbsp;→&nbsp; Kanarra Falls &nbsp;→&nbsp; Bryce Canyon &nbsp;→&nbsp; Zion &nbsp;→&nbsp; St. George</div>
   <div class="hero-pills">
-    <div class="pill hot">🎉 Wedding June 27</div>
-    <div class="pill">Kanarra Falls</div>
-    <div class="pill">Bryce Canyon NP</div>
-    <div class="pill">Zion NP</div>
-    <div class="pill">Kolob Canyons</div>
-    <div class="pill">🧗 Canyoneering</div>
-    <div class="pill">⛓️ Angels Landing</div>
+    <a class="pill hot" href="#day-4">🎉 Wedding June 27</a>
+    <a class="pill" href="#kanarra-falls">Kanarra Falls</a>
+    <a class="pill" href="#day-3">Bryce Canyon NP</a>
+    <a class="pill" href="#day-3">Zion NP</a>
+    <a class="pill" href="#day-4">Kolob Canyons</a>
+    <a class="pill" href="#canyoneering">🧗 Canyoneering</a>
+    <a class="pill" href="#angels-landing">⛓️ Angels Landing</a>
   </div>
   <div class="scroll-hint">
     <div class="scroll-arrow"></div>
@@ -811,7 +812,7 @@
   <div class="days-grid">
 
     <!-- DAY 1 -->
-    <div class="day-card fade-in">
+    <div class="day-card fade-in" id="day-1">
       <div class="day-header">
         <div class="day-num">Day 1</div>
         <div class="day-title">Fly In → Cedar City</div>
@@ -850,7 +851,7 @@
     </div>
 
     <!-- DAY 2 -->
-    <div class="day-card fade-in">
+    <div class="day-card fade-in" id="day-2">
       <div class="day-header">
         <div class="day-num">Day 2</div>
         <div class="day-title">Kanarra Falls → Bryce Sunset</div>
@@ -887,7 +888,7 @@
     </div>
 
     <!-- DAY 3 -->
-    <div class="day-card fade-in">
+    <div class="day-card fade-in" id="day-3">
       <div class="day-header">
         <div class="day-num">Day 3</div>
         <div class="day-title">Bryce Hike → Canyoneering → Zion</div>
@@ -930,7 +931,7 @@
     </div>
 
     <!-- DAY 4 -->
-    <div class="day-card fade-in">
+    <div class="day-card fade-in" id="day-4">
       <div class="day-header">
         <div class="day-num">Day 4</div>
         <div class="day-title">Angels Landing → St. George 🎉</div>
@@ -987,7 +988,7 @@
   <h2 class="section-title">All <em>Hikes</em> + Links</h2>
   <p class="section-intro">Download AllTrails maps offline before you go — cell service in the canyons is unreliable.</p>
   <div class="hikes-grid fade-in">
-    <div class="hike-card">
+    <div class="hike-card" id="kanarra-falls">
       <div class="hike-name">🌊 Kanarra Falls</div>
       <div class="hike-meta">
         <span class="hike-chip mod">Moderate</span>
@@ -1023,7 +1024,7 @@
       </div>
       <a class="stop-link alltrails" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank">AllTrails →</a>
     </div>
-    <div class="hike-card">
+    <div class="hike-card" id="angels-landing">
       <div class="hike-name">⛓️ Angels Landing</div>
       <div class="hike-meta">
         <span class="hike-chip hard">Hard</span>
@@ -1074,7 +1075,7 @@
       <div class="booking-desc">$12/person · 150 hikers/day max · Sells out weeks ahead in June. Book as soon as you have your dates.</div>
       <a class="booking-link" href="https://kanarrafalls.com" target="_blank">kanarrafalls.com →</a>
     </div>
-    <div class="booking-card">
+    <div class="booking-card" id="canyoneering">
       <div class="booking-priority urgent">⚠ BOOK IMMEDIATELY</div>
       <div class="booking-name">Guided Canyoneering (Day 3)</div>
       <div class="booking-desc">Private guided slot canyon + rappelling session near Zion. Half-day afternoon. June fills up very fast.</div>
