@@ -30,9 +30,144 @@ body {
 }
 img { display: block; width: 100%; }
 a { color: inherit; text-decoration: none; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 48px;
+  overflow: hidden;
+}
+.hero-slides { position: absolute; inset: 0; }
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: cf 15s infinite;
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+@keyframes cf {
+  0%   { opacity: 0; }
+  6%   { opacity: 1; }
+  33%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(44,24,16,0.1) 0%,
+    rgba(44,24,16,0.2) 40%,
+    rgba(44,24,16,0.85) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 14vw, 80px);
+  line-height: 0.95;
+  color: var(--sand);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+.hero-title em { color: var(--amber); font-style: italic; }
+.hero-route {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(242,222,196,0.6);
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s forwards;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--rust);
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.9s forwards;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(242,222,196,0.4);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 1s 1.4s forwards;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, transparent, rgba(242,222,196,0.4));
+  animation: pulse 2s infinite;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
 </style>
 </head>
 <body>
-  <!-- content goes here -->
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">June 21 – 28, 2025</div>
+      <h1 class="hero-title">Utah<br><em>Red Rock</em></h1>
+      <p class="hero-route">Las Vegas → Cedar City → Bryce → Zion → St. George</p>
+      <div class="hero-pill">💍 Wedding Jun 27 · St. George</div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      scroll
+    </div>
+  </section>
 </body>
 </html>
