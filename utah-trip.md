@@ -80,7 +80,7 @@
 
 | Time | Stop | Duration / Distance | Notes |
 |------|------|---------------------|-------|
-| 7:00 AM | 🌊 **The Narrows** | up to 9 mi / 4–5 hrs | See hike details below · gear from last night · ~$50/person |
+| 9:00 AM | 🌊 **The Narrows** | up to 9 mi / 4–5 hrs | See hike details below · gear from last night · ~$50/person |
 | 12:00 PM | 🥗 Lunch + gear return | ~1 hr | Zion Guru, Springdale |
 | 2:00 PM | 🚲 **E-Bike → Emerald Pools** | ~7 mi bike + 3 mi hike / 4 hrs | Ride Pa'rus Trail + Scenic Drive to Zion Lodge · lock bikes · hike the pools · ride back · zioncycles.com · ~$100/bike |
 | 6:30 PM | 🍽️ Dinner in Springdale | ~1 hr | Pack tonight for early departure |
