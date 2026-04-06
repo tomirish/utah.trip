@@ -76,6 +76,8 @@
 
 **Sleep:** Petty Ranch Inn (Night 2 of 3)
 
+> 💤 **Sleep in** — late night after stargazing. No rush, Narrows shuttle doesn't get crowded until mid-morning.
+
 | Time | Stop | Duration / Distance | Notes |
 |------|------|---------------------|-------|
 | 7:00 AM | 🌊 **The Narrows** | up to 9 mi / 4–5 hrs | See hike details below · gear from last night · ~$50/person |
@@ -99,8 +101,6 @@
 ### Day 6 — Friday June 26 · Kolob Canyons + Arrive St. George
 
 **Sleep:** The Ledges of St. George — Poolside Oasis ✅
-
-> 💤 **Sleep in** — late night after stargazing. No rush, Kolob is only 15 min from Springdale.
 
 | Time | Stop | Duration / Distance | Notes |
 |------|------|---------------------|-------|
