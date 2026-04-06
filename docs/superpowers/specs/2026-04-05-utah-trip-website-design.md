@@ -46,10 +46,18 @@ Internal planning tool. Booking status, costs, open notes. Linked from `index.ht
 - Overlay text: eyebrow "June 21–28, 2025", large title "Utah Red Rock", subtitle route line
 - Wedding pill: "💍 Wedding Jun 27 · St. George"
 - Scroll hint arrow at bottom
-- No nav bar — pure story experience, scroll to navigate
+- No nav bar in the hero — sticky date nav bar appears above content after hero
 
-#### 2. Story Chapters (one per location)
-Six chapters in sequence. Each chapter follows this structure:
+#### 2. Sticky Date Nav Bar
+- Fixed bar pinned below top of viewport, full-width (max 480px), z-index above content
+- Body gets `padding-top` matching bar height so no content hides behind it
+- Pills: `Sun 21` · `Mon 22` · `Tue 23` · `Wed 24` · `Thu 25` · `Fri 26`
+- Tapping a pill scrolls to that chapter's anchor (`#day-1`, `#day-2`, etc.)
+- Scrollspy: as user scrolls, the pill for the current chapter highlights (IntersectionObserver watching each `<article>`)
+- Same pill style as the existing Zion day selector (rust active, clay border inactive)
+
+#### 3. Story Chapters (one per location)
+Seven chapters in sequence (Day 1 added). Each chapter follows this structure:
 
 ```
 [Full-bleed chapter photo — alternates left/right image placement on tablet+]
@@ -60,20 +68,23 @@ Six chapters in sequence. Each chapter follows this structure:
 
 **Chapter list:**
 
-| # | Title | Dates | Key activities |
-|---|-------|-------|----------------|
-| 1 | Kanarra Falls | Mon Jun 22 | Slot canyon hike, drive to Bryce |
-| 2 | Bryce Canyon | Mon eve – Tue | Rim drive, Peekaboo + Navajo + Queens |
-| 3 | Zion — Arrive | Tue Jun 23 | Belly of Dragon, Canyon Overlook, dinner |
-| 4 | Zion — Canyoneering | Wed Jun 24 | The Double Crown, gear pickup |
-| 5 | Zion — Narrows + Stars | Thu Jun 25 | Narrows, e-bike → Emerald Pools, stargazing |
-| 6 | St. George + Wedding | Fri–Sat Jun 26–27 | Kolob, arrive, wedding day |
+| # | Title | Dates | Key activities | Treatment |
+|---|-------|-------|----------------|-----------|
+| 1 | Cedar City — Arrival | Sun Jun 21 | Fly in LAS, drive to Cedar City, dinner | Slim (short banner, no media strip) |
+| 2 | Kanarra Falls | Mon Jun 22 | Slot canyon hike, drive to Bryce | Full |
+| 3 | Bryce Canyon | Mon eve – Tue | Rim drive, Peekaboo + Navajo + Queens | Full |
+| 4 | Zion — Arrive | Tue Jun 23 | Belly of Dragon, Canyon Overlook, dinner | Full |
+| 5 | Zion — Canyoneering | Wed Jun 24 | The Double Crown, gear pickup | Full |
+| 6 | Zion — Narrows + Stars | Thu Jun 25 | Narrows, e-bike → Emerald Pools, stargazing | Full |
+| 7 | St. George + Wedding | Fri–Sat Jun 26–27 | Kolob, arrive, wedding day | Full |
 
 Fly home (Sun Jun 28) is a minimal footer element only — no full chapter.
 
-**Zion gets a day selector** — since it spans 3 days (chapters 3–5), each Zion chapter has a small "Tue / Wed / Thu" pill selector at the top that swaps the accordion content without a page jump.
+**Day 1 slim treatment:** No full-bleed splash photo. Short banner (~200px) with a Cedar City / Southern Utah desert road photo. Header with eyebrow + title. No media strip. Accordion with 4 beats: Land at LAS → Drive to Cedar City → Check in Abbey Inn → Dinner at The Pub.
 
-#### 3. Footer
+**Zion gets a day selector** — since it spans 3 days (chapters 4–6), each Zion chapter has a small "Tue / Wed / Thu" pill selector at the top that swaps the accordion content without a page jump.
+
+#### 4. Footer
 - Trip stats: 8 days · 3 national parks · 1 wedding · ~600 miles
 - Small link to `plan.html` (clipboard icon + "Planning doc")
 - Attribution: Unsplash photo credits
@@ -87,9 +98,18 @@ Fly home (Sun Jun 28) is a minimal footer element only — no full chapter.
 ### Media Strip
 - Horizontal scroll, no scrollbar visible
 - Items: 72×52px rounded thumbnails
-- Photos: Unsplash, 2–3 per chapter, specific to that location
+- Photos: Unsplash, 2–3 per chapter, **specific to the actual location being visited** (no generic people/travel shots)
 - Video: 1 YouTube thumbnail per chapter with red play button overlay — tapping opens YouTube in new tab (no inline embed to keep page fast)
 - Labeled with "← swipe →" hint on first visit only
+- Day 1 (Cedar City) has no media strip
+
+### Photo Sources (Unsplash — actual locations)
+- **Hero slides:** Zion canyon walls/Angel's Landing view · Bryce hoodoos at sunrise · Utah Milky Way
+- **Day 1 banner:** Cedar City / Southern Utah desert road
+- **Kanarra Falls:** Slot canyon log ladders (the actual Kanarra creek canyon)
+- **Bryce Canyon:** Thor's Hammer hoodoo / amphitheater panorama
+- **Zion:** The Narrows wading shot · red canyon wall reflections
+- **St. George / Kolob:** Red mesa landscape
 
 ### Sync Strategy (keeping HTML in sync with markdown)
 - Each chapter is wrapped in a clearly commented block: `<!-- CHAPTER: Kanarra Falls -->`
