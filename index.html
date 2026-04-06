@@ -694,6 +694,39 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">First night in Zion — treat yourselves. The balcony restaurant in Springdale has great views of the canyon walls at dusk.</p>
     </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🛍️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Pick up Narrows gear</div>
+        <div class="acc-sub"><span>Zion Guru · ~$50/person · 20 min</span></div>
+      </div>
+      <div class="acc-time">5:30 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Pick up neoprene socks, water shoes, and a trekking pole for tomorrow's Narrows hike. Gear must be picked up the evening before.</p>
+      <a class="acc-btn" href="https://www.zionguru.com" target="_blank" rel="noopener">Zion Guru</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🌟</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Zion Stargazing Tour</div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>NEW MOON · 2 hrs · $190/person</span></div>
+      </div>
+      <div class="acc-time">9:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">June 23 is just two nights before new moon — near-maximum darkness. Zion is a certified Dark Sky Park. Zero-gravity reclining pods, blankets, Celestron binoculars, hot drinks. Professional guide walks you through constellations, planets, and the full Milky Way arching overhead.</p>
+      <div class="acc-tags">
+        <span class="acc-tag acc-tag-cost">$190/person</span>
+        <span class="acc-tag acc-tag-dur">2 hours</span>
+        <span class="acc-tag acc-tag-dur">Kolob Terrace Rd</span>
+      </div>
+      <a class="acc-btn" href="https://www.stargazingzion.com" target="_blank" rel="noopener">stargazingzion.com</a>
+    </div></div>
   </div>
 </article>
 
@@ -731,59 +764,8 @@ a { color: inherit; text-decoration: none; }
     <button class="day-pill"        onclick="showZionDay('thu', this)">Thu Jun 25</button>
   </div>
 
-  <!-- WED JUN 24 — Canyoneering -->
+  <!-- WED JUN 24 — Narrows + E-Bikes -->
   <div id="zion-day-wed" class="zion-day">
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🧗</div>
-        <div class="acc-header-text">
-          <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
-          <div class="acc-sub"><span class="status-pending">⬜ Book now</span><span>7 hrs · $279/person</span></div>
-        </div>
-        <div class="acc-time">9:00 AM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
-        <div class="acc-tags">
-          <span class="acc-tag acc-tag-dur">7 hours</span>
-          <span class="acc-tag acc-tag-cost">$279/person</span>
-          <span class="acc-tag acc-tag-dur">Moderate</span>
-        </div>
-        <a class="acc-btn" href="https://www.zionguru.com" target="_blank" rel="noopener">Book at zionguru.com</a>
-      </div></div>
-
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🛍️</div>
-        <div class="acc-header-text">
-          <div class="acc-name">Pick up Narrows gear</div>
-          <div class="acc-sub"><span>Zion Guru · ~$50/person · 20 min</span></div>
-        </div>
-        <div class="acc-time">5:00 PM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">Pick up neoprene socks, water shoes, and a trekking pole for tomorrow's Narrows hike. Gear must be picked up the evening before.</p>
-        <a class="acc-btn" href="https://www.zionguru.com" target="_blank" rel="noopener">Zion Guru</a>
-      </div></div>
-
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🍽️</div>
-        <div class="acc-header-text">
-          <div class="acc-name">Dinner in Springdale</div>
-          <div class="acc-sub"><span>~1 hr</span></div>
-        </div>
-        <div class="acc-time">6:00 PM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">Spotted Dog Café or Switchback Grille. Early night — big day tomorrow.</p>
-      </div></div>
-    </div>
-  </div>
-
-  <!-- THU JUN 25 — Narrows + Stargazing -->
-  <div id="zion-day-thu" class="zion-day" style="display:none">
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">
         <div class="acc-icon">🌊</div>
@@ -791,11 +773,11 @@ a { color: inherit; text-decoration: none; }
           <div class="acc-name">The Narrows</div>
           <div class="acc-sub"><span>Up to 9 mi · 4–5 hrs · gear from last night</span></div>
         </div>
-        <div class="acc-time">7:00 AM</div>
+        <div class="acc-time">9:00 AM</div>
         <div class="acc-chevron">▼</div>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back. Consider doing 2–2.5 hrs to save energy for the afternoon and stargazing.</p>
+        <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back.</p>
         <div class="acc-tags">
           <span class="acc-tag acc-tag-dur">Up to 9 mi</span>
           <span class="acc-tag acc-tag-dur">4–5 hrs (or shorten)</span>
@@ -826,6 +808,43 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-icon">🍽️</div>
         <div class="acc-header-text">
           <div class="acc-name">Dinner in Springdale</div>
+          <div class="acc-sub"><span>~1 hr</span></div>
+        </div>
+        <div class="acc-time">6:30 PM</div>
+        <div class="acc-chevron">▼</div>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p class="acc-desc">Spotted Dog Café or Switchback Grille.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- THU JUN 25 — Canyoneering -->
+  <div id="zion-day-thu" class="zion-day" style="display:none">
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-icon">🧗</div>
+        <div class="acc-header-text">
+          <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
+          <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>7 hrs · $279/person</span></div>
+        </div>
+        <div class="acc-time">9:00 AM</div>
+        <div class="acc-chevron">▼</div>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
+        <div class="acc-tags">
+          <span class="acc-tag acc-tag-dur">7 hours</span>
+          <span class="acc-tag acc-tag-cost">$279/person</span>
+          <span class="acc-tag acc-tag-dur">Moderate</span>
+        </div>
+        <a class="acc-btn" href="https://www.zionguru.com" target="_blank" rel="noopener">zionguru.com</a>
+      </div></div>
+
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-icon">🍽️</div>
+        <div class="acc-header-text">
+          <div class="acc-name">Dinner in Springdale</div>
           <div class="acc-sub"><span>~1 hr · pack tonight for Friday departure</span></div>
         </div>
         <div class="acc-time">6:30 PM</div>
@@ -833,25 +852,6 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="acc-body"><div class="acc-body-inner">
         <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — sleeping in Friday before Kolob.</p>
-      </div></div>
-
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🌟</div>
-        <div class="acc-header-text">
-          <div class="acc-name">Zion Stargazing Tour</div>
-          <div class="acc-sub"><span class="status-pending">⬜ Book now</span><span>NEW MOON · 2 hrs · $190/person</span></div>
-        </div>
-        <div class="acc-time">9:00 PM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">June 25 is the new moon — maximum darkness. Zion is a certified Dark Sky Park. Zero-gravity reclining pods, blankets, Celestron binoculars, hot drinks. Professional guide walks you through constellations, planets, and the full Milky Way arching overhead. The best possible night of the month to do this.</p>
-        <div class="acc-tags">
-          <span class="acc-tag acc-tag-cost">$190/person</span>
-          <span class="acc-tag acc-tag-dur">2 hours</span>
-          <span class="acc-tag acc-tag-dur">Kolob Terrace Rd</span>
-        </div>
-        <a class="acc-btn" href="https://www.stargazingzion.com" target="_blank" rel="noopener">stargazingzion.com</a>
       </div></div>
     </div>
   </div>
