@@ -1,114 +1,119 @@
-# Utah Red Rock Road Trip — June 22–29, 2025
+# Utah Red Rock Road Trip — June 21–28, 2025
 
-**Route:** Salt Lake City (SLC) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Las Vegas (LAS)  
+**Route:** Las Vegas (LAS) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Las Vegas (LAS)  
 **Travelers:** 2 adults  
-**Wedding:** Saturday June 28, St. George, Utah
+**Wedding:** Saturday June 27, St. George, Utah
 
 ---
 
-## Hotels
+## Bookings
 
-| Night(s) | Hotel | Location | Book At |
-|----------|-------|----------|---------|
-| Sun Jun 22 | Abbey Inn & Suites | Cedar City, UT | abbeyinnhotel.com |
-| Mon Jun 23 | Best Western Plus Ruby's Inn | Bryce Canyon City, UT | rubysinn.com |
-| Tue–Thu Jun 24–26 | Zion Lodge *(inside park — first choice)* | Zion NP | zionlodge.com |
-| Tue–Thu Jun 24–26 | Cliffrose Springdale *(backup)* | Springdale, UT | cliffrosezion.com |
-| Fri–Sat Jun 27–28 | TBD | St. George, UT | — |
+| Date | What | Location | Book At | Status |
+|------|------|----------|---------|--------|
+| Sun Jun 21 | ✈️ Flights (LAS in) | Harry Reid International | — | ⬜ PENDING |
+| Sun Jun 21 | 🚗 Rental Car | Las Vegas, NV | — | ⬜ PENDING |
+| Sun Jun 21 | 🅿️ Airport Parking | — | [cheapairportparking.org](https://www.cheapairportparking.org) | ✅ BOOKED |
+| Sun Jun 21 | 🏨 Abbey Inn & Suites | Cedar City, UT | [abbeyinnhotel.com](https://www.abbeyinnhotel.com) | ✅ BOOKED |
+| Mon Jun 22 | 🌊 Kanarra Falls permits | Kanarraville, UT | [kanarrafalls.com](https://www.kanarrafalls.com) | ✅ BOOKED |
+| Mon Jun 22 | 🏨 Ruby's Inn | Bryce Canyon City, UT | [rubysinn.com](https://www.rubysinn.com) | ✅ BOOKED |
+| Tue–Thu Jun 23–25 | 🏨 Petty Ranch Inn | Near Zion NP | [pettyranchinn.com](https://www.pettyranchinn.com/) | ✅ BOOKED |
+| Tue Jun 23 | 🌟 Zion Stargazing Tour — $190/person | Kolob Terrace Rd | [stargazingzion.com](https://www.stargazingzion.com) | ✅ BOOKED |
+| Wed Jun 24 | 🚲 E-Bike rental — ~$100/bike | Springdale, UT | [zioncycles.com](https://www.zioncycles.com) | ⬜ PENDING |
+| Thu Jun 25 | 🧗 "The Double Crown" Canyoneering — $279/person | Near Zion NP | [zionguru.com](https://www.zionguru.com) | ✅ BOOKED |
+| Fri–Sat Jun 26–27 | 🏨 The Ledges of St. George — Poolside Oasis | St. George, UT | [ledges.com](https://www.ledges.com) | ✅ BOOKED |
+| Sun Jun 28 | ✈️ Flights (LAS out) | Harry Reid International | — | ⬜ PENDING |
 
 ---
 
 ## Day-by-Day Itinerary
 
-### Day 1 — Sunday June 22 · Travel Day
+### Day 1 — Sunday June 21 · Travel Day
 
-**Sleep:** Abbey Inn & Suites, Cedar City
+**Sleep:** Abbey Inn & Suites, Cedar City ✅
 
-| Time | Stop | Notes |
-|------|------|-------|
-| 3:00 PM | ✈️ Land at SLC | Pick up rental car |
-| 3:30 PM | 🚗 Drive to Cedar City | I-15 south, ~270 miles, ~3 hrs, straight shot |
-| 6:30 PM | 🏨 Check in — Abbey Inn & Suites | Hot breakfast included |
-| 7:00 PM | 🍽️ Dinner — The Pub Spirits + Craft Kitchen | 86 W Center St · 435-867-1400 · Closes 9 PM Sundays |
-
----
-
-### Day 2 — Monday June 23 · Kanarra Falls + Bryce Canyon
-
-**Sleep:** Ruby's Inn, Bryce Canyon City
-
-| Time | Stop | Notes |
-|------|------|-------|
-| 8:30 AM | 🚗 Depart Cedar City | 30 min south on I-15 to Kanarraville (Exit 51) |
-| 9:00 AM | 🌊 **Kanarra Falls** ⚠️ PERMITS REQUIRED | See hike details below |
-| 12:00 PM | 🚗 Drive to Bryce Canyon | East on Hwy 20, south on Hwy 89 · ~1.5 hrs |
-| 2:30 PM | 🏨 Check in — Ruby's Inn | Right at park entrance · breakfast included |
-| 4:30 PM | 🌅 Bryce Rim Drive — golden hour | Sunset Point → Inspiration Point |
-| 7:30 PM | 🍽️ Dinner at Ruby's Inn | On-site, no driving needed · early bed |
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| — | ✈️ Land at LAS | — | Pick up rental car |
+| — | 🚗 Drive to Cedar City | ~170 mi / 2.5 hrs | I-15 north, straight shot |
+| Evening | 🏨 Check in — Abbey Inn & Suites | — | Hot breakfast included |
+| 7:00 PM | 🍽️ Dinner — The Pub Spirits + Craft Kitchen | ~1 hr | 86 W Center St · 435-867-1400 · Closes 9 PM Sundays |
 
 ---
 
-### Day 3 — Tuesday June 24 · Big Bryce Day + Drive to Zion
+### Day 2 — Monday June 22 · Kanarra Falls + Bryce Canyon
 
-**Sleep:** Zion Lodge / Cliffrose Springdale
+**Sleep:** Ruby's Inn, Bryce Canyon City ✅
 
-| Time | Stop | Notes |
-|------|------|-------|
-| 7:00 AM | 🥾 **Peekaboo + Navajo + Queen's Garden** | See hike details below · start early, no shade |
-| 11:30 AM | 🚗 Rainbow Point drive-through | Highest point in Bryce 9,115 ft · on route south · 20 min detour |
-| 12:30 PM | 🐉 Belly of the Dragon | Free 20-min stop on Hwy 89 · bring flashlight · skip if raining |
-| 2:00 PM | 🏨 Check in — Zion Lodge / Cliffrose | 3 nights base camp |
-| 3:00 PM | 🏞️ Canyon Overlook Trail | See hike details below · easy warm-up |
-| 7:00 PM | 🍽️ Dinner in Springdale | Spotted Dog Café or Switchback Grille |
-
----
-
-### Day 4 — Wednesday June 25 · Zion Day 1 (Water + Canyoneering)
-
-**Sleep:** Zion Lodge / Cliffrose (Night 2 of 3)
-
-| Time | Stop | Notes |
-|------|------|-------|
-| 7:00 AM | 🌊 **The Narrows** | See hike details below · pick up gear from Zion Guru the evening before · ~$50/person |
-| 12:00 PM | 🥗 Lunch + gear return | Zion Guru, Springdale |
-| 3:00 PM | 🧗 **Guided Canyoneering** ⚠️ BOOK NOW | Rappels up to 80 ft · ~$160–180/person · zionguru.com or allwaysadventure.com |
-| 9:00 PM | 🌟 **Zion Stargazing Tour** | ~$190/person · 2 hrs · zero-gravity pods + telescopes · stargazingzion.com · book ahead |
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 8:30 AM | 🚗 Depart Cedar City | 30 min / 25 mi | I-15 south to Kanarraville (Exit 51) |
+| 9:00 AM | 🌊 **Kanarra Falls** ⚠️ PERMITS REQUIRED | 3.7 mi / 3 hrs | See hike details below |
+| 12:00 PM | 🚗 Drive to Bryce Canyon | ~1.5 hrs / 80 mi | East on Hwy 20, south on Hwy 89 |
+| 2:30 PM | 🏨 Check in — Ruby's Inn | — | Right at park entrance · breakfast included |
+| 4:30 PM | 🌅 Bryce Rim Drive — golden hour | ~1.5 hrs / scenic | Sunset Point → Inspiration Point |
+| 7:30 PM | 🍽️ Dinner at Ruby's Inn | ~1 hr | On-site, no driving needed · early bed |
 
 ---
 
-### Day 5 — Thursday June 26 · Zion Day 2 (Elevation Day)
+### Day 3 — Tuesday June 23 · Big Bryce Day + Drive to Zion
 
-**Sleep:** Zion Lodge / Cliffrose (Night 3 — pack tonight)
+**Sleep:** Petty Ranch Inn ✅
 
-> ⚠️ **No Angels Landing** — replacing with one of the options below. Decision TBD.  
-> 💤 **Late morning start** — you earned it after canyoneering + stargazing last night.
-
-| Time | Stop | Notes |
-|------|------|-------|
-| 10:00 AM | 👁️ **Observation Point** *(recommended)* | See hike details below · no permit needed · 8 mi hard |
-| — | *OR* 🥾 **Watchman Trail** *(lighter day)* | 3.3 mi moderate · great views · easier on tired legs |
-| 2:00 PM | 🚲 **E-Bike Zion Canyon — Zion Cycles** *(recommended afternoon)* | ~$100/bike · half day · Trek e-bikes · zioncycles.com · 435-772-0400 |
-| — | *OR* 💎 **Emerald Pools Trail** *(alternative)* | See hike details below · pools + waterfalls · 3 mi moderate |
-| Evening | 🍽️ Last dinner in Springdale | Pack tonight for early departure |
-
----
-
-### Day 6 — Friday June 27 · Kolob Canyons + Arrive St. George
-
-**Sleep:** St. George hotel
-
-| Time | Stop | Notes |
-|------|------|-------|
-| 8:00 AM | 🚗 Depart Springdale | Hwy 9 west → I-15 north · 15 min to Kolob exit |
-| 9:00 AM | 🔴 Kolob Canyons | Exit 40 off I-15 · Zion's secret uncrowded side · 5-mile scenic drive · Optional: Taylor Creek Trail |
-| 11:00 AM | 🚗 I-15 south to St. George | ~30 min |
-| 12:00 PM | 🎉 Arrive St. George | Relax · wedding prep · Snow Canyon State Park nearby if feeling ambitious |
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 7:00 AM | 🥾 **Peekaboo + Navajo + Queen's Garden** | 5.5 mi / 4 hrs | See hike details below · start early, no shade |
+| 11:30 AM | 🚗 Rainbow Point drive-through | 20 min / scenic | Highest point in Bryce 9,115 ft · on route south |
+| 12:30 PM | 🐉 Belly of the Dragon | 1.7 mi / 20–30 min | Free stop on Hwy 89 · bring flashlight · skip if raining |
+| 2:00 PM | 🚗 Drive to Zion + check in | ~1.5 hrs / 85 mi | Petty Ranch Inn · 3 nights base camp |
+| 3:30 PM | 🏞️ Canyon Overlook Trail | 1 mi / 45 min | See hike details below · easy warm-up |
+| 5:30 PM | 🛍️ Pick up Narrows gear | 20 min | Zion Guru or Zion Outfitter · ~$50/person · neoprene socks + water shoes + pole |
+| 7:00 PM | 🍽️ Dinner in Springdale | ~1 hr | ⭐ **Balcony restaurant** (name TBD) — first night in Zion, best night for it · Spotted Dog Café or Switchback Grille as backup |
+| 9:00 PM | 🌟 **Zion Stargazing Tour** | 2 hrs | ~$190/person · NEW MOON · zero-gravity pods + telescopes · stargazingzion.com ✅ BOOKED |
 
 ---
 
-### Day 7 — Saturday June 28 · Wedding Day 🎉
+### Day 4 — Wednesday June 24 · Narrows + E-Bike Day
 
-**Sleep:** St. George
+**Sleep:** Petty Ranch Inn (Night 2 of 3)
+
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 7:00 AM | 🌊 **The Narrows** | up to 9 mi / 4–5 hrs | See hike details below · gear from last night · ~$50/person |
+| 12:00 PM | 🥗 Lunch + gear return | ~1 hr | Zion Guru, Springdale |
+| 2:00 PM | 🚲 **E-Bike → Emerald Pools** | ~7 mi bike + 3 mi hike / 4 hrs | Ride Pa'rus Trail + Scenic Drive to Zion Lodge · lock bikes · hike the pools · ride back · zioncycles.com · ~$100/bike |
+| 6:30 PM | 🍽️ Dinner in Springdale | ~1 hr | Pack tonight for early departure |
+
+---
+
+### Day 5 — Thursday June 25 · Canyoneering Day
+
+**Sleep:** Petty Ranch Inn (Night 3 — pack tonight)
+
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 9:00 AM | 🧗 **"The Double Crown" — Huntress + Ladder** | 7 hrs | 2 slot canyons · 10+ rappels up to 80 ft · private · moderate · no experience needed · **$279/person** ✅ BOOKED |
+| 6:30 PM | 🍽️ Dinner in Springdale | ~1 hr | Pack tonight for early departure |
+
+---
+
+### Day 6 — Friday June 26 · Kolob Canyons + Arrive St. George
+
+**Sleep:** The Ledges of St. George — Poolside Oasis ✅
+
+> 💤 **Sleep in** — late night after stargazing. No rush, Kolob is only 15 min from Springdale.
+
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 10:00 AM | 🚗 Depart Springdale | 15 min | Hwy 9 west → I-15 north to Kolob exit |
+| 10:15 AM | 🔴 Kolob Canyons scenic drive | 5 mi / 30–45 min | Zion's uncrowded side · optional: +Taylor Creek Trail (5 mi / 2.5 hrs) |
+| 12:00 PM | 🚗 I-15 south to St. George | 30 min / 40 mi | — |
+| 12:30 PM | 🎉 Arrive St. George | — | Relax · wedding prep · Snow Canyon State Park nearby if feeling ambitious |
+
+---
+
+### Day 7 — Saturday June 27 · Wedding Day 🎉
+
+**Sleep:** The Ledges of St. George — Poolside Oasis ✅
 
 | Time | Stop | Notes |
 |------|------|-------|
@@ -116,19 +121,19 @@
 
 ---
 
-### Day 8 — Sunday June 29 · Fly Home
+### Day 8 — Sunday June 28 · Fly Home
 
-| Time | Stop | Notes |
-|------|------|-------|
-| 9:00 AM | 🚗 Depart St. George | I-15 south · ~120 miles · ~2.5 hrs |
-| 11:30 AM | ✈️ Harry Reid International (LAS) | Return rental car · fly home |
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| Morning | 🚗 Depart St. George | ~120 mi / 2 hrs | I-15 south |
+| — | ✈️ Harry Reid International (LAS) | — | Return rental car · fly home |
 
 ---
 
 ## Hike Details
 
 ### 🌊 Kanarra Falls
-**Day 2 — Monday June 23**
+**Day 2 — Monday June 22** ✅ BOOKED
 
 | | |
 |---|---|
@@ -146,7 +151,7 @@ You hike IN Kanarra Creek through a slot canyon with multiple waterfalls. The ca
 ---
 
 ### 🌅 Bryce Canyon Viewpoints
-**Day 2 — Monday June 23 (evening)**
+**Day 2 — Monday June 22 (evening)**
 
 | Viewpoint | What You See | Notes |
 |-----------|-------------|-------|
@@ -159,7 +164,7 @@ Aim to be at Sunset Point 45 minutes before sunset. The light starts turning gol
 ---
 
 ### 🥾 Peekaboo + Navajo Loop + Queen's Garden
-**Day 3 — Tuesday June 24 (morning)**
+**Day 3 — Tuesday June 23 (morning)**
 
 | | |
 |---|---|
@@ -180,7 +185,7 @@ The ultimate Bryce morning. Start at Sunset Point and combine three trails into 
 ---
 
 ### 🐉 Belly of the Dragon
-**Day 3 — Tuesday June 24 (en route)**
+**Day 3 — Tuesday June 23 (en route)**
 
 | | |
 |---|---|
@@ -197,7 +202,7 @@ A drainage tunnel carved under Hwy 89 — water erosion has sculpted the sandsto
 ---
 
 ### 🏞️ Canyon Overlook Trail
-**Day 3 — Tuesday June 24 (afternoon arrival at Zion)**
+**Day 3 — Tuesday June 23 (afternoon arrival at Zion)**
 
 | | |
 |---|---|
@@ -212,7 +217,7 @@ Best easy hike in Zion — highest payoff for least effort. Starts at the east e
 ---
 
 ### 🌊 The Narrows (Bottom-Up)
-**Day 4 — Wednesday June 25 (morning)**
+**Day 4 — Wednesday June 24 (morning)** ✅
 
 | | |
 |---|---|
@@ -231,7 +236,7 @@ One of the most unique hikes in America. The paved Riverside Walk (1 mile flat) 
 ---
 
 ### 👁️ Observation Point
-**Day 5 — Thursday June 26 (morning) — RECOMMENDED over Angels Landing**
+**Day 5 — Thursday June 25 (morning) — RECOMMENDED over Angels Landing**
 
 | | |
 |---|---|
@@ -261,7 +266,7 @@ Great views of Zion Canyon and the iconic Watchman formation. Easier on legs aft
 ---
 
 ### 💎 Emerald Pools Trail
-**Day 5 — Thursday June 26 (afternoon)**
+**Day 4 — Wednesday June 24 (afternoon)**
 
 | | |
 |---|---|
@@ -277,7 +282,7 @@ Beautiful shaded afternoon hike to a series of pools and small waterfalls tucked
 ---
 
 ### 🔴 Kolob Canyons + Taylor Creek Trail *(optional)*
-**Day 6 — Friday June 27 (morning stop)**
+**Day 6 — Friday June 26 (morning stop)**
 
 | | |
 |---|---|
@@ -288,28 +293,6 @@ Beautiful shaded afternoon hike to a series of pools and small waterfalls tucked
 | **AllTrails** | alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4 |
 
 Most visitors have no idea this section exists — it's part of Zion NP but accessed separately from I-15. Dramatic finger canyons of deep red Navajo sandstone with far fewer crowds than the main park.
-
----
-
-## Booking Checklist
-
-### ⚠️ Book Immediately
-- [ ] **Kanarra Falls permits** — kanarrafalls.com · **$15/person** · 150/day cap · sells out weeks ahead in June
-- [ ] **Zion Lodge** — zionlodge.com · June books out months ahead · check today
-- [ ] **Cliffrose Springdale** (backup if Zion Lodge full) — cliffrosezion.com
-- [ ] **Guided Canyoneering (Wed PM)** — zionguru.com OR allwaysadventure.com · **~$160–180/person** · June fills fast
-- [ ] **Zion Stargazing Tour (Wed night)** — stargazingzion.com · **~$190/person** · 2 hrs · book ahead, small group caps
-
-### 📅 Book Soon
-- [ ] **Ruby's Inn, Bryce Canyon** — rubysinn.com · book direct
-- [ ] **Abbey Inn, Cedar City** — abbeyinnhotel.com
-- [ ] **St. George hotel** (Fri + Sat) — TBD
-- [ ] **America the Beautiful Pass** — store.usgs.gov · **$80** · covers Bryce + Zion + Kolob entry (worth it — saves ~$35/person entry fees)
-- [ ] **Narrows gear rental (Tue evening pickup)** — zionguru.com · **~$50/person** · summer footwear package · pick up night before
-- [ ] **E-bike rental (Thu afternoon)** — zioncycles.com · 435-772-0400 · **~$100/bike** · half day · Trek e-bikes · June inventory is limited
-
-### ⏰ Night Before (Set Alarm)
-- [ ] **Canyoneering permit** (if required by guide company) — confirm with guide
 
 ---
 
@@ -332,24 +315,21 @@ Most visitors have no idea this section exists — it's part of Zion NP but acce
 
 | Activity | Park / Location | Day | Miles | Difficulty | Time | Permit |
 |----------|----------------|-----|-------|-----------|------|--------|
-| [Kanarra Falls](https://alltrails.com/trail/us/utah/kanarra-falls) | Kanarraville (not NP) | Mon | 3.7 | Moderate | 3 hrs | ⚠️ Required |
-| [Bryce Rim Drive](https://www.nps.gov/brca/planyourvisit/scenic-drive.htm) | Bryce Canyon NP | Mon eve | — | Easy | 1.5 hrs | None |
-| [Peekaboo + Navajo + Queens](https://alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail) | Bryce Canyon NP | Tue | 5.5 | Strenuous | 4 hrs | None |
-| [Belly of the Dragon](https://alltrails.com/trail/us/utah/the-belly-of-the-dragon) | Hwy 89 (not NP) | Tue | 1.7 | Easy | 20 min | None |
-| [Canyon Overlook](https://alltrails.com/trail/us/utah/canyon-overlook-trail) | Zion NP | Tue | 1.0 | Easy | 45 min | None |
-| [The Narrows](https://alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring) | Zion NP | Wed | up to 9 | Moderate | 3–5 hrs | None |
-| [Guided Canyoneering](https://www.zionguru.com/tours/canyoneering) | Near Zion (guided) | Wed | — | Extreme | 3–4 hrs | Via guide |
-| [🌟 Stargazing Tour](https://www.stargazingzion.com/tours) | Near Zion (Kolob Terrace) | Wed PM | — | Easy | 2 hrs | None |
-| [Observation Point](https://alltrails.com/trail/us/utah/observation-point-trail) | Zion NP | Thu | 8.0 | Hard | 4–5 hrs | None |
-| [*OR* Watchman Trail](https://alltrails.com/trail/us/utah/watchman-trail) | Zion NP | Thu | 3.3 | Moderate | 2 hrs | None |
-| [🚲 E-Bike Canyon Ride](https://www.zioncycles.com/ebikes) | Zion NP | Thu PM | ~10 | Easy | 2–4 hrs | None |
-| [Emerald Pools](https://alltrails.com/trail/us/utah/emerald-pools-trail) | Zion NP | Thu (alt) | 3.0 | Moderate | 2 hrs | None |
-| [Kolob / Taylor Creek](https://alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4) | Zion NP (Kolob) | Fri | 5.0 | Moderate | 2.5 hrs | None (pass) |
+| [Kanarra Falls](https://alltrails.com/trail/us/utah/kanarra-falls) | Kanarraville (not NP) | Mon Jun 22 | 3.7 | Moderate | 3 hrs | ✅ Booked |
+| [Bryce Rim Drive](https://www.nps.gov/brca/planyourvisit/scenic-drive.htm) | Bryce Canyon NP | Mon Jun 22 eve | — | Easy | 1.5 hrs | None |
+| [Peekaboo + Navajo + Queens](https://alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail) | Bryce Canyon NP | Tue Jun 23 | 5.5 | Strenuous | 4 hrs | None |
+| [Belly of the Dragon](https://alltrails.com/trail/us/utah/the-belly-of-the-dragon) | Hwy 89 (not NP) | Tue Jun 23 | 1.7 | Easy | 20 min | None |
+| [Canyon Overlook](https://alltrails.com/trail/us/utah/canyon-overlook-trail) | Zion NP | Tue Jun 23 | 1.0 | Easy | 45 min | None |
+| [🌟 Stargazing Tour](https://www.stargazingzion.com/tours) | Near Zion (Kolob Terrace) | Tue Jun 23 eve | — | Easy | 2 hrs | ✅ Booked |
+| [The Narrows](https://alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring) | Zion NP | Wed Jun 24 AM | up to 9 | Moderate | 4–5 hrs | None |
+| [Emerald Pools](https://alltrails.com/trail/us/utah/emerald-pools-trail) | Zion NP | Wed Jun 24 PM | 3.0 | Moderate | 2 hrs | None |
+| ["The Double Crown" Canyoneering](https://www.zionguru.com/tours/canyoneering) | Near Zion (guided) | Thu Jun 25 | — | Moderate | 7 hrs | ✅ Booked |
+| [Kolob / Taylor Creek](https://alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4) | Zion NP (Kolob) | Fri Jun 26 | 5.0 | Moderate | 2.5 hrs | None (pass) |
 
 ---
 
 ### 🚲 E-Bike — Zion Canyon Scenic Ride
-**Day 5 — Thursday June 26 (afternoon)**
+**Day 4 — Wednesday June 24 (afternoon)**
 
 | | |
 |---|---|
@@ -369,7 +349,7 @@ Ride the same road the park shuttle uses — but at your own pace, stopping when
 ---
 
 ### 🌟 Zion Stargazing Tour
-**Day 4 — Wednesday June 25 (evening, ~9 PM)**
+**Day 3 — Tuesday June 23 (evening, ~9 PM)** ✅ BOOKED
 
 | | |
 |---|---|
@@ -380,17 +360,9 @@ Ride the same road the park shuttle uses — but at your own pace, stopping when
 
 Zion is a designated International Dark Sky Park — on a clear June night with a new moon you can see the full Milky Way arching overhead. The tour starts at sunset and walks you to a private dark-sky field away from any light pollution. Each person gets a zero-gravity reclining pod and a blanket, plus Celestron binoculars. Professional astronomy guides walk you through constellations, planets, distant galaxies, and nebulae using high-powered telescopes and laser pointers. Hot chocolate, coffee, and tea included.
 
-**Tip:** Check the moon phase before booking — a night near the new moon gives you the most stars. Late June 2025 new moon falls June 25 — perfect timing for a Wednesday night tour.  
+**Tip:** Late June 2025 new moon falls June 25 — your stargazing tour is on new moon night itself. Maximum darkness, best possible conditions.  
 **⚠️ Weather dependent** — full refund if cancelled due to clouds. Book early, small group caps.
 
 ---
 
-## Open Questions
-
-- [ ] **Day 5 hike decision** — Observation Point (big) or Watchman Trail (easier recovery day)?
-- [ ] **Thursday evening restaurant** in Springdale — "balcony at best restaurant" (name TBD)
-- [ ] **St. George hotel** — need to pick and book
-
----
-
-*Last updated: March 2026 — added e-bike (Zion Cycles), stargazing tour (confirmed), late morning Day 5 start, costs throughout*
+*Last updated: April 2026 — rescheduled Zion days: Stargazing → Tue, Narrows + E-Bikes → Wed, Double Crown → Thu (booked); added airport parking*
