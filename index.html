@@ -468,12 +468,15 @@ a { color: inherit; text-decoration: none; }
 function toggleAcc(header) {
   const body = header.nextElementSibling;
   const isOpen = header.classList.contains('open');
-  // close siblings
+  // close all open siblings (not self)
   header.closest('.accordion').querySelectorAll('.acc-header.open').forEach(h => {
-    h.classList.remove('open');
-    h.nextElementSibling.style.maxHeight = null;
+    if (h !== header) { h.classList.remove('open'); h.nextElementSibling.style.maxHeight = null; }
   });
-  if (!isOpen) {
+  // toggle self
+  if (isOpen) {
+    header.classList.remove('open');
+    body.style.maxHeight = null;
+  } else {
     header.classList.add('open');
     body.style.maxHeight = body.scrollHeight + 'px';
   }
