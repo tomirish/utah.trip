@@ -10,9 +10,9 @@
 
 | Date | What | Location | Book At | Status |
 |------|------|----------|---------|--------|
+| Sun Jun 21 | 🅿️ Airport Parking | SeaTac Airport | [cheapairportparking.org](https://www.cheapairportparking.org) | ✅ BOOKED |
 | Sun Jun 21 | ✈️ Flights (LAS in) | Harry Reid International | — | ⬜ PENDING |
 | Sun Jun 21 | 🚗 Rental Car | Las Vegas, NV | — | ⬜ PENDING |
-| Sun Jun 21 | 🅿️ Airport Parking | — | [cheapairportparking.org](https://www.cheapairportparking.org) | ✅ BOOKED |
 | Sun Jun 21 | 🏨 Abbey Inn & Suites | Cedar City, UT | [abbeyinnhotel.com](https://www.abbeyinnhotel.com) | ✅ BOOKED |
 | Mon Jun 22 | 🌊 Kanarra Falls permits | Kanarraville, UT | [kanarrafalls.com](https://www.kanarrafalls.com) | ✅ BOOKED |
 | Mon Jun 22 | 🏨 Ruby's Inn | Bryce Canyon City, UT | [rubysinn.com](https://www.rubysinn.com) | ✅ BOOKED |
