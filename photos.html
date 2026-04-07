@@ -9,582 +9,594 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Jost', sans-serif; background: #111; color: #f0e8de; padding: 24px 20px; max-width: 1100px; margin: 0 auto; }
 h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 8px; }
-.intro { font-size: 13px; color: #888; line-height: 1.7; margin-bottom: 28px; }
-.how-to { background: #1e1e1e; border-left: 3px solid #E07B39; border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 40px; font-size: 13px; color: #aaa; line-height: 1.8; }
-.how-to strong { color: #f0e8de; }
-.section { margin-bottom: 52px; }
-.section-title { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #E07B39; padding-bottom: 8px; border-bottom: 1px solid #2a2a2a; margin-bottom: 6px; }
-.section-subtitle { font-size: 12px; color: #555; margin-bottom: 16px; font-style: italic; }
-.subsection { margin-bottom: 28px; }
-.subsection-label { font-size: 11px; font-weight: 600; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; padding-left: 2px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-.card { background: #1a1a1a; border-radius: 10px; overflow: hidden; position: relative; }
+.intro { font-size: 13px; color: #888; line-height: 1.7; margin-bottom: 32px; }
+
+/* Slot = one thing to decide */
+.slot { margin-bottom: 44px; }
+.slot-header { display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #222; margin-bottom: 16px; }
+.slot-name { font-size: 13px; font-weight: 600; color: #f0e8de; }
+.slot-pick { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #E07B39; background: rgba(224,123,57,0.12); padding: 2px 8px; border-radius: 20px; }
+.slot-desc { font-size: 11px; color: #555; font-style: italic; margin-left: auto; }
+
+/* Section headings (grouping slots) */
+.group-title { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #444; margin: 48px 0 20px; border-top: 1px solid #1e1e1e; padding-top: 16px; }
+.group-title:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.card { background: #1a1a1a; border-radius: 10px; overflow: hidden; cursor: pointer; transition: outline 0.1s; }
 .card.pick { outline: 2px solid #E07B39; }
-.photo { width: 100%; height: 170px; overflow: hidden; position: relative; background: #2a2a2a; }
+.photo { width: 100%; height: 160px; overflow: hidden; position: relative; background: #2a2a2a; }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .badge { position: absolute; top: 7px; left: 7px; background: rgba(0,0,0,0.75); color: #E07B39; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
 .rec-badge { position: absolute; top: 7px; right: 7px; background: #E07B39; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
-.card-body { padding: 9px 11px 12px; }
-.card-label { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
-.card-filename { font-size: 10px; color: #444; font-family: monospace; word-break: break-all; margin-bottom: 7px; }
-.link-btn { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 600; text-decoration: none; background: #2a2a2a; color: #777; }
-.link-btn:hover { background: #333; color: #aaa; }
-.unused-section { opacity: 0.5; }
+.card-body { padding: 8px 10px 10px; }
+.card-label { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+.card-filename { font-size: 9px; color: #3a3a3a; font-family: monospace; word-break: break-all; margin-bottom: 6px; }
+.link-btn { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 9px; font-weight: 600; text-decoration: none; background: #222; color: #666; }
+.link-btn:hover { background: #2a2a2a; color: #999; }
+
+/* "Needs photo" placeholder */
+.needs-photo { background: #1a1a1a; border-radius: 10px; border: 2px dashed #2a2a2a; padding: 28px 16px; text-align: center; font-size: 12px; color: #444; }
+.needs-photo strong { display: block; color: #666; margin-bottom: 4px; }
 </style>
 </head>
 <body>
 
-<h1>Photo Approval — Utah Trip</h1>
-<p class="intro">All photos are local in <code style="color:#aaa">images/</code>. Orange border = my recommendation for that slot. Tell me any changes and I'll update the site.</p>
-
-<div class="how-to">
-  <strong>Slots per chapter:</strong><br>
-  <strong>Splash</strong> — tall full-bleed banner, always visible at top of chapter<br>
-  <strong>Activity</strong> — photo shown when you expand an accordion item<br><br>
-  Tell me e.g. <em>"Narrows activity → use joebraun_narrows26"</em> and I'll update the site.
-</div>
+<h1>Photo Selection — Utah Trip</h1>
+<p class="intro">19 slots to fill. Orange border = my recommendation. Tell me your picks by name or badge code (e.g. <em>"Narrows → ZA-N3"</em>) and I'll wire them into the site. Drop any new images into <code style="color:#aaa">images/</code> and I'll add them here.</p>
 
 
-<!-- ════════════════════════════════════════ -->
-<!-- HERO SLIDES                             -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Hero Slides — 3 crossfading background photos</div>
-  <div class="section-subtitle">Slide 1 = Zion · Slide 2 = Bryce · Slide 3 = Night sky</div>
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- HERO SLIDESHOW                                        -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="group-title">Hero Slideshow — 6 photos, crossfading background</div>
 
-  <div class="subsection">
-    <div class="subsection-label">Slide 1 — Zion</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_towersofthevirgin01.jpg" alt=""><div class="badge">H-Z1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Towers of the Virgin</div><div class="card-filename">joebraun_towersofthevirgin01.jpg</div><a class="link-btn" href="images/joebraun_towersofthevirgin01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">H-Z2</div></div>
-        <div class="card-body"><div class="card-label">Canyon Junction</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_eastcanyon02.jpg" alt=""><div class="badge">H-Z3</div></div>
-        <div class="card-body"><div class="card-label">East Canyon</div><div class="card-filename">joebraun_eastcanyon02.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon02.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/zion-z2.jpg" alt=""><div class="badge">H-Z4</div></div>
-        <div class="card-body"><div class="card-label">Canyon wall (Unsplash)</div><div class="card-filename">zion-z2.jpg</div><a class="link-btn" href="images/zion-z2.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 1 · Zion</span><span class="slot-pick">Pick 1</span>
+    <span class="slot-desc">First thing visitors see</span>
   </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Slide 2 — Bryce Canyon</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Bryce-Canyon-Sunset-Point-3.jpg" alt=""><div class="badge">H-B1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Sunset Point</div><div class="card-filename">Bryce-Canyon-Sunset-Point-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Sunset-Point-3.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">H-B2</div></div>
-        <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/bryce-b1.jpg" alt=""><div class="badge">H-B3</div></div>
-        <div class="card-body"><div class="card-label">Hoodoos (Unsplash)</div><div class="card-filename">bryce-b1.jpg</div><a class="link-btn" href="images/bryce-b1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/bryce-b2.jpg" alt=""><div class="badge">H-B4</div></div>
-        <div class="card-body"><div class="card-label">Bryce Canyon (Unsplash)</div><div class="card-filename">bryce-b2.jpg</div><a class="link-btn" href="images/bryce-b2.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Slide 3 — Night Sky / Milky Way</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_kolobmilkyway01.jpg" alt=""><div class="badge">H-N1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Kolob Milky Way</div><div class="card-filename">joebraun_kolobmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_kolobmilkyway01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_canjunctmilkyway01.jpg" alt=""><div class="badge">H-N2</div></div>
-        <div class="card-body"><div class="card-label">Canyon Junction Milky Way</div><div class="card-filename">joebraun_canjunctmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_canjunctmilkyway01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_startrails01.jpg" alt=""><div class="badge">H-N3</div></div>
-        <div class="card-body"><div class="card-label">Star Trails</div><div class="card-filename">joebraun_startrails01.jpg</div><a class="link-btn" href="images/joebraun_startrails01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/milky-way.jpg" alt=""><div class="badge">H-N4</div></div>
-        <div class="card-body"><div class="card-label">Milky Way (current)</div><div class="card-filename">milky-way.jpg</div><a class="link-btn" href="images/milky-way.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════ -->
-<!-- DAY 1 — CEDAR CITY                      -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Day 1 — Cedar City Arrival · Slim Banner</div>
-  <div class="section-subtitle">Short 180px banner — any beautiful Southern Utah vista works</div>
   <div class="grid">
     <div class="card pick">
-      <div class="photo"><img src="images/joebraun_smithsoniansunset01.jpg" alt=""><div class="badge">D1-1</div><div class="rec-badge">★ My pick</div></div>
+      <div class="photo"><img src="images/joebraun_towersofthevirgin01.jpg" alt=""><div class="badge">H-Z1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Towers of the Virgin</div><div class="card-filename">joebraun_towersofthevirgin01.jpg</div><a class="link-btn" href="images/joebraun_towersofthevirgin01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">H-Z2</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_eastcanyon02.jpg" alt=""><div class="badge">H-Z3</div></div>
+      <div class="card-body"><div class="card-label">East Canyon walls</div><div class="card-filename">joebraun_eastcanyon02.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon02.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/zion-z2.jpg" alt=""><div class="badge">H-Z4</div></div>
+      <div class="card-body"><div class="card-label">Canyon wall</div><div class="card-filename">zion-z2.jpg</div><a class="link-btn" href="images/zion-z2.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 2 · Zion</span><span class="slot-pick">Pick 1</span>
+    <span class="slot-desc">Second Zion angle — different mood from Slide 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">H-Z2</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_eastcanyon02.jpg" alt=""><div class="badge">H-Z3</div></div>
+      <div class="card-body"><div class="card-label">East Canyon walls</div><div class="card-filename">joebraun_eastcanyon02.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon02.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/zion-z1.jpg" alt=""><div class="badge">H-Z5</div></div>
+      <div class="card-body"><div class="card-label">River + stars</div><div class="card-filename">zion-z1.jpg</div><a class="link-btn" href="images/zion-z1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/zion-z3.jpg" alt=""><div class="badge">H-Z6</div></div>
+      <div class="card-body"><div class="card-label">River in forest</div><div class="card-filename">zion-z3.jpg</div><a class="link-btn" href="images/zion-z3.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 3 · Bryce Canyon</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Bryce-Canyon-Sunset-Point-3.jpg" alt=""><div class="badge">H-B1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Sunset Point — hoodoos</div><div class="card-filename">Bryce-Canyon-Sunset-Point-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Sunset-Point-3.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">H-B2</div></div>
+      <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/bryce-b1.jpg" alt=""><div class="badge">H-B3</div></div>
+      <div class="card-body"><div class="card-label">Hoodoos close-up</div><div class="card-filename">bryce-b1.jpg</div><a class="link-btn" href="images/bryce-b1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/bryce-b2.jpg" alt=""><div class="badge">H-B4</div></div>
+      <div class="card-body"><div class="card-label">Bryce Canyon wide</div><div class="card-filename">bryce-b2.jpg</div><a class="link-btn" href="images/bryce-b2.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/bryce canyon sunset point.jpeg" alt=""><div class="badge">H-B5</div></div>
+      <div class="card-body"><div class="card-label">Sunset Point (alt)</div><div class="card-filename">bryce canyon sunset point.jpeg</div><a class="link-btn" href="images/bryce canyon sunset point.jpeg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 4 · Bryce Canyon</span><span class="slot-pick">Pick 1</span>
+    <span class="slot-desc">Different angle from Slide 3</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">H-B2</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Rim Drive — wide vista</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce Canyon Scenic Drives.jpg" alt=""><div class="badge">H-B6</div></div>
+      <div class="card-body"><div class="card-label">Scenic Drives overview</div><div class="card-filename">Bryce Canyon Scenic Drives.jpg</div><a class="link-btn" href="images/Bryce Canyon Scenic Drives.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/bryce-b2.jpg" alt=""><div class="badge">H-B4</div></div>
+      <div class="card-body"><div class="card-label">Bryce Canyon wide</div><div class="card-filename">bryce-b2.jpg</div><a class="link-btn" href="images/bryce-b2.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 5 · Night Sky</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_kolobmilkyway01.jpg" alt=""><div class="badge">H-N1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Kolob Milky Way</div><div class="card-filename">joebraun_kolobmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_kolobmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_canjunctmilkyway01.jpg" alt=""><div class="badge">H-N2</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction Milky Way</div><div class="card-filename">joebraun_canjunctmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_canjunctmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_watchmanmilkyway01.jpg" alt=""><div class="badge">H-N3</div></div>
+      <div class="card-body"><div class="card-label">Watchman Milky Way</div><div class="card-filename">joebraun_watchmanmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_watchmanmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_startrails01.jpg" alt=""><div class="badge">H-N4</div></div>
+      <div class="card-body"><div class="card-label">Star Trails</div><div class="card-filename">joebraun_startrails01.jpg</div><a class="link-btn" href="images/joebraun_startrails01.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Slide 6 · Night Sky</span><span class="slot-pick">Pick 1</span>
+    <span class="slot-desc">Different from Slide 5</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_canjunctmilkyway01.jpg" alt=""><div class="badge">H-N2</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction Milky Way</div><div class="card-filename">joebraun_canjunctmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_canjunctmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_obspointmilkyway01.jpg" alt=""><div class="badge">H-N5</div></div>
+      <div class="card-body"><div class="card-label">Observation Point Milky Way</div><div class="card-filename">joebraun_obspointmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_obspointmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/milky-way.jpg" alt=""><div class="badge">H-N6</div></div>
+      <div class="card-body"><div class="card-label">Milky Way arc</div><div class="card-filename">milky-way.jpg</div><a class="link-btn" href="images/milky-way.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_kolobmilkyway02.jpg" alt=""><div class="badge">H-N7</div></div>
+      <div class="card-body"><div class="card-label">Kolob Milky Way (2)</div><div class="card-filename">joebraun_kolobmilkyway02.jpg</div><a class="link-btn" href="images/joebraun_kolobmilkyway02.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER SPLASHES                                      -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="group-title">Chapter Splashes — 1 photo each, full-bleed banner</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Day 1 · Cedar City Arrival</span><span class="slot-pick">Pick 1</span>
+    <span class="slot-desc">Slim 180px banner — Southern Utah arrival vibe</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_smithsoniansunset01.jpg" alt=""><div class="badge">D1-1</div><div class="rec-badge">★ Pick</div></div>
       <div class="card-body"><div class="card-label">Smithsonian Butte Sunset</div><div class="card-filename">joebraun_smithsoniansunset01.jpg</div><a class="link-btn" href="images/joebraun_smithsoniansunset01.jpg" target="_blank">Full size</a></div>
     </div>
     <div class="card">
       <div class="photo"><img src="images/joebraun_eastcanyon01.jpg" alt=""><div class="badge">D1-2</div></div>
       <div class="card-body"><div class="card-label">East Canyon</div><div class="card-filename">joebraun_eastcanyon01.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon01.jpg" target="_blank">Full size</a></div>
     </div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════ -->
-<!-- DAY 2 — KANARRA FALLS                   -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Day 2 — Kanarra Falls</div>
-
-  <div class="subsection">
-    <div class="subsection-label">Chapter Splash</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_kanarracreek01.jpg" alt=""><div class="badge">K-S1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Kanarra Creek — narrow crack</div><div class="card-filename">joebraun_kanarracreek01.jpg</div><a class="link-btn" href="images/joebraun_kanarracreek01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/kanarra-creek-k2.jpg" alt=""><div class="badge">K-S2</div></div>
-        <div class="card-body"><div class="card-label">Creek canyon 2025</div><div class="card-filename">kanarra-creek-k2.jpg</div><a class="link-btn" href="images/kanarra-creek-k2.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/kanarra-creek-k3.jpg" alt=""><div class="badge">K-S3</div></div>
-        <div class="card-body"><div class="card-label">Creek canyon 2014</div><div class="card-filename">kanarra-creek-k3.jpg</div><a class="link-btn" href="images/kanarra-creek-k3.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/kanarra-creek-k4.jpg" alt=""><div class="badge">K-S4</div></div>
-        <div class="card-body"><div class="card-label">Creek canyon 2010</div><div class="card-filename">kanarra-creek-k4.jpg</div><a class="link-btn" href="images/kanarra-creek-k4.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/kanarra-creek-k5.jpg" alt=""><div class="badge">K-S5</div></div>
-        <div class="card-body"><div class="card-label">Creek canyon 2004</div><div class="card-filename">kanarra-creek-k5.jpg</div><a class="link-btn" href="images/kanarra-creek-k5.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/kanarra-falls-k6.jpg" alt=""><div class="badge">K-S6</div></div>
-        <div class="card-body"><div class="card-label">Kanarraville Falls</div><div class="card-filename">kanarra-falls-k6.jpg</div><a class="link-btn" href="images/kanarra-falls-k6.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity Photo — "Kanarra Falls" accordion item</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/kanarra-falls-k1.jpg" alt=""><div class="badge">K-A1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">The falls</div><div class="card-filename">kanarra-falls-k1.jpg</div><a class="link-btn" href="images/kanarra-falls-k1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_kanarrafalls01.jpg" alt=""><div class="badge">K-A2</div></div>
-        <div class="card-body"><div class="card-label">Kanarra Falls (Joe Braun)</div><div class="card-filename">joebraun_kanarrafalls01.jpg</div><a class="link-btn" href="images/joebraun_kanarrafalls01.jpg" target="_blank">Full size</a></div>
-      </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">D1-3</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
     </div>
   </div>
 </div>
 
-
-<!-- ════════════════════════════════════════ -->
-<!-- DAY 3 — BRYCE CANYON                    -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Day 3 — Bryce Canyon</div>
-
-  <div class="subsection">
-    <div class="subsection-label">Chapter Splash</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Bryce-Canyon-Sunset-Point-3.jpg" alt=""><div class="badge">B-S1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Sunset Point — hoodoos</div><div class="card-filename">Bryce-Canyon-Sunset-Point-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Sunset-Point-3.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">B-S2</div></div>
-        <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Bryce Canyon Scenic Drives.jpg" alt=""><div class="badge">B-S3</div></div>
-        <div class="card-body"><div class="card-label">Scenic Drives overview</div><div class="card-filename">Bryce Canyon Scenic Drives.jpg</div><a class="link-btn" href="images/Bryce Canyon Scenic Drives.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/bryce canyon sunset point.jpeg" alt=""><div class="badge">B-S4</div></div>
-        <div class="card-body"><div class="card-label">Sunset Point (alt)</div><div class="card-filename">bryce canyon sunset point.jpeg</div><a class="link-btn" href="images/bryce canyon sunset point.jpeg" target="_blank">Full size</a></div>
-      </div>
-    </div>
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Day 2 · Kanarra Falls</span><span class="slot-pick">Pick 1</span>
   </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — Peekaboo + Navajo + Queens Garden</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Bryce-Canyon-Wall-Street-3.jpg" alt=""><div class="badge">B-A1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Wall Street slot canyon</div><div class="card-filename">Bryce-Canyon-Wall-Street-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Wall-Street-3.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo1.jpeg" alt=""><div class="badge">B-A2</div></div>
-        <div class="card-body"><div class="card-label">Queens Garden – Peekaboo</div><div class="card-filename">Queens Garden – Peekaboo – Navajo1.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo1.jpeg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo2.jpeg" alt=""><div class="badge">B-A3</div></div>
-        <div class="card-body"><div class="card-label">Queens Garden – Peekaboo (2)</div><div class="card-filename">Queens Garden – Peekaboo – Navajo2.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo2.jpeg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo4.jpeg" alt=""><div class="badge">B-A4</div></div>
-        <div class="card-body"><div class="card-label">Queens Garden – Peekaboo (4)</div><div class="card-filename">Queens Garden – Peekaboo – Navajo4.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo4.jpeg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Bryce-Canyon-Peek-A-Boo-Loop-6-e1508255537815-800x543.jpg" alt=""><div class="badge">B-A5</div></div>
-        <div class="card-body"><div class="card-label">Peekaboo Loop</div><div class="card-filename">Bryce-Canyon-Peek-A-Boo-Loop-6.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Peek-A-Boo-Loop-6-e1508255537815-800x543.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — Bryce Rim Drive (Golden Hour)</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">B-R1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Bryce Rim Drive.webp" alt=""><div class="badge">B-R2</div></div>
-        <div class="card-body"><div class="card-label">Rim Drive (webp)</div><div class="card-filename">Bryce Rim Drive.webp</div><a class="link-btn" href="images/Bryce Rim Drive.webp" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — Rainbow Point Drive-Through</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Rainbow & Yovimpa Point.jpg" alt=""><div class="badge">B-RP1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Rainbow & Yovimpa Point</div><div class="card-filename">Rainbow & Yovimpa Point.jpg</div><a class="link-btn" href="images/Rainbow & Yovimpa Point.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Rainbow & Yovimpa Point2.jpg" alt=""><div class="badge">B-RP2</div></div>
-        <div class="card-body"><div class="card-label">Rainbow & Yovimpa (alt)</div><div class="card-filename">Rainbow & Yovimpa Point2.jpg</div><a class="link-btn" href="images/Rainbow & Yovimpa Point2.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — Belly of the Dragon</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/Belly-of-the-Dragon.jpg" alt=""><div class="badge">BD-1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Belly of the Dragon</div><div class="card-filename">Belly-of-the-Dragon.jpg</div><a class="link-btn" href="images/Belly-of-the-Dragon.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Belly of the Dragon2.avif" alt=""><div class="badge">BD-2</div></div>
-        <div class="card-body"><div class="card-label">Belly of the Dragon (alt)</div><div class="card-filename">Belly of the Dragon2.avif</div><a class="link-btn" href="images/Belly of the Dragon2.avif" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════ -->
-<!-- ZION — CHAPTER SPLASH                   -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Zion National Park — Chapter Splash</div>
-  <div class="section-subtitle">Used for both Tue arrival and the Wed/Thu accordion header</div>
   <div class="grid">
     <div class="card pick">
-      <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">ZS-1</div><div class="rec-badge">★ My pick</div></div>
-      <div class="card-body"><div class="card-label">Canyon Junction — classic Zion valley</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
+      <div class="photo"><img src="images/joebraun_kanarracreek01.jpg" alt=""><div class="badge">K-S1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Kanarra Creek — narrow crack</div><div class="card-filename">joebraun_kanarracreek01.jpg</div><a class="link-btn" href="images/joebraun_kanarracreek01.jpg" target="_blank">Full size</a></div>
     </div>
     <div class="card">
-      <div class="photo"><img src="images/joebraun_eastcanyon02.jpg" alt=""><div class="badge">ZS-2</div></div>
-      <div class="card-body"><div class="card-label">East Canyon walls</div><div class="card-filename">joebraun_eastcanyon02.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon02.jpg" target="_blank">Full size</a></div>
+      <div class="photo"><img src="images/kanarra-creek-k2.jpg" alt=""><div class="badge">K-S2</div></div>
+      <div class="card-body"><div class="card-label">Creek canyon (2)</div><div class="card-filename">kanarra-creek-k2.jpg</div><a class="link-btn" href="images/kanarra-creek-k2.jpg" target="_blank">Full size</a></div>
     </div>
     <div class="card">
-      <div class="photo"><img src="images/joebraun_towersofthevirgin01.jpg" alt=""><div class="badge">ZS-3</div></div>
+      <div class="photo"><img src="images/kanarra-creek-k3.jpg" alt=""><div class="badge">K-S3</div></div>
+      <div class="card-body"><div class="card-label">Creek canyon (3)</div><div class="card-filename">kanarra-creek-k3.jpg</div><a class="link-btn" href="images/kanarra-creek-k3.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/kanarra-creek-k4.jpg" alt=""><div class="badge">K-S4</div></div>
+      <div class="card-body"><div class="card-label">Creek canyon (4)</div><div class="card-filename">kanarra-creek-k4.jpg</div><a class="link-btn" href="images/kanarra-creek-k4.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/kanarra-creek-k5.jpg" alt=""><div class="badge">K-S5</div></div>
+      <div class="card-body"><div class="card-label">Creek canyon (5)</div><div class="card-filename">kanarra-creek-k5.jpg</div><a class="link-btn" href="images/kanarra-creek-k5.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/kanarra-falls-k6.jpg" alt=""><div class="badge">K-S6</div></div>
+      <div class="card-body"><div class="card-label">Kanarraville Falls</div><div class="card-filename">kanarra-falls-k6.jpg</div><a class="link-btn" href="images/kanarra-falls-k6.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Day 3 · Bryce Canyon</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Bryce-Canyon-Sunset-Point-3.jpg" alt=""><div class="badge">B-S1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Sunset Point hoodoos</div><div class="card-filename">Bryce-Canyon-Sunset-Point-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Sunset-Point-3.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">B-S2</div></div>
+      <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce Canyon Scenic Drives.jpg" alt=""><div class="badge">B-S3</div></div>
+      <div class="card-body"><div class="card-label">Scenic Drives overview</div><div class="card-filename">Bryce Canyon Scenic Drives.jpg</div><a class="link-btn" href="images/Bryce Canyon Scenic Drives.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/bryce canyon sunset point.jpeg" alt=""><div class="badge">B-S4</div></div>
+      <div class="card-body"><div class="card-label">Sunset Point (alt)</div><div class="card-filename">bryce canyon sunset point.jpeg</div><a class="link-btn" href="images/bryce canyon sunset point.jpeg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Days 4–5 · Zion National Park</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_canyonjunction01.jpg" alt=""><div class="badge">ZS-1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction — classic valley</div><div class="card-filename">joebraun_canyonjunction01.jpg</div><a class="link-btn" href="images/joebraun_canyonjunction01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_towersofthevirgin01.jpg" alt=""><div class="badge">ZS-2</div></div>
       <div class="card-body"><div class="card-label">Towers of the Virgin</div><div class="card-filename">joebraun_towersofthevirgin01.jpg</div><a class="link-btn" href="images/joebraun_towersofthevirgin01.jpg" target="_blank">Full size</a></div>
     </div>
     <div class="card">
+      <div class="photo"><img src="images/joebraun_eastcanyon02.jpg" alt=""><div class="badge">ZS-3</div></div>
+      <div class="card-body"><div class="card-label">East Canyon walls</div><div class="card-filename">joebraun_eastcanyon02.jpg</div><a class="link-btn" href="images/joebraun_eastcanyon02.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
       <div class="photo"><img src="images/zion-z1.jpg" alt=""><div class="badge">ZS-4</div></div>
-      <div class="card-body"><div class="card-label">Night river / stars (Unsplash)</div><div class="card-filename">zion-z1.jpg</div><a class="link-btn" href="images/zion-z1.jpg" target="_blank">Full size</a></div>
-    </div>
-    <div class="card">
-      <div class="photo"><img src="images/zion-z2.jpg" alt=""><div class="badge">ZS-5</div></div>
-      <div class="card-body"><div class="card-label">Canyon wall (Unsplash)</div><div class="card-filename">zion-z2.jpg</div><a class="link-btn" href="images/zion-z2.jpg" target="_blank">Full size</a></div>
-    </div>
-    <div class="card">
-      <div class="photo"><img src="images/zion-z3.jpg" alt=""><div class="badge">ZS-6</div></div>
-      <div class="card-body"><div class="card-label">River in forest (Unsplash)</div><div class="card-filename">zion-z3.jpg</div><a class="link-btn" href="images/zion-z3.jpg" target="_blank">Full size</a></div>
+      <div class="card-body"><div class="card-label">River + stars</div><div class="card-filename">zion-z1.jpg</div><a class="link-btn" href="images/zion-z1.jpg" target="_blank">Full size</a></div>
     </div>
   </div>
 </div>
 
-
-<!-- ════════════════════════════════════════ -->
-<!-- ZION — ACTIVITIES                       -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Zion — Activity Photos</div>
-
-  <div class="subsection">
-    <div class="subsection-label">Canyon Overlook Trail</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_canyonoverlook01.jpg" alt=""><div class="badge">ZA-CO1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Canyon Overlook</div><div class="card-filename">joebraun_canyonoverlook01.jpg</div><a class="link-btn" href="images/joebraun_canyonoverlook01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/zion canyon overlook.jpg" alt=""><div class="badge">ZA-CO2</div></div>
-        <div class="card-body"><div class="card-label">Canyon Overlook (alt)</div><div class="card-filename">zion canyon overlook.jpg</div><a class="link-btn" href="images/zion canyon overlook.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Days 6–7 · St. George + Kolob</span><span class="slot-pick">Pick 1</span>
   </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Zion Stargazing Tour</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_canjunctmilkyway01.jpg" alt=""><div class="badge">ZA-SG1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Canyon Junction Milky Way</div><div class="card-filename">joebraun_canjunctmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_canjunctmilkyway01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_obspointmilkyway01.jpg" alt=""><div class="badge">ZA-SG2</div></div>
-        <div class="card-body"><div class="card-label">Observation Point Milky Way</div><div class="card-filename">joebraun_obspointmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_obspointmilkyway01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_watchmanmilkyway01.jpg" alt=""><div class="badge">ZA-SG3</div></div>
-        <div class="card-body"><div class="card-label">Watchman Milky Way</div><div class="card-filename">joebraun_watchmanmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_watchmanmilkyway01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/stargazing-s1.jpg" alt=""><div class="badge">ZA-SG4</div></div>
-        <div class="card-body"><div class="card-label">Mountain + starry sky (Unsplash)</div><div class="card-filename">stargazing-s1.jpg</div><a class="link-btn" href="images/stargazing-s1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/stargazing-s2.jpg" alt=""><div class="badge">ZA-SG5</div></div>
-        <div class="card-body"><div class="card-label">Stargazing (Unsplash 2)</div><div class="card-filename">stargazing-s2.jpg</div><a class="link-btn" href="images/stargazing-s2.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">The Narrows</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_narrows01.jpg" alt=""><div class="badge">ZA-N1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Narrows — classic shot</div><div class="card-filename">joebraun_narrows01.jpg</div><a class="link-btn" href="images/joebraun_narrows01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows02.jpg" alt=""><div class="badge">ZA-N2</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (2)</div><div class="card-filename">joebraun_zionnarrows02.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows02.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows03.jpg" alt=""><div class="badge">ZA-N3</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (3)</div><div class="card-filename">joebraun_zionnarrows03.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows03.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows04.jpg" alt=""><div class="badge">ZA-N4</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (4)</div><div class="card-filename">joebraun_zionnarrows04.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows04.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_narrows26.jpg" alt=""><div class="badge">ZA-N5</div></div>
-        <div class="card-body"><div class="card-label">Narrows (26)</div><div class="card-filename">joebraun_narrows26.jpg</div><a class="link-btn" href="images/joebraun_narrows26.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows06.jpg" alt=""><div class="badge">ZA-N6</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (6)</div><div class="card-filename">joebraun_zionnarrows06.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows06.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows37.jpg" alt=""><div class="badge">ZA-N7</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (37)</div><div class="card-filename">joebraun_zionnarrows37.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows37.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/narrows-n1.jpg" alt=""><div class="badge">ZA-N8</div></div>
-        <div class="card-body"><div class="card-label">Narrows (Unsplash N1)</div><div class="card-filename">narrows-n1.jpg</div><a class="link-btn" href="images/narrows-n1.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/narrows-n2.jpg" alt=""><div class="badge">ZA-N9</div></div>
-        <div class="card-body"><div class="card-label">Narrows (Unsplash N2)</div><div class="card-filename">narrows-n2.jpg</div><a class="link-btn" href="images/narrows-n2.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_zionnarrows01.jpg" alt=""><div class="badge">ZA-N10</div></div>
-        <div class="card-body"><div class="card-label">Zion Narrows (1)</div><div class="card-filename">joebraun_zionnarrows01.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_narrows23.jpg" alt=""><div class="badge">ZA-N11</div></div>
-        <div class="card-body"><div class="card-label">Narrows (23)</div><div class="card-filename">joebraun_narrows23.jpg</div><a class="link-btn" href="images/joebraun_narrows23.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_narrows24.jpg" alt=""><div class="badge">ZA-N12</div></div>
-        <div class="card-body"><div class="card-label">Narrows (24)</div><div class="card-filename">joebraun_narrows24.jpg</div><a class="link-btn" href="images/joebraun_narrows24.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_narrowsday03.jpg" alt=""><div class="badge">ZA-N13</div></div>
-        <div class="card-body"><div class="card-label">Narrows Day (3)</div><div class="card-filename">joebraun_narrowsday03.jpg</div><a class="link-btn" href="images/joebraun_narrowsday03.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_narrowsday05.jpg" alt=""><div class="badge">ZA-N14</div></div>
-        <div class="card-body"><div class="card-label">Narrows Day (5)</div><div class="card-filename">joebraun_narrowsday05.jpg</div><a class="link-btn" href="images/joebraun_narrowsday05.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">E-Bikes → Emerald Pools</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_emeraldpools01.jpg" alt=""><div class="badge">ZA-EP1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Emerald Pools (1)</div><div class="card-filename">joebraun_emeraldpools01.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_emeraldpools02.jpg" alt=""><div class="badge">ZA-EP2</div></div>
-        <div class="card-body"><div class="card-label">Emerald Pools (2)</div><div class="card-filename">joebraun_emeraldpools02.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools02.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_emeraldpools03.jpg" alt=""><div class="badge">ZA-EP3</div></div>
-        <div class="card-body"><div class="card-label">Emerald Pools (3)</div><div class="card-filename">joebraun_emeraldpools03.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools03.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_emeraldpools12.jpg" alt=""><div class="badge">ZA-EP4</div></div>
-        <div class="card-body"><div class="card-label">Emerald Pools (12)</div><div class="card-filename">joebraun_emeraldpools12.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools12.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Double Crown Canyoneering</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_pinecreek01.jpg" alt=""><div class="badge">ZA-C1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Pine Creek Canyon — rappelling</div><div class="card-filename">joebraun_pinecreek01.jpg</div><a class="link-btn" href="images/joebraun_pinecreek01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_pinecreek08.jpg" alt=""><div class="badge">ZA-C2</div></div>
-        <div class="card-body"><div class="card-label">Pine Creek Canyon (8)</div><div class="card-filename">joebraun_pinecreek08.jpg</div><a class="link-btn" href="images/joebraun_pinecreek08.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_subway12.jpg" alt=""><div class="badge">ZA-C3</div></div>
-        <div class="card-body"><div class="card-label">The Subway — slot canyon</div><div class="card-filename">joebraun_subway12.jpg</div><a class="link-btn" href="images/joebraun_subway12.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_behunin01.jpg" alt=""><div class="badge">ZA-C4</div></div>
-        <div class="card-body"><div class="card-label">Behunin Canyon</div><div class="card-filename">joebraun_behunin01.jpg</div><a class="link-btn" href="images/joebraun_behunin01.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_rightfork09.jpg" alt=""><div class="badge">ZA-C5</div></div>
-        <div class="card-body"><div class="card-label">Right Fork Canyon</div><div class="card-filename">joebraun_rightfork09.jpg</div><a class="link-btn" href="images/joebraun_rightfork09.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card pick">
-        <div class="photo"><img src="images/Double Crown Canyoneering1.webp" alt=""><div class="badge">ZA-C6</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Double Crown — actual tour</div><div class="card-filename">Double Crown Canyoneering1.webp</div><a class="link-btn" href="images/Double Crown Canyoneering1.webp" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Double Crown Canyoneering2.webp" alt=""><div class="badge">ZA-C7</div></div>
-        <div class="card-body"><div class="card-label">Double Crown — rappel (2)</div><div class="card-filename">Double Crown Canyoneering2.webp</div><a class="link-btn" href="images/Double Crown Canyoneering2.webp" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Double Crown Canyoneering3.webp" alt=""><div class="badge">ZA-C8</div></div>
-        <div class="card-body"><div class="card-label">Double Crown — rappel (3)</div><div class="card-filename">Double Crown Canyoneering3.webp</div><a class="link-btn" href="images/Double Crown Canyoneering3.webp" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════ -->
-<!-- DAYS 6–7 — ST. GEORGE + KOLOB           -->
-<!-- ════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-title">Days 6–7 — St. George + Kolob Canyons</div>
-
-  <div class="subsection">
-    <div class="subsection-label">Chapter Splash</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_westrim12.jpg" alt=""><div class="badge">SG-S1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">West Rim — dramatic vista</div><div class="card-filename">joebraun_westrim12.jpg</div><a class="link-btn" href="images/joebraun_westrim12.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_westrim15.jpg" alt=""><div class="badge">SG-S2</div></div>
-        <div class="card-body"><div class="card-label">West Rim (15)</div><div class="card-filename">joebraun_westrim15.jpg</div><a class="link-btn" href="images/joebraun_westrim15.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_westrim20.jpg" alt=""><div class="badge">SG-S3</div></div>
-        <div class="card-body"><div class="card-label">West Rim (20)</div><div class="card-filename">joebraun_westrim20.jpg</div><a class="link-btn" href="images/joebraun_westrim20.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_westrim57.jpg" alt=""><div class="badge">SG-S4</div></div>
-        <div class="card-body"><div class="card-label">West Rim (57)</div><div class="card-filename">joebraun_westrim57.jpg</div><a class="link-btn" href="images/joebraun_westrim57.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_smithsoniansunset01.jpg" alt=""><div class="badge">SG-S5</div></div>
-        <div class="card-body"><div class="card-label">Smithsonian Butte Sunset</div><div class="card-filename">joebraun_smithsoniansunset01.jpg</div><a class="link-btn" href="images/joebraun_smithsoniansunset01.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — Kolob Canyons</div>
-    <div class="grid">
-      <div class="card pick">
-        <div class="photo"><img src="images/joebraun_timbercreekoverlook06.jpg" alt=""><div class="badge">SG-K1</div><div class="rec-badge">★ My pick</div></div>
-        <div class="card-body"><div class="card-label">Timber Creek Overlook (Kolob)</div><div class="card-filename">joebraun_timbercreekoverlook06.jpg</div><a class="link-btn" href="images/joebraun_timbercreekoverlook06.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_kolobmilkyway02.jpg" alt=""><div class="badge">SG-K2</div></div>
-        <div class="card-body"><div class="card-label">Kolob Milky Way (2)</div><div class="card-filename">joebraun_kolobmilkyway02.jpg</div><a class="link-btn" href="images/joebraun_kolobmilkyway02.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/joebraun_westrim11.jpg" alt=""><div class="badge">SG-K3</div></div>
-        <div class="card-body"><div class="card-label">West Rim (11)</div><div class="card-filename">joebraun_westrim11.jpg</div><a class="link-btn" href="images/joebraun_westrim11.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/Kolob Canyons scenic drive.jpg" alt=""><div class="badge">SG-K4</div></div>
-        <div class="card-body"><div class="card-label">Kolob Canyons scenic drive</div><div class="card-filename">Kolob Canyons scenic drive.jpg</div><a class="link-btn" href="images/Kolob Canyons scenic drive.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <div class="subsection-label">Activity — The Ledges Resort</div>
-    <div class="grid">
-      <div class="card">
-        <div class="photo"><img src="images/The-Ledges-St.-George-Destination-Wedding_0365.jpg" alt=""><div class="badge">SG-L1</div></div>
-        <div class="card-body"><div class="card-label">The Ledges (venue)</div><div class="card-filename">The-Ledges-St.-George-Destination-Wedding_0365.jpg</div><a class="link-btn" href="images/The-Ledges-St.-George-Destination-Wedding_0365.jpg" target="_blank">Full size</a></div>
-      </div>
-      <div class="card">
-        <div class="photo"><img src="images/St. George wedding.jpg" alt=""><div class="badge">SG-L2</div></div>
-        <div class="card-body"><div class="card-label">St. George landscape</div><div class="card-filename">St. George wedding.jpg</div><a class="link-btn" href="images/St. George wedding.jpg" target="_blank">Full size</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════════ -->
-<!-- NOT IN ITINERARY                        -->
-<!-- ════════════════════════════════════════ -->
-<div class="section unused-section">
-  <div class="section-title">Not in itinerary — extra photos</div>
-  <div class="section-subtitle">Angels Landing was removed; these are great photos but don't map to any activity</div>
   <div class="grid">
-    <div class="card"><div class="photo"><img src="images/joebraun_angelslanding02.jpg" alt=""><div class="badge">X1</div></div><div class="card-body"><div class="card-label">Angels Landing</div><div class="card-filename">joebraun_angelslanding02.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_obspoint01.jpg" alt=""><div class="badge">X2</div></div><div class="card-body"><div class="card-label">Observation Point</div><div class="card-filename">joebraun_obspoint01.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_canaanmountain26.jpg" alt=""><div class="badge">X3</div></div><div class="card-body"><div class="card-label">Canaan Mountain</div><div class="card-filename">joebraun_canaanmountain26.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_westrim36.jpg" alt=""><div class="badge">X4</div></div><div class="card-body"><div class="card-label">West Rim (extra)</div><div class="card-filename">joebraun_westrim36.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_parunuweap01.jpg" alt=""><div class="badge">X5</div></div><div class="card-body"><div class="card-label">Parunuweap Canyon</div><div class="card-filename">joebraun_parunuweap01.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_deertrap11.jpg" alt=""><div class="badge">X6</div></div><div class="card-body"><div class="card-label">Deer Trap Mountain</div><div class="card-filename">joebraun_deertrap11.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_eaglecrags03.jpg" alt=""><div class="badge">X7</div></div><div class="card-body"><div class="card-label">Eagle Crags</div><div class="card-filename">joebraun_eaglecrags03.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_laverkincreektrail14.jpg" alt=""><div class="badge">X8</div></div><div class="card-body"><div class="card-label">LaVerkin Creek Trail</div><div class="card-filename">joebraun_laverkincreektrail14.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_lostpeak06.jpg" alt=""><div class="badge">X9</div></div><div class="card-body"><div class="card-label">Lost Peak</div><div class="card-filename">joebraun_lostpeak06.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_progenypeak01.jpg" alt=""><div class="badge">X10</div></div><div class="card-body"><div class="card-label">Progeny Peak</div><div class="card-filename">joebraun_progenypeak01.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_canaanmtn21.jpg" alt=""><div class="badge">X11</div></div><div class="card-body"><div class="card-label">Canaan Mountain (21)</div><div class="card-filename">joebraun_canaanmtn21.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_obspoint04.jpg" alt=""><div class="badge">X12</div></div><div class="card-body"><div class="card-label">Observation Point (4)</div><div class="card-filename">joebraun_obspoint04.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_narrows31.jpg" alt=""><div class="badge">X13</div></div><div class="card-body"><div class="card-label">Narrows (31) — extra</div><div class="card-filename">joebraun_narrows31.jpg</div></div></div>
-    <div class="card"><div class="photo"><img src="images/joebraun_lowermountain01.jpg" alt=""><div class="badge">X14</div></div><div class="card-body"><div class="card-label">Lower Mountain</div><div class="card-filename">joebraun_lowermountain01.jpg</div></div></div>
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_westrim12.jpg" alt=""><div class="badge">SG-S1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">West Rim — dramatic vista</div><div class="card-filename">joebraun_westrim12.jpg</div><a class="link-btn" href="images/joebraun_westrim12.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_westrim15.jpg" alt=""><div class="badge">SG-S2</div></div>
+      <div class="card-body"><div class="card-label">West Rim (15)</div><div class="card-filename">joebraun_westrim15.jpg</div><a class="link-btn" href="images/joebraun_westrim15.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_westrim20.jpg" alt=""><div class="badge">SG-S3</div></div>
+      <div class="card-body"><div class="card-label">West Rim (20)</div><div class="card-filename">joebraun_westrim20.jpg</div><a class="link-btn" href="images/joebraun_westrim20.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_smithsoniansunset01.jpg" alt=""><div class="badge">SG-S4</div></div>
+      <div class="card-body"><div class="card-label">Smithsonian Butte Sunset</div><div class="card-filename">joebraun_smithsoniansunset01.jpg</div><a class="link-btn" href="images/joebraun_smithsoniansunset01.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- ACTIVITY PHOTOS                                       -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="group-title">Activity Photos — 1 photo each, 220px tall inside accordion (Double Crown: 2 side-by-side)</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Kanarra Falls hike</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/kanarra-falls-k1.jpg" alt=""><div class="badge">A-KF1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">The falls</div><div class="card-filename">kanarra-falls-k1.jpg</div><a class="link-btn" href="images/kanarra-falls-k1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_kanarrafalls01.jpg" alt=""><div class="badge">A-KF2</div></div>
+      <div class="card-body"><div class="card-label">Kanarra Falls (Joe Braun)</div><div class="card-filename">joebraun_kanarrafalls01.jpg</div><a class="link-btn" href="images/joebraun_kanarrafalls01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_kanarracreek01.jpg" alt=""><div class="badge">A-KF3</div></div>
+      <div class="card-body"><div class="card-label">Kanarra Creek slot</div><div class="card-filename">joebraun_kanarracreek01.jpg</div><a class="link-btn" href="images/joebraun_kanarracreek01.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Navajo / Peekaboo / Queens Garden loop</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Bryce-Canyon-Wall-Street-3.jpg" alt=""><div class="badge">A-B1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Wall Street slot canyon</div><div class="card-filename">Bryce-Canyon-Wall-Street-3.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Wall-Street-3.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo1.jpeg" alt=""><div class="badge">A-B2</div></div>
+      <div class="card-body"><div class="card-label">Queens Garden – Peekaboo (1)</div><div class="card-filename">Queens Garden – Peekaboo – Navajo1.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo1.jpeg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo2.jpeg" alt=""><div class="badge">A-B3</div></div>
+      <div class="card-body"><div class="card-label">Queens Garden – Peekaboo (2)</div><div class="card-filename">Queens Garden – Peekaboo – Navajo2.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo2.jpeg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Queens Garden – Peekaboo – Navajo4.jpeg" alt=""><div class="badge">A-B4</div></div>
+      <div class="card-body"><div class="card-label">Queens Garden – Peekaboo (4)</div><div class="card-filename">Queens Garden – Peekaboo – Navajo4.jpeg</div><a class="link-btn" href="images/Queens Garden – Peekaboo – Navajo4.jpeg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce-Canyon-Peek-A-Boo-Loop-6-e1508255537815-800x543.jpg" alt=""><div class="badge">A-B5</div></div>
+      <div class="card-body"><div class="card-label">Peekaboo Loop</div><div class="card-filename">Bryce-Canyon-Peek-A-Boo-Loop-6.jpg</div><a class="link-btn" href="images/Bryce-Canyon-Peek-A-Boo-Loop-6-e1508255537815-800x543.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Bryce Rim Drive — Golden Hour</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Bryce Rim Drive1.jpg" alt=""><div class="badge">A-RD1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Rim Drive</div><div class="card-filename">Bryce Rim Drive1.jpg</div><a class="link-btn" href="images/Bryce Rim Drive1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Bryce Rim Drive.webp" alt=""><div class="badge">A-RD2</div></div>
+      <div class="card-body"><div class="card-label">Rim Drive (alt)</div><div class="card-filename">Bryce Rim Drive.webp</div><a class="link-btn" href="images/Bryce Rim Drive.webp" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Rainbow Point Drive-Through</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Rainbow & Yovimpa Point.jpg" alt=""><div class="badge">A-RP1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Rainbow & Yovimpa Point</div><div class="card-filename">Rainbow & Yovimpa Point.jpg</div><a class="link-btn" href="images/Rainbow & Yovimpa Point.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Rainbow & Yovimpa Point2.jpg" alt=""><div class="badge">A-RP2</div></div>
+      <div class="card-body"><div class="card-label">Rainbow & Yovimpa (alt)</div><div class="card-filename">Rainbow & Yovimpa Point2.jpg</div><a class="link-btn" href="images/Rainbow & Yovimpa Point2.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Belly of the Dragon</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Belly-of-the-Dragon.jpg" alt=""><div class="badge">A-BD1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Belly of the Dragon</div><div class="card-filename">Belly-of-the-Dragon.jpg</div><a class="link-btn" href="images/Belly-of-the-Dragon.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Belly of the Dragon2.avif" alt=""><div class="badge">A-BD2</div></div>
+      <div class="card-body"><div class="card-label">Belly of the Dragon (alt)</div><div class="card-filename">Belly of the Dragon2.avif</div><a class="link-btn" href="images/Belly of the Dragon2.avif" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Canyon Overlook Trail</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_canyonoverlook01.jpg" alt=""><div class="badge">A-CO1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Canyon Overlook</div><div class="card-filename">joebraun_canyonoverlook01.jpg</div><a class="link-btn" href="images/joebraun_canyonoverlook01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/zion canyon overlook.jpg" alt=""><div class="badge">A-CO2</div></div>
+      <div class="card-body"><div class="card-label">Canyon Overlook (alt)</div><div class="card-filename">zion canyon overlook.jpg</div><a class="link-btn" href="images/zion canyon overlook.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Zion Stargazing Tour</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_canjunctmilkyway01.jpg" alt=""><div class="badge">A-SG1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Canyon Junction Milky Way</div><div class="card-filename">joebraun_canjunctmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_canjunctmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_obspointmilkyway01.jpg" alt=""><div class="badge">A-SG2</div></div>
+      <div class="card-body"><div class="card-label">Observation Point Milky Way</div><div class="card-filename">joebraun_obspointmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_obspointmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_watchmanmilkyway01.jpg" alt=""><div class="badge">A-SG3</div></div>
+      <div class="card-body"><div class="card-label">Watchman Milky Way</div><div class="card-filename">joebraun_watchmanmilkyway01.jpg</div><a class="link-btn" href="images/joebraun_watchmanmilkyway01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/stargazing-s1.jpg" alt=""><div class="badge">A-SG4</div></div>
+      <div class="card-body"><div class="card-label">Starry sky (Unsplash)</div><div class="card-filename">stargazing-s1.jpg</div><a class="link-btn" href="images/stargazing-s1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/stargazing-s2.jpg" alt=""><div class="badge">A-SG5</div></div>
+      <div class="card-body"><div class="card-label">Stargazing (Unsplash 2)</div><div class="card-filename">stargazing-s2.jpg</div><a class="link-btn" href="images/stargazing-s2.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">The Narrows</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_narrows01.jpg" alt=""><div class="badge">A-N1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Narrows — classic shot</div><div class="card-filename">joebraun_narrows01.jpg</div><a class="link-btn" href="images/joebraun_narrows01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_zionnarrows01.jpg" alt=""><div class="badge">A-N2</div></div>
+      <div class="card-body"><div class="card-label">Zion Narrows (1)</div><div class="card-filename">joebraun_zionnarrows01.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_zionnarrows02.jpg" alt=""><div class="badge">A-N3</div></div>
+      <div class="card-body"><div class="card-label">Zion Narrows (2)</div><div class="card-filename">joebraun_zionnarrows02.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows02.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_zionnarrows03.jpg" alt=""><div class="badge">A-N4</div></div>
+      <div class="card-body"><div class="card-label">Zion Narrows (3)</div><div class="card-filename">joebraun_zionnarrows03.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows03.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_zionnarrows04.jpg" alt=""><div class="badge">A-N5</div></div>
+      <div class="card-body"><div class="card-label">Zion Narrows (4)</div><div class="card-filename">joebraun_zionnarrows04.jpg</div><a class="link-btn" href="images/joebraun_zionnarrows04.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_narrows23.jpg" alt=""><div class="badge">A-N6</div></div>
+      <div class="card-body"><div class="card-label">Narrows (23)</div><div class="card-filename">joebraun_narrows23.jpg</div><a class="link-btn" href="images/joebraun_narrows23.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_narrows24.jpg" alt=""><div class="badge">A-N7</div></div>
+      <div class="card-body"><div class="card-label">Narrows (24)</div><div class="card-filename">joebraun_narrows24.jpg</div><a class="link-btn" href="images/joebraun_narrows24.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_narrowsday03.jpg" alt=""><div class="badge">A-N8</div></div>
+      <div class="card-body"><div class="card-label">Narrows Day (3)</div><div class="card-filename">joebraun_narrowsday03.jpg</div><a class="link-btn" href="images/joebraun_narrowsday03.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_narrowsday05.jpg" alt=""><div class="badge">A-N9</div></div>
+      <div class="card-body"><div class="card-label">Narrows Day (5)</div><div class="card-filename">joebraun_narrowsday05.jpg</div><a class="link-btn" href="images/joebraun_narrowsday05.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/narrows-n1.jpg" alt=""><div class="badge">A-N10</div></div>
+      <div class="card-body"><div class="card-label">Narrows (Unsplash 1)</div><div class="card-filename">narrows-n1.jpg</div><a class="link-btn" href="images/narrows-n1.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/narrows-n2.jpg" alt=""><div class="badge">A-N11</div></div>
+      <div class="card-body"><div class="card-label">Narrows (Unsplash 2)</div><div class="card-filename">narrows-n2.jpg</div><a class="link-btn" href="images/narrows-n2.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">E-Bikes + Emerald Pools</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_emeraldpools01.jpg" alt=""><div class="badge">A-EP1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Emerald Pools (1)</div><div class="card-filename">joebraun_emeraldpools01.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_emeraldpools02.jpg" alt=""><div class="badge">A-EP2</div></div>
+      <div class="card-body"><div class="card-label">Emerald Pools (2)</div><div class="card-filename">joebraun_emeraldpools02.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools02.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_emeraldpools03.jpg" alt=""><div class="badge">A-EP3</div></div>
+      <div class="card-body"><div class="card-label">Emerald Pools (3)</div><div class="card-filename">joebraun_emeraldpools03.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools03.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_emeraldpools12.jpg" alt=""><div class="badge">A-EP4</div></div>
+      <div class="card-body"><div class="card-label">Emerald Pools (12)</div><div class="card-filename">joebraun_emeraldpools12.jpg</div><a class="link-btn" href="images/joebraun_emeraldpools12.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Double Crown Canyoneering</span><span class="slot-pick">Pick 2 — shown side-by-side</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/Double Crown Canyoneering1.webp" alt=""><div class="badge">A-DC1</div><div class="rec-badge">★ Pick (left)</div></div>
+      <div class="card-body"><div class="card-label">Double Crown — actual tour</div><div class="card-filename">Double Crown Canyoneering1.webp</div><a class="link-btn" href="images/Double Crown Canyoneering1.webp" target="_blank">Full size</a></div>
+    </div>
+    <div class="card pick">
+      <div class="photo"><img src="images/Double Crown Canyoneering2.webp" alt=""><div class="badge">A-DC2</div><div class="rec-badge">★ Pick (right)</div></div>
+      <div class="card-body"><div class="card-label">Double Crown — rappel (2)</div><div class="card-filename">Double Crown Canyoneering2.webp</div><a class="link-btn" href="images/Double Crown Canyoneering2.webp" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Double Crown Canyoneering3.webp" alt=""><div class="badge">A-DC3</div></div>
+      <div class="card-body"><div class="card-label">Double Crown — rappel (3)</div><div class="card-filename">Double Crown Canyoneering3.webp</div><a class="link-btn" href="images/Double Crown Canyoneering3.webp" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_pinecreek01.jpg" alt=""><div class="badge">A-DC4</div></div>
+      <div class="card-body"><div class="card-label">Pine Creek Canyon</div><div class="card-filename">joebraun_pinecreek01.jpg</div><a class="link-btn" href="images/joebraun_pinecreek01.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_pinecreek08.jpg" alt=""><div class="badge">A-DC5</div></div>
+      <div class="card-body"><div class="card-label">Pine Creek Canyon (8)</div><div class="card-filename">joebraun_pinecreek08.jpg</div><a class="link-btn" href="images/joebraun_pinecreek08.jpg" target="_blank">Full size</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slot">
+  <div class="slot-header">
+    <span class="slot-name">Kolob Canyons</span><span class="slot-pick">Pick 1</span>
+  </div>
+  <div class="grid">
+    <div class="card pick">
+      <div class="photo"><img src="images/joebraun_timbercreekoverlook06.jpg" alt=""><div class="badge">A-KC1</div><div class="rec-badge">★ Pick</div></div>
+      <div class="card-body"><div class="card-label">Timber Creek Overlook</div><div class="card-filename">joebraun_timbercreekoverlook06.jpg</div><a class="link-btn" href="images/joebraun_timbercreekoverlook06.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/Kolob Canyons scenic drive.jpg" alt=""><div class="badge">A-KC2</div></div>
+      <div class="card-body"><div class="card-label">Kolob Canyons scenic drive</div><div class="card-filename">Kolob Canyons scenic drive.jpg</div><a class="link-btn" href="images/Kolob Canyons scenic drive.jpg" target="_blank">Full size</a></div>
+    </div>
+    <div class="card">
+      <div class="photo"><img src="images/joebraun_westrim11.jpg" alt=""><div class="badge">A-KC3</div></div>
+      <div class="card-body"><div class="card-label">West Rim (11)</div><div class="card-filename">joebraun_westrim11.jpg</div><a class="link-btn" href="images/joebraun_westrim11.jpg" target="_blank">Full size</a></div>
+    </div>
   </div>
 </div>
 
