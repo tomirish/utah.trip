@@ -19,7 +19,7 @@
   --light: #FBF0E4;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 48px; }
 body {
   font-family: 'Jost', sans-serif;
   background: var(--cream);
@@ -354,6 +354,48 @@ a { color: inherit; text-decoration: none; }
 .status-booked { color: #4caf50; }
 .status-pending { color: var(--amber); }
 
+/* ── GLOBAL DATE NAV ── */
+.date-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--cream);
+  border-bottom: 2px solid rgba(196,82,26,0.12);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 2px 12px rgba(44,24,16,0.08);
+}
+.date-nav::-webkit-scrollbar { display: none; }
+.date-nav-pill {
+  flex-shrink: 0;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(196,82,26,0.25);
+  color: var(--clay);
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.date-nav-pill.active {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: white;
+}
+
+/* ── SLIM CHAPTER (Day 1) ── */
+.chapter-splash--slim {
+  height: 180px;
+}
+
 /* ── ZION DAY SELECTOR ── */
 .day-selector {
   display: flex;
@@ -455,8 +497,11 @@ a { color: inherit; text-decoration: none; }
   <!-- HERO -->
   <section class="hero">
     <div class="hero-slides">
+      <!-- Zion canyon walls -->
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')"></div>
+      <!-- Bryce Canyon hoodoos -->
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80')"></div>
+      <!-- Utah Milky Way night sky -->
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80')"></div>
     </div>
     <div class="hero-overlay"></div>
@@ -472,9 +517,86 @@ a { color: inherit; text-decoration: none; }
     </div>
   </section>
 
+<!-- GLOBAL DATE NAV -->
+<nav class="date-nav" id="date-nav">
+  <button class="date-nav-pill" data-target="day-1" onclick="navTo('day-1')">Sun 21</button>
+  <button class="date-nav-pill" data-target="day-2" onclick="navTo('day-2')">Mon 22</button>
+  <button class="date-nav-pill" data-target="day-3" onclick="navTo('day-3')">Tue 23</button>
+  <button class="date-nav-pill" data-target="day-4" data-zion="wed" onclick="navTo('day-4','wed')">Wed 24</button>
+  <button class="date-nav-pill" data-target="day-4" data-zion="thu" onclick="navTo('day-4','thu')">Thu 25</button>
+  <button class="date-nav-pill" data-target="day-5" onclick="navTo('day-5')">Fri 26</button>
+</nav>
+
+<!-- CHAPTER: Cedar City — Arrival -->
+<article class="chapter fade-up" id="day-1">
+  <div class="chapter-splash chapter-splash--slim" style="background-image:url('https://images.unsplash.com/photo-wlVGh33VDGw?w=800&q=80')">
+    <div class="chapter-splash-overlay">
+      <div class="chapter-eyebrow">Day 1 · Sunday June 21</div>
+      <h2 class="chapter-title">Cedar City<br><em>Arrival</em></h2>
+      <div class="chapter-hotel">🌙 Abbey Inn &amp; Suites · Cedar City, UT</div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">✈️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Land at LAS — Pick up rental car</div>
+        <div class="acc-sub"><span>Harry Reid International · Las Vegas</span></div>
+      </div>
+      <div class="acc-time">—</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Fly into Las Vegas. Pick up the rental car — airport car rental is right in the terminal. Load up and head north on I-15.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🚗</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Drive to Cedar City</div>
+        <div class="acc-sub"><span>170 mi · ~2.5 hrs · I-15 north</span></div>
+      </div>
+      <div class="acc-time">—</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Straight shot up I-15. The landscape shifts from Mojave desert to Utah red rock — first glimpse of what's ahead. Cedar City is a small college town at the base of the Colorado Plateau.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check in — Abbey Inn &amp; Suites</div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>Hot breakfast included</span></div>
+      </div>
+      <div class="acc-time">Evening</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Comfortable basecamp for night one. Hot breakfast included — fuel up for the Kanarra Falls hike tomorrow morning.</p>
+      <a class="acc-btn" href="https://www.abbeyinnhotel.com" target="_blank" rel="noopener">abbeyinnhotel.com</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner — The Pub Spirits + Craft Kitchen</div>
+        <div class="acc-sub"><span>86 W Center St · Closes 9 PM Sundays</span></div>
+      </div>
+      <div class="acc-time">7:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Best spot in Cedar City for a first-night meal. Craft burgers, local beers, chill vibe. 435-867-1400.</p>
+    </div></div>
+  </div>
+</article>
+
 <!-- CHAPTER: Kanarra Falls -->
-<article class="chapter fade-up">
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-1518623001395-125242310d0c?w=800&q=80')">
+<article class="chapter fade-up" id="day-2">
+  <!-- Kanarra Creek slot canyon -->
+  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=800&q=80')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Day 2 · Monday June 22</div>
       <h2 class="chapter-title">Kanarra<br><em>Falls</em></h2>
@@ -485,12 +607,12 @@ a { color: inherit; text-decoration: none; }
   <div class="media-strip-wrap">
     <div class="media-strip-hint">← swipe photos →</div>
     <div class="media-strip">
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1518623001395-125242310d0c?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80')"></div>
-      <!-- REPLACE search: "Kanarra Falls hike Utah" on YouTube, copy video ID from URL -->
+      <!-- Kanarra Creek slot canyon -->
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-YxGI9KV4LCk?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-j3ZkteI63e8?w=300&q=80')"></div>
       <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=kanarra+falls+hike+utah" target="_blank" rel="noopener"
-         style="background-image:url('https://images.unsplash.com/photo-1518623001395-125242310d0c?w=300&q=80')">
+         style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=300&q=80')">
         <div class="yt-play-badge"></div>
       </a>
     </div>
@@ -585,8 +707,9 @@ a { color: inherit; text-decoration: none; }
 </article>
 
 <!-- CHAPTER: Bryce Canyon -->
-<article class="chapter fade-up">
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')">
+<article class="chapter fade-up" id="day-3">
+  <!-- Bryce Canyon hoodoos -->
+  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Day 3 · Tuesday June 23</div>
       <h2 class="chapter-title">Bryce<br><em>Canyon</em></h2>
@@ -596,12 +719,12 @@ a { color: inherit; text-decoration: none; }
 
   <div class="media-strip-wrap">
     <div class="media-strip">
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1526090056489-40c74b8b9ad2?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300&q=80')"></div>
-      <!-- REPLACE search: "Bryce Canyon hoodoos drone 4K" on YouTube -->
+      <!-- Bryce Canyon hoodoos / amphitheater -->
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-CW2foqNQYss?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-sOs_R0LsOVE?w=300&q=80')"></div>
       <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=bryce+canyon+hoodoos+drone+4k" target="_blank" rel="noopener"
-         style="background-image:url('https://images.unsplash.com/photo-1526090056489-40c74b8b9ad2?w=300&q=80')">
+         style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=300&q=80')">
         <div class="yt-play-badge"></div>
       </a>
     </div>
@@ -731,7 +854,7 @@ a { color: inherit; text-decoration: none; }
 </article>
 
 <!-- CHAPTER: Zion National Park -->
-<article class="chapter fade-up">
+<article class="chapter fade-up" id="day-4">
   <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Days 4–5 · Wed–Thu June 24–25</div>
@@ -742,15 +865,16 @@ a { color: inherit; text-decoration: none; }
 
   <div class="media-strip-wrap">
     <div class="media-strip">
+      <!-- Zion canyon walls -->
       <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=300&q=80')"></div>
-      <!-- REPLACE search: "Zion Narrows hike bottom up" on YouTube -->
+      <!-- Zion Narrows - Virgin River slot canyon -->
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-rUIulb1jhQk?w=300&q=80')"></div>
       <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=zion+narrows+hike+bottom+up" target="_blank" rel="noopener"
-         style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80')">
+         style="background-image:url('https://images.unsplash.com/photo-rUIulb1jhQk?w=300&q=80')">
         <div class="yt-play-badge"></div>
       </a>
+      <!-- Utah Milky Way night sky -->
       <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=300&q=80')"></div>
-      <!-- REPLACE search: "Zion National Park night sky Milky Way" on YouTube -->
       <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=zion+national+park+milky+way+night+sky" target="_blank" rel="noopener"
          style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=300&q=80')">
         <div class="yt-play-badge"></div>
@@ -760,8 +884,8 @@ a { color: inherit; text-decoration: none; }
 
   <!-- Day selector -->
   <div class="day-selector">
-    <button class="day-pill active" onclick="showZionDay('wed', this)">Wed Jun 24</button>
-    <button class="day-pill"        onclick="showZionDay('thu', this)">Thu Jun 25</button>
+    <button class="day-pill active" data-zion-day="wed" onclick="showZionDay('wed', this)">Wed Jun 24</button>
+    <button class="day-pill"        data-zion-day="thu" onclick="showZionDay('thu', this)">Thu Jun 25</button>
   </div>
 
   <!-- WED JUN 24 — Narrows + E-Bikes -->
@@ -858,8 +982,9 @@ a { color: inherit; text-decoration: none; }
 </article>
 
 <!-- CHAPTER: St. George + Wedding -->
-<article class="chapter fade-up">
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&q=80')">
+<article class="chapter fade-up" id="day-5">
+  <!-- Kolob Canyons red rock -->
+  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=800&q=80')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Days 6–7 · Fri–Sat June 26–27</div>
       <h2 class="chapter-title">St. George<br><em>&amp; The Wedding</em></h2>
@@ -869,12 +994,12 @@ a { color: inherit; text-decoration: none; }
 
   <div class="media-strip-wrap">
     <div class="media-strip">
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=300&q=80')"></div>
-      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-1495562569060-2eec283d3391?w=300&q=80')"></div>
-      <!-- REPLACE search: "Snow Canyon State Park St George Utah" on YouTube -->
-      <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=snow+canyon+state+park+st+george+utah" target="_blank" rel="noopener"
-         style="background-image:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=300&q=80')">
+      <!-- Kolob Canyons / St George red rock -->
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-BcjF8IITZyU?w=300&q=80')"></div>
+      <div class="media-thumb" style="background-image:url('https://images.unsplash.com/photo-wlVGh33VDGw?w=300&q=80')"></div>
+      <a class="media-thumb-video" href="https://www.youtube.com/results?search_query=kolob+canyons+zion+national+park" target="_blank" rel="noopener"
+         style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=300&q=80')">
         <div class="yt-play-badge"></div>
       </a>
     </div>
@@ -966,11 +1091,9 @@ a { color: inherit; text-decoration: none; }
 function toggleAcc(header) {
   const body = header.nextElementSibling;
   const isOpen = header.classList.contains('open');
-  // close all open siblings (not self)
   header.closest('.accordion').querySelectorAll('.acc-header.open').forEach(h => {
     if (h !== header) { h.classList.remove('open'); h.nextElementSibling.style.maxHeight = null; }
   });
-  // toggle self
   if (isOpen) {
     header.classList.remove('open');
     body.style.maxHeight = null;
@@ -981,20 +1104,57 @@ function toggleAcc(header) {
 }
 
 // ── Zion day selector ──
+let activeZionDay = 'wed';
 function showZionDay(day, btn) {
+  activeZionDay = day;
   document.querySelectorAll('.zion-day').forEach(d => { d.style.display = 'none'; });
   document.getElementById('zion-day-' + day).style.display = 'block';
   document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
+  // sync global nav to matching Zion pill
+  setGlobalNav('day-4');
 }
 
-// ── Scroll fade-up ──
-const observer = new IntersectionObserver(entries => {
+// ── Global date nav ──
+function setGlobalNav(activeId) {
+  document.querySelectorAll('.date-nav-pill').forEach(p => p.classList.remove('active'));
+  if (activeId === 'day-4') {
+    const pill = document.querySelector(`.date-nav-pill[data-zion="${activeZionDay}"]`);
+    if (pill) pill.classList.add('active');
+  } else {
+    const pill = document.querySelector(`.date-nav-pill[data-target="${activeId}"]`);
+    if (pill) pill.classList.add('active');
+  }
+}
+
+function navTo(id, zionDay) {
+  if (zionDay) {
+    activeZionDay = zionDay;
+    document.querySelectorAll('.zion-day').forEach(d => { d.style.display = 'none'; });
+    document.getElementById('zion-day-' + zionDay).style.display = 'block';
+    document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
+    const localPill = document.querySelector(`.day-pill[data-zion-day="${zionDay}"]`);
+    if (localPill) localPill.classList.add('active');
+  }
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  setGlobalNav(id);
+}
+
+// ── Scrollspy ──
+const spyObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    if (e.isIntersecting) setGlobalNav(e.target.id);
+  });
+}, { rootMargin: '-25% 0px -75% 0px', threshold: 0 });
+document.querySelectorAll('article.chapter').forEach(a => spyObs.observe(a));
+
+// ── Scroll fade-up ──
+const fadeObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
   });
 }, { threshold: 0.08 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 </script>
 </body>
 </html>
