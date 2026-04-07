@@ -49,16 +49,19 @@ a { color: inherit; text-decoration: none; }
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: cf 15s infinite;
+  animation: cf 30s infinite;
 }
 .hero-slide:nth-child(1) { animation-delay: 0s; }
 .hero-slide:nth-child(2) { animation-delay: 5s; }
 .hero-slide:nth-child(3) { animation-delay: 10s; }
+.hero-slide:nth-child(4) { animation-delay: 15s; }
+.hero-slide:nth-child(5) { animation-delay: 20s; }
+.hero-slide:nth-child(6) { animation-delay: 25s; }
 @keyframes cf {
   0%   { opacity: 0; }
-  6%   { opacity: 1; }
-  33%  { opacity: 1; }
-  40%  { opacity: 0; }
+  3%   { opacity: 1; }
+  14%  { opacity: 1; }
+  17%  { opacity: 0; }
   100% { opacity: 0; }
 }
 .hero-overlay {
@@ -193,7 +196,7 @@ a { color: inherit; text-decoration: none; }
 /* ── ACCORDION PHOTO + VIDEO ── */
 .acc-photo {
   width: 100%;
-  height: 130px;
+  height: 220px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
@@ -458,12 +461,12 @@ a { color: inherit; text-decoration: none; }
   <!-- HERO -->
   <section class="hero">
     <div class="hero-slides">
-      <!-- Zion canyon walls -->
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
-      <!-- Bryce Canyon hoodoos -->
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80')"></div>
-      <!-- Utah Milky Way night sky -->
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('images/joebraun_towersofthevirgin01.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/joebraun_canyonjunction01.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/bryce%20canyon%20sunset%20point.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('images/Bryce%20Rim%20Drive1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/joebraun_kolobmilkyway01.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/joebraun_canjunctmilkyway01.jpg')"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -490,7 +493,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- CHAPTER: Cedar City — Arrival -->
 <article class="chapter fade-up" id="day-1">
-  <div class="chapter-splash chapter-splash--slim" style="background-image:url('https://images.unsplash.com/photo-wlVGh33VDGw?w=800&q=80')">
+  <div class="chapter-splash chapter-splash--slim" style="background-image:url('images/joebraun_smithsoniansunset01.jpg')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Day 1 · Sunday June 21</div>
       <h2 class="chapter-title">Cedar City<br><em>Arrival</em></h2>
@@ -557,7 +560,7 @@ a { color: inherit; text-decoration: none; }
 <!-- CHAPTER: Kanarra Falls -->
 <article class="chapter fade-up" id="day-2">
   <!-- Kanarra Creek slot canyon -->
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=800&q=80')">
+  <div class="chapter-splash" style="background-image:url('images/kanarra-creek-k2.jpg')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Day 2 · Monday June 22</div>
       <h2 class="chapter-title">Kanarra<br><em>Falls</em></h2>
@@ -589,7 +592,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/kanarra-falls-k1.jpg')"></div>
       <p class="acc-desc">Hike IN Kanarra Creek through a jaw-dropping slot canyon with two major waterfalls. Water is ankle-to-knee deep throughout. Climb a 20-foot metal ladder next to the first waterfall. Cold, beautiful, completely unique.</p>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">3.7 mi out-and-back</span>
@@ -637,7 +640,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/Bryce%20Rim%20Drive.webp')"></div>
       <p class="acc-desc">Drive the rim road at golden hour. Sunset Point is the classic Thor's Hammer shot — glow is best 45 min before actual sunset. Inspiration Point has the widest panoramic view of the whole amphitheater and fewer crowds.</p>
     </div></div>
 
@@ -659,7 +662,7 @@ a { color: inherit; text-decoration: none; }
 <!-- CHAPTER: Bryce Canyon -->
 <article class="chapter fade-up" id="day-3">
   <!-- Bryce Canyon hoodoos -->
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80')">
+  <div class="chapter-splash" style="background-image:url('images/Bryce-Canyon-Sunset-Point-3.jpg')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Day 3 · Tuesday June 23</div>
       <h2 class="chapter-title">Bryce<br><em>Canyon</em></h2>
@@ -678,7 +681,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-CW2foqNQYss?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/Bryce-Canyon-Peek-A-Boo-Loop-6-e1508255537815-800x543.jpg')"></div>
       <p class="acc-desc">The ultimate Bryce morning. Start at Sunset Point and combine three trails: Navajo Loop descends through Wall Street (Bryce's only slot canyon), Queen's Garden gets you past the Queen Victoria hoodoo, Peekaboo takes you deeper where most visitors never go. Zero shade — start by 7 AM or it gets brutal.</p>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">5.5 mi loop</span>
@@ -699,6 +702,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo" style="background-image:url('images/Rainbow%20%26%20Yovimpa%20Point2.jpg')"></div>
       <p class="acc-desc">Highest point in the park on the way out. Sweeping views over the Grand Staircase. Only adds 20 minutes — worth it.</p>
     </div></div>
 
@@ -712,6 +716,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo" style="background-image:url('images/Belly-of-the-Dragon.jpg')"></div>
       <p class="acc-desc">A drainage tunnel carved under Hwy 89 — erosion has sculpted the sandstone interior into a ribbed, cave-like passage. Completely dark in the middle. Bring a flashlight. Right on the drive to Zion — free, unique, 20 minutes. Do NOT enter if raining, it floods fast.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/the-belly-of-the-dragon" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=belly+of+the+dragon+utah+tunnel" target="_blank" rel="noopener">Belly of the Dragon</a>
@@ -741,7 +746,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/joebraun_canyonoverlook01.jpg')"></div>
       <p class="acc-desc">Best easy hike in Zion. Starts at the east end of the Mt. Carmel Tunnel — almost no elevation, ends at a stunning overlook of lower Zion Canyon and the Great Arch. Perfect first-afternoon hike: gets your legs moving without destroying them before the big days.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/canyon-overlook-trail" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=canyon+overlook+trail+zion" target="_blank" rel="noopener">Canyon Overlook Trail</a>
@@ -784,7 +789,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/joebraun_canjunctmilkyway01.jpg')"></div>
       <p class="acc-desc">June 23 is just two nights before new moon — near-maximum darkness. Zion is a certified Dark Sky Park. Zero-gravity reclining pods, blankets, Celestron binoculars, hot drinks. Professional guide walks you through constellations, planets, and the full Milky Way arching overhead.</p>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-cost">$190/person</span>
@@ -799,7 +804,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- CHAPTER: Zion National Park -->
 <article class="chapter fade-up" id="day-4">
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')">
+  <div class="chapter-splash" style="background-image:url('images/joebraun_canyonjunction01.jpg')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Days 4–5 · Wed–Thu June 24–25</div>
       <h2 class="chapter-title">Zion<br><em>National Park</em></h2>
@@ -826,7 +831,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-chevron">▼</div>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-rUIulb1jhQk?w=600&q=80')"></div>
+        <div class="acc-photo" style="background-image:url('images/joebraun_narrows01.jpg')"></div>
         <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back.</p>
         <div class="acc-tags">
           <span class="acc-tag acc-tag-dur">Up to 9 mi</span>
@@ -847,6 +852,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-chevron">▼</div>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
+        <div class="acc-photo" style="background-image:url('images/joebraun_emeraldpools03.jpg')"></div>
         <p class="acc-desc">Rent Trek e-bikes from Zion Cycles, ride the Pa'rus Trail + Scenic Drive up to Zion Lodge (stop 5), lock bikes, hike Emerald Pools (pools + walk-behind waterfall), ride back. Pedal assist makes it easy even after the Narrows. A completely different perspective of the canyon.</p>
         <div class="acc-tags">
           <span class="acc-tag acc-tag-cost">~$100/bike</span>
@@ -884,7 +890,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-chevron">▼</div>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-YxGI9KV4LCk?w=600&q=80')"></div>
+        <div class="acc-photo" style="background-image:url('images/Double%20Crown%20Canyoneering3.webp')"></div>
         <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
         <div class="acc-tags">
           <span class="acc-tag acc-tag-dur">7 hours</span>
@@ -914,7 +920,7 @@ a { color: inherit; text-decoration: none; }
 <!-- CHAPTER: St. George + Wedding -->
 <article class="chapter fade-up" id="day-5">
   <!-- Kolob Canyons red rock -->
-  <div class="chapter-splash" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=800&q=80')">
+  <div class="chapter-splash" style="background-image:url('images/joebraun_westrim12.jpg')">
     <div class="chapter-splash-overlay">
       <div class="chapter-eyebrow">Days 6–7 · Fri–Sat June 26–27</div>
       <h2 class="chapter-title">St. George<br><em>&amp; The Wedding</em></h2>
@@ -946,7 +952,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=600&q=80')"></div>
+      <div class="acc-photo" style="background-image:url('images/joebraun_timbercreekoverlook06.jpg')"></div>
       <p class="acc-desc">Most visitors have no idea this is part of Zion NP — accessed from I-15 Exit 40. Dramatic finger canyons of deep red Navajo sandstone with almost no crowds. Covered by your America the Beautiful Pass. Optional: Taylor Creek Trail (5 mi, 2.5 hrs, double arch at the end).</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4" target="_blank" rel="noopener">Taylor Creek AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=kolob+canyons+zion+national+park+drive" target="_blank" rel="noopener">Kolob Canyons</a>
