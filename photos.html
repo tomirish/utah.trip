@@ -44,6 +44,11 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   background: rgba(180,120,0,0.85); color: white;
   font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px;
 }
+.pending {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: #555; flex-direction: column; gap: 6px;
+}
+.pending span { font-size: 22px; }
 .card-body { padding: 10px 12px 14px; }
 .card-label { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .card-src { font-size: 10px; color: #555; font-family: monospace; word-break: break-all; margin-bottom: 8px; }
@@ -58,13 +63,13 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
 <body>
 
 <h1>Photo Approval — Utah Trip</h1>
-<p class="intro">Review the photos below, then tell me which ones to use for each slot.</p>
+<p class="intro">All photos are now stored locally in <code style="color:#aaa">images/</code>. No more 404s.</p>
 
 <div class="how-to">
   <strong>Two slots per chapter:</strong><br>
-  <strong>Splash</strong> — the tall full-bleed banner at the top of the chapter (always visible, ~260px tall)<br>
+  <strong>Splash</strong> — tall full-bleed banner at the top of the chapter (always visible)<br>
   <strong>Activity</strong> — photo shown inside an accordion item when you tap to expand it<br><br>
-  Tell me: <em>"Kanarra splash → K3, Kanarra activity → K1"</em> or however you like.
+  Tell me: <em>"Kanarra splash → K3, activity → K1"</em> and I'll update the site.
 </div>
 
 <!-- ── KANARRA FALLS ── -->
@@ -73,86 +78,56 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo">
-        <img src="https://www.citrusmilo.com/zion2021/joebraun_kanarrafalls01.jpg" alt="">
-        <div class="badge">K1</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-falls-k1.jpg" alt=""><div class="badge">K1</div></div>
       <div class="card-body">
-        <div class="card-label">Kanarra Falls — the falls</div>
-        <div class="card-src">citrusmilo.com · zion2021</div>
-        <a class="link-btn" href="https://www.citrusmilo.com/zion2021/joebraun_kanarrafalls01.jpg" target="_blank">Full size</a>
+        <div class="card-label">The falls</div>
+        <div class="card-src">kanarra-falls-k1.jpg</div>
+        <a class="link-btn" href="images/kanarra-falls-k1.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://www.citrusmilo.com/zion2025/joebraun_kanarracreek04.jpg" alt="">
-        <div class="badge">K2</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-creek-k2.jpg" alt=""><div class="badge">K2</div></div>
       <div class="card-body">
-        <div class="card-label">Kanarra Creek — canyon 2025</div>
-        <div class="card-src">citrusmilo.com · zion2025</div>
-        <a class="link-btn" href="https://www.citrusmilo.com/zion2025/joebraun_kanarracreek04.jpg" target="_blank">Full size</a>
+        <div class="card-label">Creek canyon 2025</div>
+        <div class="card-src">kanarra-creek-k2.jpg</div>
+        <a class="link-btn" href="images/kanarra-creek-k2.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://www.citrusmilo.com/zion2014/joebraun_kanarracreek04.jpg" alt="">
-        <div class="badge">K3</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-creek-k3.jpg" alt=""><div class="badge">K3</div></div>
       <div class="card-body">
-        <div class="card-label">Kanarra Creek — canyon 2014</div>
-        <div class="card-src">citrusmilo.com · zion2014</div>
-        <a class="link-btn" href="https://www.citrusmilo.com/zion2014/joebraun_kanarracreek04.jpg" target="_blank">Full size</a>
+        <div class="card-label">Creek canyon 2014</div>
+        <div class="card-src">kanarra-creek-k3.jpg</div>
+        <a class="link-btn" href="images/kanarra-creek-k3.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://www.citrusmilo.com/zion2010/joebraun_kanarra05.jpg" alt="">
-        <div class="badge">K4</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-creek-k4.jpg" alt=""><div class="badge">K4</div></div>
       <div class="card-body">
-        <div class="card-label">Kanarra Creek — 2010</div>
-        <div class="card-src">citrusmilo.com · zion2010</div>
-        <a class="link-btn" href="https://www.citrusmilo.com/zion2010/joebraun_kanarra05.jpg" target="_blank">Full size</a>
+        <div class="card-label">Creek canyon 2010</div>
+        <div class="card-src">kanarra-creek-k4.jpg</div>
+        <a class="link-btn" href="images/kanarra-creek-k4.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://www.citrusmilo.com/zion2004/joebraun_kanarra01.jpg" alt="">
-        <div class="badge">K5</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-creek-k5.jpg" alt=""><div class="badge">K5</div></div>
       <div class="card-body">
-        <div class="card-label">Kanarra Creek — 2004</div>
-        <div class="card-src">citrusmilo.com · zion2004</div>
-        <a class="link-btn" href="https://www.citrusmilo.com/zion2004/joebraun_kanarra01.jpg" target="_blank">Full size</a>
+        <div class="card-label">Creek canyon 2004</div>
+        <div class="card-src">kanarra-creek-k5.jpg</div>
+        <a class="link-btn" href="images/kanarra-creek-k5.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://thenatureseeker.com/wp-content/uploads/2022/03/kanarraville-falls-utah-picture.jpg" alt="">
-        <div class="badge">K6</div>
-      </div>
+      <div class="photo"><img src="images/kanarra-falls-k6.jpg" alt=""><div class="badge">K6</div></div>
       <div class="card-body">
         <div class="card-label">Kanarraville Falls</div>
-        <div class="card-src">thenatureseeker.com</div>
-        <a class="link-btn" href="https://thenatureseeker.com/wp-content/uploads/2022/03/kanarraville-falls-utah-picture.jpg" target="_blank">Full size</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="photo">
-        <img src="https://media.gettyimages.com/id/999512816/photo/kanarra-falls.jpg?s=612x612&w=0&k=20&c=t0v0VzIuKeAheg638m60kqEiAivEsEx5uffVLWKsFR0=" alt="">
-        <div class="badge">K7</div>
-      </div>
-      <div class="card-body">
-        <div class="card-label">Kanarra Falls — Getty</div>
-        <div class="card-src">gettyimages.com</div>
-        <a class="link-btn" href="https://media.gettyimages.com/id/999512816/photo/kanarra-falls.jpg?s=612x612&w=0&k=20&c=t0v0VzIuKeAheg638m60kqEiAivEsEx5uffVLWKsFR0=" target="_blank">Full size</a>
+        <div class="card-src">kanarra-falls-k6.jpg</div>
+        <a class="link-btn" href="images/kanarra-falls-k6.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
@@ -165,24 +140,20 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-ofOuFrS4k20?w=600&q=80')">
-        <div class="badge">B1</div>
-      </div>
+      <div class="photo" style="background-image:url('images/bryce-b1.jpg')"><div class="badge">B1</div></div>
       <div class="card-body">
-        <div class="card-label">Bryce Canyon hoodoos</div>
-        <div class="card-src">unsplash · ofOuFrS4k20</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-ofOuFrS4k20?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">Bryce hoodoos</div>
+        <div class="card-src">bryce-b1.jpg</div>
+        <a class="link-btn" href="images/bryce-b1.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-ntTWkCHiylI?w=600&q=80')">
-        <div class="badge">B2</div>
-      </div>
+      <div class="photo" style="background-image:url('images/bryce-b2.jpg')"><div class="badge">B2</div></div>
       <div class="card-body">
         <div class="card-label">Bryce Canyon</div>
-        <div class="card-src">unsplash · ntTWkCHiylI</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-ntTWkCHiylI?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-src">bryce-b2.jpg</div>
+        <a class="link-btn" href="images/bryce-b2.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
@@ -195,24 +166,20 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-CURCtCYYXK8?w=600&q=80')">
-        <div class="badge">N1</div>
-      </div>
+      <div class="photo" style="background-image:url('images/narrows-n1.jpg')"><div class="badge">N1</div></div>
       <div class="card-body">
         <div class="card-label">Narrow canyon, river flowing through</div>
-        <div class="card-src">unsplash · CURCtCYYXK8</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-CURCtCYYXK8?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-src">narrows-n1.jpg</div>
+        <a class="link-btn" href="images/narrows-n1.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-aHdAdA0JzLE?w=600&q=80')">
-        <div class="badge">N2</div>
-      </div>
+      <div class="photo" style="background-image:url('images/narrows-n2.jpg')"><div class="badge">N2</div></div>
       <div class="card-body">
         <div class="card-label">River between rocky mountains</div>
-        <div class="card-src">unsplash · aHdAdA0JzLE</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-aHdAdA0JzLE?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-src">narrows-n2.jpg</div>
+        <a class="link-btn" href="images/narrows-n2.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
@@ -225,35 +192,38 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-s6zbz7CFjbo?w=600&q=80')">
-        <div class="badge">Z1</div>
-      </div>
+      <div class="photo" style="background-image:url('images/zion-z1.jpg')"><div class="badge">Z1</div></div>
       <div class="card-body">
-        <div class="card-label">Zion — night river timelapse</div>
-        <div class="card-src">unsplash · s6zbz7CFjbo</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-s6zbz7CFjbo?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">Night river / stars</div>
+        <div class="card-src">zion-z1.jpg</div>
+        <a class="link-btn" href="images/zion-z1.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-Cg9Y39NW5NQ?w=600&q=80')">
-        <div class="badge">Z2</div>
-      </div>
+      <div class="photo" style="background-image:url('images/zion-z2.jpg')"><div class="badge">Z2</div></div>
       <div class="card-body">
-        <div class="card-label">Zion — canyon wall</div>
-        <div class="card-src">unsplash · Cg9Y39NW5NQ</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-Cg9Y39NW5NQ?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">Canyon wall</div>
+        <div class="card-src">zion-z2.jpg</div>
+        <a class="link-btn" href="images/zion-z2.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-uGbRqOBtoiU?w=600&q=80')">
-        <div class="badge">Z3</div>
-      </div>
+      <div class="photo" style="background-image:url('images/zion-z3.jpg')"><div class="badge">Z3</div></div>
       <div class="card-body">
-        <div class="card-label">Zion — river in forest</div>
-        <div class="card-src">unsplash · uGbRqOBtoiU</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-uGbRqOBtoiU?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">River in forest / valley</div>
+        <div class="card-src">zion-z3.jpg</div>
+        <a class="link-btn" href="images/zion-z3.jpg" target="_blank">Full size</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('images/zion-canyon.jpg')"><div class="badge">Z4</div></div>
+      <div class="card-body">
+        <div class="card-label">Zion canyon walls (current)</div>
+        <div class="card-src">zion-canyon.jpg</div>
+        <a class="link-btn" href="images/zion-canyon.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
@@ -266,25 +236,32 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-Lpeym8VI4E8?w=600&q=80')">
-        <div class="badge">S1</div>
-      </div>
+      <div class="photo" style="background-image:url('images/stargazing-s1.jpg')"><div class="badge">S1</div></div>
       <div class="card-body">
-        <div class="card-label">Rocky mountain, starry sky above</div>
-        <div class="card-src">unsplash · Lpeym8VI4E8</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-Lpeym8VI4E8?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">Rocky mountain, starry sky</div>
+        <div class="card-src">stargazing-s1.jpg</div>
+        <a class="link-btn" href="images/stargazing-s1.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-CgQ1TZ0gDd8?w=600&q=80')">
+      <div class="photo" style="background-image:url('images/stargazing-s2.jpg')">
         <div class="badge">S2</div>
         <div class="warn-badge">has person</div>
       </div>
       <div class="card-body">
-        <div class="card-label">Person on hill under night sky</div>
-        <div class="card-src">unsplash · CgQ1TZ0gDd8</div>
-        <a class="link-btn" href="https://images.unsplash.com/photo-CgQ1TZ0gDd8?w=1200&q=90" target="_blank">Full size</a>
+        <div class="card-label">Person on hill, night sky</div>
+        <div class="card-src">stargazing-s2.jpg</div>
+        <a class="link-btn" href="images/stargazing-s2.jpg" target="_blank">Full size</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('images/milky-way.jpg')"><div class="badge">S3</div></div>
+      <div class="card-body">
+        <div class="card-label">Milky Way (current)</div>
+        <div class="card-src">milky-way.jpg</div>
+        <a class="link-btn" href="images/milky-way.jpg" target="_blank">Full size</a>
       </div>
     </div>
 
@@ -297,40 +274,59 @@ h1 { font-size: 20px; font-weight: 600; color: #E07B39; margin-bottom: 6px; }
   <div class="grid">
 
     <div class="card">
-      <div class="photo">
-        <img src="https://imgs.search.brave.com/2PolGv3Bz6YYLjtD24hoktXtjf54AM1JZs0jBJDjVDE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saXJw/LmNkbi13ZWJzaXRl/LmNvbS8yZDc4Mzlk/YS9kbXMzcmVwL211/bHRpL29wdC8yMDIy/MDQwOV9mdWppZmls/bXgxMDBzXzY1NjJy/LTE5MjB3LmpwZw" alt="">
+      <div class="photo pending" id="dc1-photo">
+        <span>🖼️</span>
+        Save as <code>images/double-crown-dc1.jpg</code>
         <div class="badge">DC1</div>
       </div>
       <div class="card-body">
-        <div class="card-label">Double Crown — canyon shot</div>
-        <div class="card-src">allwaysadventure.com</div>
+        <div class="card-label">Canyon shot</div>
+        <div class="card-src">double-crown-dc1.jpg</div>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://imgs.search.brave.com/Ma5RePXNH6Gh5f4TdKRFjUeQZqiKi2fNi2KFllcqXCk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saXJw/LmNkbi13ZWJzaXRl/LmNvbS8yZDc4Mzlk/YS9kbXMzcmVwL211/bHRpL29wdC9IVU5U/UkVTUy0yLTBhM2I5/OTcxLTE5MjB3Lmpw/Zw" alt="">
+      <div class="photo pending">
+        <span>🖼️</span>
+        Save as <code>images/double-crown-dc2.jpg</code>
         <div class="badge">DC2</div>
       </div>
       <div class="card-body">
         <div class="card-label">Huntress Canyon</div>
-        <div class="card-src">allwaysadventure.com</div>
+        <div class="card-src">double-crown-dc2.jpg</div>
       </div>
     </div>
 
     <div class="card">
-      <div class="photo">
-        <img src="https://imgs.search.brave.com/9kZmUa7EKPGz6lM08OvMpXDlsE5Gnz9p8IB1Xrl00d0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saXJw/LmNkbi13ZWJzaXRl/LmNvbS8yZDc4Mzlk/YS9kbXMzcmVwL211/bHRpL29wdC9DYW55/b25lZXJpbmctMzMt/NmRlMGJhZjYtMTky/MHcuanBn" alt="">
+      <div class="photo pending">
+        <span>🖼️</span>
+        Save as <code>images/double-crown-dc3.jpg</code>
         <div class="badge">DC3</div>
       </div>
       <div class="card-body">
         <div class="card-label">Canyoneering rappel</div>
-        <div class="card-src">allwaysadventure.com</div>
+        <div class="card-src">double-crown-dc3.jpg</div>
       </div>
     </div>
 
   </div>
 </div>
+
+<script>
+// Auto-load DC images if they exist (they'll just show as broken img otherwise)
+['dc1','dc2','dc3'].forEach((id, i) => {
+  const card = document.querySelectorAll('.pending')[i];
+  if (!card) return;
+  const img = new Image();
+  img.onload = () => {
+    card.style.backgroundImage = `url('images/double-crown-${id}.jpg')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+    card.innerHTML = `<div class="badge">${id.toUpperCase().replace('dc','DC')}</div>`;
+  };
+  img.src = `images/double-crown-${id}.jpg`;
+});
+</script>
 
 </body>
 </html>
