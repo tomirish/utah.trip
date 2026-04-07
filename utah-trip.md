@@ -19,7 +19,7 @@
 | Tue–Thu Jun 23–25 | 🏨 Petty Ranch Inn | Near Zion NP | [pettyranchinn.com](https://www.pettyranchinn.com/) | ✅ BOOKED |
 | Tue Jun 23 | 🌟 Zion Stargazing Tour — $190/person | Kolob Terrace Rd | [stargazingzion.com](https://www.stargazingzion.com) | ✅ BOOKED |
 | Wed Jun 24 | 🚲 E-Bike rental — ~$100/bike | Springdale, UT | [zioncycles.com](https://www.zioncycles.com) | ⬜ PENDING |
-| Thu Jun 25 | 🧗 "The Double Crown" Canyoneering — $279/person | Near Zion NP | [zionguru.com](https://www.zionguru.com) | ✅ BOOKED |
+| Thu Jun 25 | 🧗 "The Double Crown" Canyoneering — $279/person | Near Zion NP | [allwaysadventure.com](https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder) | ✅ BOOKED |
 | Fri–Sat Jun 26–27 | 🏨 The Ledges of St. George — Poolside Oasis | St. George, UT | [ledges.com](https://www.ledges.com) | ✅ BOOKED |
 | Sun Jun 28 | ✈️ Flights (LAS out) | Harry Reid International | — | ⬜ PENDING |
 
@@ -323,7 +323,7 @@ Most visitors have no idea this section exists — it's part of Zion NP but acce
 | [🌟 Stargazing Tour](https://www.stargazingzion.com/tours) | Near Zion (Kolob Terrace) | Tue Jun 23 eve | — | Easy | 2 hrs | ✅ Booked |
 | [The Narrows](https://alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring) | Zion NP | Wed Jun 24 AM | up to 9 | Moderate | 4–5 hrs | None |
 | [Emerald Pools](https://alltrails.com/trail/us/utah/emerald-pools-trail) | Zion NP | Wed Jun 24 PM | 3.0 | Moderate | 2 hrs | None |
-| ["The Double Crown" Canyoneering](https://www.zionguru.com/tours/canyoneering) | Near Zion (guided) | Thu Jun 25 | — | Moderate | 7 hrs | ✅ Booked |
+| ["The Double Crown" Canyoneering](https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder) | Near Zion (guided) | Thu Jun 25 | — | Moderate | 7 hrs | ✅ Booked |
 | [Kolob / Taylor Creek](https://alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4) | Zion NP (Kolob) | Fri Jun 26 | 5.0 | Moderate | 2.5 hrs | None (pass) |
 
 ---
