@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Approval — Utah Trip</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Jost', sans-serif; background: #1a1a1a; color: #f0e8de; padding: 24px; }
+h1 { font-size: 22px; font-weight: 600; margin-bottom: 6px; color: #E07B39; }
+.subtitle { font-size: 13px; color: #888; margin-bottom: 32px; line-height: 1.6; }
+.subtitle a { color: #E07B39; }
+.section { margin-bottom: 48px; }
+.section-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: #E07B39; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 20px;
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card { background: #252525; border-radius: 12px; overflow: hidden; }
+.photo {
+  width: 100%; height: 200px; background-size: cover; background-position: center;
+  background-color: #333; position: relative;
+}
+.photo-label {
+  position: absolute; bottom: 8px; left: 8px;
+  background: rgba(0,0,0,0.7); color: white;
+  font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 10px;
+}
+.card-body { padding: 12px; }
+.card-name { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.photo-id {
+  font-size: 11px; color: #888; background: #1a1a1a; padding: 4px 8px;
+  border-radius: 6px; font-family: monospace; word-break: break-all;
+  margin-bottom: 8px; display: block;
+}
+.links { display: flex; gap: 8px; flex-wrap: wrap; }
+.link-btn {
+  padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 600;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.link-btn:hover { opacity: 0.8; }
+.link-unsplash { background: #333; color: #aaa; }
+.link-preview { background: #C4521A; color: white; }
+.note { font-size: 11px; color: #666; margin-top: 8px; font-style: italic; }
+.instructions {
+  background: #252525; border-radius: 12px; padding: 20px; margin-bottom: 32px;
+  border-left: 3px solid #E07B39;
+}
+.instructions h2 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.instructions ol { padding-left: 18px; font-size: 13px; line-height: 2; color: #aaa; }
+.instructions li strong { color: #f0e8de; }
+</style>
+</head>
+<body>
+
+<h1>Photo Approval</h1>
+<p class="subtitle">
+  Review all photos currently in the site. To replace one, find a better photo on
+  <a href="https://unsplash.com" target="_blank">unsplash.com</a>,
+  copy its ID from the URL (e.g. <code style="color:#aaa">unsplash.com/photos/<strong>abc123XYZ</strong></code>),
+  and tell me: <em>"Day 2 splash → abc123XYZ"</em>
+</p>
+
+<div class="instructions">
+  <h2>How to find the photo ID</h2>
+  <ol>
+    <li>Click any <strong>Search Unsplash</strong> link below</li>
+    <li>Click a photo you like — it opens at <code>unsplash.com/photos/<strong>ID</strong></code></li>
+    <li>Copy the ID from the URL (the part after <code>/photos/</code>)</li>
+    <li>Tell me which slot to put it in (e.g. <em>"Day 3 splash → 1abc2def-3456"</em>)</li>
+  </ol>
+</div>
+
+<!-- ── HERO SLIDES ── -->
+<div class="section">
+  <div class="section-title">Hero — Crossfading Background (3 slides)</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')">
+        <div class="photo-label">Slide 1</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Hero Slide 1 — Zion Canyon Walls</div>
+        <code class="photo-id">1558618666-fcd25c85cd64</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/zion-canyon-walls" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=600&q=80')">
+        <div class="photo-label">Slide 2</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Hero Slide 2 — Bryce Canyon Hoodoos</div>
+        <code class="photo-id">apJnLsVyIQY</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/bryce-canyon-hoodoos-sunset" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80')">
+        <div class="photo-label">Slide 3</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Hero Slide 3 — Utah Milky Way</div>
+        <code class="photo-id">1419242902214-272b3f66ee7a</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/utah-milky-way-night-sky" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── CHAPTER SPLASHES ── -->
+<div class="section">
+  <div class="section-title">Chapter Splash Photos (full-bleed banners)</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-wlVGh33VDGw?w=600&q=80')">
+        <div class="photo-label">Day 1</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Day 1 — Cedar City Arrival</div>
+        <code class="photo-id">wlVGh33VDGw</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/southern-utah-desert-highway" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-wlVGh33VDGw?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=600&q=80')">
+        <div class="photo-label">Day 2</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Day 2 — Kanarra Falls</div>
+        <code class="photo-id">OlL_8dJfnMQ</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/kanarra-falls-utah-slot-canyon" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-OlL_8dJfnMQ?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=600&q=80')">
+        <div class="photo-label">Day 3</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Day 3 — Bryce Canyon</div>
+        <code class="photo-id">apJnLsVyIQY</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/bryce-canyon-hoodoos" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')">
+        <div class="photo-label">Days 4–5</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Days 4–5 — Zion National Park</div>
+        <code class="photo-id">1558618666-fcd25c85cd64</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/zion-national-park-canyon" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=600&q=80')">
+        <div class="photo-label">Days 6–7</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Days 6–7 — St. George &amp; Wedding</div>
+        <code class="photo-id">SZ_Cmgv40Hc</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/kolob-canyons-utah-red-rock" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── ACTIVITY PHOTOS ── -->
+<div class="section">
+  <div class="section-title">Activity Photos (shown when accordion item is expanded)</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-OlL_8dJfnMQ?w=600&q=80')">
+        <div class="photo-label">Kanarra Falls hike</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Kanarra Falls Hike</div>
+        <code class="photo-id">OlL_8dJfnMQ</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/kanarra-falls-slot-canyon-water" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-OlL_8dJfnMQ?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-apJnLsVyIQY?w=600&q=80')">
+        <div class="photo-label">Bryce Rim Drive</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Bryce Rim Drive — Golden Hour</div>
+        <code class="photo-id">apJnLsVyIQY</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/bryce-canyon-sunset-point" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-apJnLsVyIQY?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-CW2foqNQYss?w=600&q=80')">
+        <div class="photo-label">Peekaboo + Navajo Loop</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Peekaboo + Navajo + Queens Garden</div>
+        <code class="photo-id">CW2foqNQYss</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/bryce-canyon-trail-hoodoos" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-CW2foqNQYss?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')">
+        <div class="photo-label">Canyon Overlook Trail</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Canyon Overlook Trail — Zion</div>
+        <code class="photo-id">1558618666-fcd25c85cd64</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/zion-canyon-overlook" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" target="_blank">Full size</a>
+        </div>
+        <p class="note">⚠ Same photo as Zion chapter splash — consider a different shot here</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80')">
+        <div class="photo-label">Stargazing Tour</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Zion Stargazing Tour</div>
+        <code class="photo-id">1419242902214-272b3f66ee7a</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/utah-milky-way-stars" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-rUIulb1jhQk?w=600&q=80')">
+        <div class="photo-label">The Narrows</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">The Narrows — Zion</div>
+        <code class="photo-id">rUIulb1jhQk</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/zion-narrows-virgin-river" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-rUIulb1jhQk?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-YxGI9KV4LCk?w=600&q=80')">
+        <div class="photo-label">Double Crown Canyoneering</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">The Double Crown — Canyoneering</div>
+        <code class="photo-id">YxGI9KV4LCk</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/slot-canyon-rappelling-zion" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-YxGI9KV4LCk?w=800&q=80" target="_blank">Full size</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=600&q=80')">
+        <div class="photo-label">Kolob Canyons</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Kolob Canyons</div>
+        <code class="photo-id">SZ_Cmgv40Hc</code>
+        <div class="links">
+          <a class="link-btn link-unsplash" href="https://unsplash.com/s/photos/kolob-canyons-red-rock" target="_blank">Search Unsplash</a>
+          <a class="link-btn link-preview" href="https://images.unsplash.com/photo-SZ_Cmgv40Hc?w=800&q=80" target="_blank">Full size</a>
+        </div>
+        <p class="note">⚠ Same photo as St. George chapter splash — consider a different shot</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
