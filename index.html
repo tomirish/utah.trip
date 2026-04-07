@@ -165,7 +165,13 @@ a { color: inherit; text-decoration: none; }
 .chapter-splash-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 30%, rgba(44,24,16,0.82));
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05) 0%,
+    rgba(0,0,0,0.15) 35%,
+    rgba(0,0,0,0.65) 65%,
+    rgba(0,0,0,0.88) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
