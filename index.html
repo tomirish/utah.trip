@@ -370,31 +370,6 @@ a { color: inherit; text-decoration: none; }
   height: 180px;
 }
 
-/* ── ZION DAY SELECTOR ── */
-.day-selector {
-  display: flex;
-  gap: 8px;
-  padding: 14px 18px;
-  background: var(--light);
-  border-bottom: 1px solid rgba(44,24,16,0.07);
-}
-.day-pill {
-  padding: 7px 16px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  border: 1px solid rgba(196,82,26,0.25);
-  color: var(--clay);
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  -webkit-tap-highlight-color: transparent;
-}
-.day-pill.active {
-  background: var(--rust);
-  border-color: var(--rust);
-  color: white;
-}
 
 /* ── FOOTER ── */
 .site-footer {
@@ -496,9 +471,11 @@ a { color: inherit; text-decoration: none; }
   <button class="date-nav-pill" data-target="day-1" onclick="navTo('day-1')">Sun 21</button>
   <button class="date-nav-pill" data-target="day-2" onclick="navTo('day-2')">Mon 22</button>
   <button class="date-nav-pill" data-target="day-3" onclick="navTo('day-3')">Tue 23</button>
-  <button class="date-nav-pill" data-target="day-4" data-zion="wed" onclick="navTo('day-4','wed')">Wed 24</button>
-  <button class="date-nav-pill" data-target="day-4" data-zion="thu" onclick="navTo('day-4','thu')">Thu 25</button>
-  <button class="date-nav-pill" data-target="day-5" onclick="navTo('day-5')">Fri 26</button>
+  <button class="date-nav-pill" data-target="day-4" onclick="navTo('day-4')">Wed 24</button>
+  <button class="date-nav-pill" data-target="day-5" onclick="navTo('day-5')">Thu 25</button>
+  <button class="date-nav-pill" data-target="day-6" onclick="navTo('day-6')">Fri 26</button>
+  <button class="date-nav-pill" data-target="day-7" onclick="navTo('day-7')">Sat 27</button>
+  <button class="date-nav-pill" data-target="day-8" onclick="navTo('day-8')">Sun 28</button>
 </nav>
 
 <!-- CHAPTER: Cedar City — Arrival -->
@@ -812,135 +789,130 @@ a { color: inherit; text-decoration: none; }
   </div>
 </article>
 
-<!-- CHAPTER: Zion National Park -->
+<!-- CHAPTER: Day 4 — Wed Jun 24 — The Narrows -->
 <article class="chapter fade-up" id="day-4">
-  <div class="chapter-splash" style="background-image:url('images/joebraun_canyonjunction01.jpg')">
+  <div class="chapter-splash" style="background-image:url('images/joebraun_narrows01.jpg')">
     <div class="chapter-splash-overlay">
-      <div class="chapter-eyebrow">Days 4–5 · Wed–Thu June 24–25</div>
-      <h2 class="chapter-title">Zion<br><em>National Park</em></h2>
-      <div class="chapter-hotel">🌙 Petty Ranch Inn · Nights 2 & 3</div>
+      <div class="chapter-eyebrow">Day 4 · Wednesday June 24</div>
+      <h2 class="chapter-title">The<br><em>Narrows</em></h2>
+      <div class="chapter-hotel">🌙 Petty Ranch Inn · Night 2</div>
     </div>
   </div>
-
-  <!-- Day selector -->
-  <div class="day-selector">
-    <button class="day-pill active" data-zion-day="wed" onclick="showZionDay('wed', this)">Wed Jun 24</button>
-    <button class="day-pill"        data-zion-day="thu" onclick="showZionDay('thu', this)">Thu Jun 25</button>
-  </div>
-
-  <!-- WED JUN 24 — Narrows + E-Bikes -->
-  <div id="zion-day-wed" class="zion-day">
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🌊</div>
-        <div class="acc-header-text">
-          <div class="acc-name">The Narrows</div>
-          <div class="acc-sub"><span>Up to 9 mi · 4–5 hrs · gear from last night</span></div>
-        </div>
-        <div class="acc-time">9:00 AM</div>
-        <div class="acc-chevron">▼</div>
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🌊</div>
+      <div class="acc-header-text">
+        <div class="acc-name">The Narrows</div>
+        <div class="acc-sub"><span>Up to 9 mi · 4–5 hrs · gear from last night</span></div>
       </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <div class="acc-photo" style="background-image:url('images/joebraun_narrows01.jpg')"></div>
-        <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back.</p>
-        <div class="acc-tags">
-          <span class="acc-tag acc-tag-dur">Up to 9 mi</span>
-          <span class="acc-tag acc-tag-dur">4–5 hrs (or shorten)</span>
-          <span class="acc-tag acc-tag-cost">Gear ~$50/person</span>
-        </div>
-        <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank" rel="noopener">AllTrails</a>
-        <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+narrows+hike+bottom+up" target="_blank" rel="noopener">The Narrows hike</a>
-      </div></div>
-
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🚲</div>
-        <div class="acc-header-text">
-          <div class="acc-name">E-Bike → Emerald Pools</div>
-          <div class="acc-sub"><span class="status-pending">⬜ Book bikes</span><span>~7 mi bike + 3 mi hike · 4 hrs</span></div>
-        </div>
-        <div class="acc-time">2:00 PM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <div class="acc-photo" style="background-image:url('images/joebraun_emeraldpools03.jpg')"></div>
-        <p class="acc-desc">Rent Trek e-bikes from Zion Cycles, ride the Pa'rus Trail + Scenic Drive up to Zion Lodge (stop 5), lock bikes, hike Emerald Pools (pools + walk-behind waterfall), ride back. Pedal assist makes it easy even after the Narrows. A completely different perspective of the canyon.</p>
-        <div class="acc-tags">
-          <span class="acc-tag acc-tag-cost">~$100/bike</span>
-          <span class="acc-tag acc-tag-dur">Half day</span>
-        </div>
-        <a class="acc-btn" href="https://www.zioncycles.com" target="_blank" rel="noopener">Zion Cycles</a>
-        <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+national+park+ebike+scenic+drive" target="_blank" rel="noopener">Zion e-bike ride</a>
-      </div></div>
-
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🍽️</div>
-        <div class="acc-header-text">
-          <div class="acc-name">Dinner in Springdale</div>
-          <div class="acc-sub"><span>~1 hr</span></div>
-        </div>
-        <div class="acc-time">6:30 PM</div>
-        <div class="acc-chevron">▼</div>
-      </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">Spotted Dog Café or Switchback Grille.</p>
-      </div></div>
+      <div class="acc-time">9:00 AM</div>
+      <div class="acc-chevron">▼</div>
     </div>
-  </div>
-
-  <!-- THU JUN 25 — Canyoneering -->
-  <div id="zion-day-thu" class="zion-day" style="display:none">
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🧗</div>
-        <div class="acc-header-text">
-          <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
-          <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>7 hrs · $279/person</span></div>
-        </div>
-        <div class="acc-time">9:00 AM</div>
-        <div class="acc-chevron">▼</div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo" style="background-image:url('images/joebraun_narrows01.jpg')"></div>
+      <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back.</p>
+      <div class="acc-tags">
+        <span class="acc-tag acc-tag-dur">Up to 9 mi</span>
+        <span class="acc-tag acc-tag-dur">4–5 hrs (or shorten)</span>
+        <span class="acc-tag acc-tag-cost">Gear ~$50/person</span>
       </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <div class="acc-photo-pair">
-          <div class="acc-photo" style="background-image:url('images/Double%20Crown%20Canyoneering2.webp')"></div>
-          <div class="acc-photo" style="background-image:url('images/Double%20Crown%20Canyoneering3.webp')"></div>
-        </div>
-        <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
-        <div class="acc-tags">
-          <span class="acc-tag acc-tag-dur">7 hours</span>
-          <span class="acc-tag acc-tag-cost">$279/person</span>
-          <span class="acc-tag acc-tag-dur">Moderate</span>
-        </div>
-        <a class="acc-btn" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank" rel="noopener">allwaysadventure.com</a>
-        <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=double+crown+canyoneering+zion" target="_blank" rel="noopener">Double Crown canyoneering</a>
-      </div></div>
+      <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank" rel="noopener">AllTrails</a>
+      <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+narrows+hike+bottom+up" target="_blank" rel="noopener">The Narrows hike</a>
+    </div></div>
 
-      <div class="acc-header" onclick="toggleAcc(this)">
-        <div class="acc-icon">🍽️</div>
-        <div class="acc-header-text">
-          <div class="acc-name">Dinner in Springdale</div>
-          <div class="acc-sub"><span>~1 hr · pack tonight for Friday departure</span></div>
-        </div>
-        <div class="acc-time">6:30 PM</div>
-        <div class="acc-chevron">▼</div>
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🚲</div>
+      <div class="acc-header-text">
+        <div class="acc-name">E-Bike → Emerald Pools</div>
+        <div class="acc-sub"><span class="status-pending">⬜ Book bikes</span><span>~7 mi bike + 3 mi hike · 4 hrs</span></div>
       </div>
-      <div class="acc-body"><div class="acc-body-inner">
-        <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — sleeping in Friday before Kolob.</p>
-      </div></div>
+      <div class="acc-time">2:00 PM</div>
+      <div class="acc-chevron">▼</div>
     </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo" style="background-image:url('images/joebraun_emeraldpools03.jpg')"></div>
+      <p class="acc-desc">Rent Trek e-bikes from Zion Cycles, ride the Pa'rus Trail + Scenic Drive up to Zion Lodge (stop 5), lock bikes, hike Emerald Pools (pools + walk-behind waterfall), ride back. Pedal assist makes it easy even after the Narrows. A completely different perspective of the canyon.</p>
+      <div class="acc-tags">
+        <span class="acc-tag acc-tag-cost">~$100/bike</span>
+        <span class="acc-tag acc-tag-dur">Half day</span>
+      </div>
+      <a class="acc-btn" href="https://www.zioncycles.com" target="_blank" rel="noopener">Zion Cycles</a>
+      <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+national+park+ebike+scenic+drive" target="_blank" rel="noopener">Zion e-bike ride</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner in Springdale</div>
+        <div class="acc-sub"><span>~1 hr</span></div>
+      </div>
+      <div class="acc-time">6:30 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Spotted Dog Café or Switchback Grille.</p>
+    </div></div>
   </div>
 </article>
 
-<!-- CHAPTER: St. George + Wedding -->
+<!-- CHAPTER: Day 5 — Thu Jun 25 — Double Crown -->
 <article class="chapter fade-up" id="day-5">
-  <!-- Kolob Canyons red rock -->
-  <div class="chapter-splash" style="background-image:url('images/joebraun_westrim12.jpg')">
+  <div class="chapter-splash" style="background-image:url('images/joebraun_canyonjunction01.jpg')">
     <div class="chapter-splash-overlay">
-      <div class="chapter-eyebrow">Days 6–7 · Fri–Sat June 26–27</div>
-      <h2 class="chapter-title">St. George<br><em>&amp; The Wedding</em></h2>
-      <div class="chapter-hotel">🌙 The Ledges of St. George · Poolside Oasis</div>
+      <div class="chapter-eyebrow">Day 5 · Thursday June 25</div>
+      <h2 class="chapter-title">Double<br><em>Crown</em></h2>
+      <div class="chapter-hotel">🌙 Petty Ranch Inn · Night 3</div>
     </div>
   </div>
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🧗</div>
+      <div class="acc-header-text">
+        <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>7 hrs · $279/person</span></div>
+      </div>
+      <div class="acc-time">9:00 AM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo-pair">
+        <div class="acc-photo" style="background-image:url('images/Double%20Crown%20Canyoneering2.webp')"></div>
+        <div class="acc-photo" style="background-image:url('images/Double%20Crown%20Canyoneering3.webp')"></div>
+      </div>
+      <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
+      <div class="acc-tags">
+        <span class="acc-tag acc-tag-dur">7 hours</span>
+        <span class="acc-tag acc-tag-cost">$279/person</span>
+        <span class="acc-tag acc-tag-dur">Moderate</span>
+      </div>
+      <a class="acc-btn" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank" rel="noopener">allwaysadventure.com</a>
+      <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=double+crown+canyoneering+zion" target="_blank" rel="noopener">Double Crown canyoneering</a>
+    </div></div>
 
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner in Springdale</div>
+        <div class="acc-sub"><span>~1 hr · pack tonight for Friday departure</span></div>
+      </div>
+      <div class="acc-time">6:30 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — sleeping in Saturday before Kolob.</p>
+    </div></div>
+  </div>
+</article>
+
+<!-- CHAPTER: Day 6 — Fri Jun 26 — St. George + Kolob -->
+<article class="chapter fade-up" id="day-6">
+  <div class="chapter-splash" style="background-image:url('images/joebraun_westrim12.jpg')">
+    <div class="chapter-splash-overlay">
+      <div class="chapter-eyebrow">Day 6 · Friday June 26</div>
+      <h2 class="chapter-title">St. George<br><em>&amp; Kolob</em></h2>
+      <div class="chapter-hotel">🌙 The Ledges of St. George · Night 1</div>
+    </div>
+  </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">💤</div>
@@ -952,7 +924,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Late night after stargazing — no rush. Hwy 9 west to I-15 north, 15 min to the Kolob Canyons exit.</p>
+      <p class="acc-desc">Late checkout from Petty Ranch Inn. Hwy 9 west to I-15 north, 15 min to the Kolob Canyons exit.</p>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -984,18 +956,54 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Check in at The Ledges of St. George — Poolside Oasis. Relax, decompress, wedding prep. Snow Canyon State Park is a great easy option nearby if you want one more short hike.</p>
       <a class="acc-btn" href="https://www.ledges.com" target="_blank" rel="noopener">ledges.com</a>
     </div></div>
+  </div>
+</article>
 
+<!-- CHAPTER: Day 7 — Sat Jun 27 — Wedding Day -->
+<article class="chapter fade-up" id="day-7">
+  <div class="chapter-splash" style="background-image:url('images/St.%20George%20wedding.jpg')">
+    <div class="chapter-splash-overlay">
+      <div class="chapter-eyebrow">Day 7 · Saturday June 27</div>
+      <h2 class="chapter-title">Wedding<br><em>Day</em></h2>
+      <div class="chapter-hotel">🌙 The Ledges of St. George · Night 2</div>
+    </div>
+  </div>
+  <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">💍</div>
       <div class="acc-header-text">
         <div class="acc-name">Wedding Day</div>
-        <div class="acc-sub"><span>Saturday June 27 · St. George, Utah</span></div>
+        <div class="acc-sub"><span>St. George, Utah</span></div>
       </div>
       <div class="acc-time">All Day</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">You made it. One of the most epic road trips in the American Southwest — and now the celebration begins. Enjoy every moment.</p>
+    </div></div>
+  </div>
+</article>
+
+<!-- CHAPTER: Day 8 — Sun Jun 28 — Drive Home -->
+<article class="chapter fade-up" id="day-8">
+  <div class="chapter-splash" style="background-image:url('images/Road_Trip.jpg')">
+    <div class="chapter-splash-overlay">
+      <div class="chapter-eyebrow">Day 8 · Sunday June 28</div>
+      <h2 class="chapter-title">Drive to<br><em>Las Vegas</em></h2>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🚗</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — Drive to LAS</div>
+        <div class="acc-sub"><span>~2 hrs · I-15 south</span></div>
+      </div>
+      <div class="acc-time">Morning</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">St. George to Las Vegas is 2 hours on I-15 south. Return the rental car at LAS and fly home.</p>
     </div></div>
   </div>
 </article>
@@ -1045,39 +1053,14 @@ function toggleAcc(header) {
   }
 }
 
-// ── Zion day selector ──
-let activeZionDay = 'wed';
-function showZionDay(day, btn) {
-  activeZionDay = day;
-  document.querySelectorAll('.zion-day').forEach(d => { d.style.display = 'none'; });
-  document.getElementById('zion-day-' + day).style.display = 'block';
-  document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  // sync global nav to matching Zion pill
-  setGlobalNav('day-4');
-}
-
 // ── Global date nav ──
 function setGlobalNav(activeId) {
   document.querySelectorAll('.date-nav-pill').forEach(p => p.classList.remove('active'));
-  if (activeId === 'day-4') {
-    const pill = document.querySelector(`.date-nav-pill[data-zion="${activeZionDay}"]`);
-    if (pill) pill.classList.add('active');
-  } else {
-    const pill = document.querySelector(`.date-nav-pill[data-target="${activeId}"]`);
-    if (pill) pill.classList.add('active');
-  }
+  const pill = document.querySelector(`.date-nav-pill[data-target="${activeId}"]`);
+  if (pill) pill.classList.add('active');
 }
 
-function navTo(id, zionDay) {
-  if (zionDay) {
-    activeZionDay = zionDay;
-    document.querySelectorAll('.zion-day').forEach(d => { d.style.display = 'none'; });
-    document.getElementById('zion-day-' + zionDay).style.display = 'block';
-    document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
-    const localPill = document.querySelector(`.day-pill[data-zion-day="${zionDay}"]`);
-    if (localPill) localPill.classList.add('active');
-  }
+function navTo(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   setGlobalNav(id);
 }
