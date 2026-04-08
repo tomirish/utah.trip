@@ -1,4 +1,4 @@
-# Utah Red Rock Road Trip — June 21–28, 2025
+# Utah Red Rock Road Trip — June 21–28, 2026
 
 **Route:** Las Vegas (LAS) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Las Vegas (LAS)  
 **Travelers:** 2 adults  
@@ -68,7 +68,7 @@
 | 3:30 PM | 🏞️ Canyon Overlook Trail | 1 mi / 45 min | See hike details below · easy warm-up |
 | 5:30 PM | 🛍️ Pick up Narrows gear | 20 min | Zion Guru or Zion Outfitter · ~$50/person · neoprene socks + water shoes + pole |
 | 7:00 PM | 🍽️ Dinner in Springdale | ~1 hr | ⭐ **Balcony restaurant** (name TBD) — first night in Zion, best night for it · Spotted Dog Café or Switchback Grille as backup |
-| 9:00 PM | 🌟 **Zion Stargazing Tour** | 2 hrs | ~$190/person · NEW MOON · zero-gravity pods + telescopes · stargazingzion.com ✅ BOOKED |
+| 9:00 PM | 🌟 **Zion Stargazing Tour** | 2 hrs | ~$190/person · zero-gravity pods + telescopes · stargazingzion.com ✅ BOOKED |
 
 ---
 
@@ -360,7 +360,7 @@ Ride the same road the park shuttle uses — but at your own pace, stopping when
 
 Zion is a designated International Dark Sky Park — on a clear June night with a new moon you can see the full Milky Way arching overhead. The tour starts at sunset and walks you to a private dark-sky field away from any light pollution. Each person gets a zero-gravity reclining pod and a blanket, plus Celestron binoculars. Professional astronomy guides walk you through constellations, planets, distant galaxies, and nebulae using high-powered telescopes and laser pointers. Hot chocolate, coffee, and tea included.
 
-**Tip:** Late June 2025 new moon falls June 25 — your stargazing tour is on new moon night itself. Maximum darkness, best possible conditions.  
+**Tip:** The June 2026 new moon is June 14 — by June 23 the moon is waxing gibbous (~75% illuminated). Zion is still a certified Dark Sky Park so the Milky Way will be visible, but expect some moon glow.  
 **⚠️ Weather dependent** — full refund if cancelled due to clouds. Book early, small group caps.
 
 ---
