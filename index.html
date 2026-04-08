@@ -24,7 +24,6 @@ body {
   font-family: 'Jost', sans-serif;
   background: var(--cream);
   color: var(--dusk);
-  overflow-x: hidden;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -339,13 +338,12 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 5px;
-  padding: 10px 10px;
+  padding: 8px 10px;
   background: var(--cream);
   border-bottom: 2px solid rgba(196,82,26,0.12);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
   box-shadow: 0 2px 12px rgba(44,24,16,0.08);
 }
 .date-nav::-webkit-scrollbar { display: none; }
@@ -593,7 +591,6 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">3.7 mi out-and-back</span>
         <span class="acc-tag acc-tag-dur">~3 hours</span>
-        <span class="acc-tag acc-tag-cost">$15/person</span>
       </div>
       <a class="acc-btn" href="https://www.kanarrafalls.com" target="_blank" rel="noopener">kanarrafalls.com</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=kanarra+falls+hike+utah" target="_blank" rel="noopener">Kanarra Falls hike</a>
@@ -708,7 +705,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🐉</div>
       <div class="acc-header-text">
         <div class="acc-name">Belly of the Dragon</div>
-        <div class="acc-sub"><span>Free · 1.7 mi · 20–30 min · skip if raining</span></div>
+        <div class="acc-sub"><span>Free · 1.7 mi · 20–30 min</span></div>
       </div>
       <div class="acc-time">12:30 PM</div>
       <div class="acc-chevron">▼</div>
@@ -767,7 +764,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🛍️</div>
       <div class="acc-header-text">
         <div class="acc-name">Pick up Narrows gear</div>
-        <div class="acc-sub"><span>Zion Guru · ~$50/person · 20 min</span></div>
+        <div class="acc-sub"><span>Zion Guru · 20 min</span></div>
       </div>
       <div class="acc-time">5:30 PM</div>
       <div class="acc-chevron">▼</div>
@@ -781,16 +778,15 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🌟</div>
       <div class="acc-header-text">
         <div class="acc-name">Zion Stargazing Tour</div>
-        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>NEW MOON · 2 hrs · $190/person</span></div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>Near-dark skies · 2 hrs</span></div>
       </div>
       <div class="acc-time">9:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('images/joebraun_canjunctmilkyway01.jpg')"></div>
+      <div class="acc-photo" style="background-image:url('images/stargazing-s2.jpg')"></div>
       <p class="acc-desc">June 23 is just two nights before new moon — near-maximum darkness. Zion is a certified Dark Sky Park. Zero-gravity reclining pods, blankets, Celestron binoculars, hot drinks. Professional guide walks you through constellations, planets, and the full Milky Way arching overhead.</p>
       <div class="acc-tags">
-        <span class="acc-tag acc-tag-cost">$190/person</span>
         <span class="acc-tag acc-tag-dur">2 hours</span>
         <span class="acc-tag acc-tag-dur">Kolob Terrace Rd</span>
       </div>
@@ -822,12 +818,11 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('images/joebraun_narrows01.jpg')"></div>
+      <div class="acc-photo" style="background-image:url('images/narrows-n2.jpg')"></div>
       <p class="acc-desc">One of the most iconic hikes in America. The trail disappears into the Virgin River — you hike upstream through a 1,000-ft slot canyon, water ankle to waist deep. Go as far as you want and turn back.</p>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">Up to 9 mi</span>
         <span class="acc-tag acc-tag-dur">4–5 hrs (or shorten)</span>
-        <span class="acc-tag acc-tag-cost">Gear ~$50/person</span>
       </div>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+narrows+hike+bottom+up" target="_blank" rel="noopener">The Narrows hike</a>
@@ -846,7 +841,6 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/joebraun_emeraldpools03.jpg')"></div>
       <p class="acc-desc">Rent Trek e-bikes from Zion Cycles, ride the Pa'rus Trail + Scenic Drive up to Zion Lodge (stop 5), lock bikes, hike Emerald Pools (pools + walk-behind waterfall), ride back. Pedal assist makes it easy even after the Narrows. A completely different perspective of the canyon.</p>
       <div class="acc-tags">
-        <span class="acc-tag acc-tag-cost">~$100/bike</span>
         <span class="acc-tag acc-tag-dur">Half day</span>
       </div>
       <a class="acc-btn" href="https://www.zioncycles.com" target="_blank" rel="noopener">Zion Cycles</a>
@@ -884,7 +878,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🧗</div>
       <div class="acc-header-text">
         <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
-        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>7 hrs · $279/person</span></div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>7 hrs · Moderate</span></div>
       </div>
       <div class="acc-time">9:00 AM</div>
       <div class="acc-chevron">▼</div>
@@ -897,7 +891,6 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">7 hours</span>
-        <span class="acc-tag acc-tag-cost">$279/person</span>
         <span class="acc-tag acc-tag-dur">Moderate</span>
       </div>
       <a class="acc-btn" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank" rel="noopener">allwaysadventure.com</a>
@@ -908,13 +901,13 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🍽️</div>
       <div class="acc-header-text">
         <div class="acc-name">Dinner in Springdale</div>
-        <div class="acc-sub"><span>~1 hr · pack tonight for Friday departure</span></div>
+        <div class="acc-sub"><span>~1 hr · pack tonight for tomorrow's move</span></div>
       </div>
       <div class="acc-time">6:30 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — sleeping in Saturday before Kolob.</p>
+      <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — checking out and heading to St. George tomorrow.</p>
     </div></div>
   </div>
 </article>
@@ -932,16 +925,16 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon">💤</div>
+      <div class="acc-icon">🏨</div>
       <div class="acc-header-text">
-        <div class="acc-name">Sleep in — Depart Springdale</div>
-        <div class="acc-sub"><span>15 min to Kolob exit</span></div>
+        <div class="acc-name">Checkout — Depart Springdale</div>
+        <div class="acc-sub"><span>Petty Ranch Inn · 15 min to Kolob exit</span></div>
       </div>
-      <div class="acc-time">10:00 AM</div>
+      <div class="acc-time">9:30 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Late checkout from Petty Ranch Inn. Hwy 9 west to I-15 north, 15 min to the Kolob Canyons exit.</p>
+      <p class="acc-desc">Check out of Petty Ranch Inn. Head west on Hwy 9 to I-15 north — Kolob Canyons exit is just 15 minutes up the highway.</p>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1015,16 +1008,55 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — The Ledges</div>
+        <div class="acc-sub"><span>St. George</span></div>
+      </div>
+      <div class="acc-time">Morning</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Check out of The Ledges, pack up, and hit the road. Allow extra time for the drive to make your flight.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🚗</div>
       <div class="acc-header-text">
-        <div class="acc-name">Check out — Drive to LAS</div>
+        <div class="acc-name">Drive to Las Vegas</div>
         <div class="acc-sub"><span>~2 hrs · I-15 south</span></div>
       </div>
       <div class="acc-time">Morning</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">St. George to Las Vegas is 2 hours on I-15 south. Return the rental car at LAS and fly home.</p>
+      <p class="acc-desc">Straight shot down I-15. One last look at the red rock as Utah fades in the rearview mirror.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🚙</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Return rental car at LAS</div>
+        <div class="acc-sub"><span>Harry Reid International · rental return is in-terminal</span></div>
+      </div>
+      <div class="acc-time">On arrival</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Rental return is conveniently located in the terminal complex at LAS. Follow signs from the highway — allow 20 minutes to return and get to the gate.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">✈️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Fly home</div>
+        <div class="acc-sub"><span>Las Vegas → Home</span></div>
+      </div>
+      <div class="acc-time">—</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">That's a wrap. Eight days, two national parks, a slot canyon, a wedding, and a thousand miles of red rock highway. See you on the next one.</p>
     </div></div>
   </div>
 </article>
