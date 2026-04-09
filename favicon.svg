@@ -1,14 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Sky -->
-  <rect width="32" height="32" rx="6" fill="#2C1810"/>
-  <!-- Canyon walls + arch -->
-  <path d="M0 32 L0 14 Q4 14 4 20 Q4 10 10 10 Q16 10 16 18 Q16 10 22 10 Q28 14 28 20 Q28 14 32 14 L32 32 Z" fill="#C4521A"/>
-  <!-- Arch opening -->
-  <path d="M10 32 L10 20 Q10 14 16 14 Q22 14 22 20 L22 32 Z" fill="#2C1810"/>
-  <!-- Stars -->
-  <circle cx="7" cy="6" r="1" fill="#E07B39" opacity="0.9"/>
-  <circle cx="16" cy="4" r="1.2" fill="#F2DEC4" opacity="0.9"/>
-  <circle cx="25" cy="7" r="1" fill="#E07B39" opacity="0.9"/>
-  <circle cx="11" cy="3" r="0.7" fill="#F2DEC4" opacity="0.7"/>
-  <circle cx="22" cy="3" r="0.7" fill="#F2DEC4" opacity="0.7"/>
+  <rect width="32" height="32" rx="6" fill="#C4521A"/>
+  <path d="M4 26 L4 18 L10 10 L16 18 L22 10 L28 18 L28 26 Z" fill="#2C1810"/>
+  <path d="M11 26 L11 20 Q11 16 16 16 Q21 16 21 20 L21 26 Z" fill="#C4521A"/>
 </svg>
