@@ -43,16 +43,30 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   border-bottom: 1px solid rgba(139,74,43,0.08);
   vertical-align: top; line-height: 1.4;
 }
-/* Date and Status shrink to content; What takes remaining space */
 .bookings td.date-col { white-space: nowrap; font-size: 11px; color: var(--clay); width: 1%; }
 .bookings td.status-col, .bookings th.status-col { width: 1%; white-space: nowrap; text-align: center; padding-right: 0; }
 .bookings tr.pending td { background: rgba(224,123,57,0.06); }
 .bookings tr.pending td:first-child { border-left: 3px solid var(--amber); padding-left: 8px; }
 .book-link { color: var(--rust); text-decoration: underline; font-size: 11px; }
+.book-meta { font-size: 10px; color: rgba(139,74,43,0.55); margin-top: 3px; line-height: 1.5; }
+.book-warn { color: var(--amber); font-weight: 600; }
 .status-ok { color: #4caf50; }
 .status-no { color: var(--amber); }
 .price-col { text-align: right; white-space: nowrap; font-size: 11px; width: 1%; }
 .bookings th.price-col { text-align: right; }
+.price-due { display: block; color: var(--amber); font-size: 10px; }
+
+/* Action items */
+.action-list { list-style: none; }
+.action-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid rgba(139,74,43,0.08);
+  font-size: 13px;
+}
+.action-item:last-child { border-bottom: none; }
+.action-icon { flex-shrink: 0; font-size: 15px; line-height: 1.4; }
+.action-text { flex: 1; line-height: 1.5; color: var(--clay); font-weight: 300; }
+.action-text strong { font-weight: 600; color: var(--dusk); }
 
 /* Restaurant list */
 .city-label {
@@ -88,23 +102,61 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   <a class="plan-back" href="index.html">← Back to trip</a>
 </div>
 
-<!-- BOOKINGS -->
+<!-- ACTION ITEMS -->
 <div class="plan-section">
+  <div class="plan-section-title">Action Items</div>
+  <ul class="action-list">
+    <li class="action-item">
+      <span class="action-icon">✍️</span>
+      <span class="action-text"><strong>Sign Kanarra Falls waiver</strong> — required before Jun 22 check-in · <a href="https://www.kanarrafalls.com" style="color:var(--rust)">kanarrafalls.com</a></span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">✍️</span>
+      <span class="action-text"><strong>Sign Double Crown waiver</strong> — All Ways Adventure release of liability · <a href="https://www.allwaysadventure.com" style="color:var(--rust)">allwaysadventure.com</a></span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">📍</span>
+      <span class="action-text"><strong>Double Crown meeting point TBD</strong> — All Ways Adventure will call to confirm · (435) 309-9745</span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">💳</span>
+      <span class="action-text"><strong>Ledges balance $428.91 due Jun 12</strong> — auto-charged to card on file</span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">💳</span>
+      <span class="action-text"><strong>Double Crown balance $299.51 due Jun 23</strong> — auto-charged 2 days before tour</span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">🎫</span>
+      <span class="action-text"><strong>Bring AAA card</strong> — required at Abbey Inn and Ruby's Inn check-in</span>
+    </li>
+    <li class="action-item">
+      <span class="action-icon">🅿️</span>
+      <span class="action-text"><strong>Print airport parking confirmation</strong> — PI600228 · required at Hilton SeaTac lot</span>
+    </li>
+  </ul>
+</div>
+
+<!-- BOOKINGS -->
+<div class="plan-section" style="margin-top:24px">
   <div class="plan-section-title">Bookings</div>
   <table class="bookings">
     <thead>
       <tr>
         <th>Date</th>
         <th>What</th>
-        <th class="price-col">Price</th>
-        <th class="status-col">Status</th>
+        <th class="price-col">Paid</th>
+        <th class="status-col">✓</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="date-col">Sun Jun 21</td>
-        <td><a class="book-link" href="https://www.cheapairportparking.org" target="_blank">🅿️ Airport Parking · SeaTac</a></td>
-        <td class="price-col">—</td>
+        <td>
+          <a class="book-link" href="https://www.cheapairportparking.org" target="_blank">🅿️ Airport Parking · SeaTac</a>
+          <div class="book-meta">#PI600228 · Hilton SeaTac Indoor · (206) 244-4800<br>Jun 21 10am – Jun 28 12pm · print confirmation</div>
+        </td>
+        <td class="price-col">$150.17</td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr class="pending">
@@ -121,32 +173,49 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
       </tr>
       <tr>
         <td class="date-col">Sun Jun 21</td>
-        <td><a class="book-link" href="https://www.abbeyinnhotel.com" target="_blank">🏨 Abbey Inn · Cedar City</a></td>
-        <td class="price-col">—</td>
+        <td>
+          <a class="book-link" href="https://www.abbeyinnhotel.com" target="_blank">🏨 Abbey Inn · Cedar City</a>
+          <div class="book-meta">#BB26040520548406 · (435) 586-9966<br>Check-in 3pm · breakfast incl · <span class="book-warn">AAA card req</span></div>
+        </td>
+        <td class="price-col">$151.63</td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr>
         <td class="date-col">Mon Jun 22</td>
-        <td><a class="book-link" href="https://www.kanarrafalls.com" target="_blank">🌊 Kanarra Falls permits</a></td>
-        <td class="price-col">$15/pp</td>
+        <td>
+          <a class="book-link" href="https://www.kanarrafalls.com" target="_blank">🌊 Kanarra Falls permits</a>
+          <div class="book-meta">#342142422 · (435) 590-7490 · 2 adults<br>385 E 100 N St, Kanarraville · <span class="book-warn">sign waiver</span></div>
+        </td>
+        <td class="price-col">$34.10</td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr>
         <td class="date-col">Mon Jun 22</td>
-        <td><a class="book-link" href="https://www.rubysinn.com" target="_blank">🏨 Ruby's Inn · Bryce</a></td>
-        <td class="price-col">—</td>
+        <td>
+          <a class="book-link" href="https://www.rubysinn.com" target="_blank">🏨 Ruby's Inn · Bryce</a>
+          <div class="book-meta">#L7W7631SV7 · (435) 834-5341<br>Check-in 3pm · 2 Kings · breakfast incl · <span class="book-warn">AAA card req</span></div>
+        </td>
+        <td class="price-col">$200.06</td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr>
         <td class="date-col">Tue–Thu Jun 23–25</td>
-        <td><a class="book-link" href="https://www.pettyranchinn.com" target="_blank">🏨 Petty Ranch Inn</a></td>
-        <td class="price-col">—</td>
+        <td>
+          <a class="book-link" href="https://www.pettyranchinn.com" target="_blank">🏨 Petty Ranch Inn · Springdale</a>
+          <div class="book-meta">#9563067610399 · (435) 599-7930<br>King Mountain View · check-in 3pm / out 11am<br>$404.17 balance due at checkout</div>
+        </td>
+        <td class="price-col">$404.18
+          <span class="price-due">+$404.17 at checkout</span>
+        </td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr>
         <td class="date-col">Tue Jun 23</td>
-        <td><a class="book-link" href="https://www.stargazingzion.com" target="_blank">🌟 Stargazing</a></td>
-        <td class="price-col">$190/pp</td>
+        <td>
+          <a class="book-link" href="https://www.stargazingzion.com" target="_blank">🌟 Stargazing · Zion</a>
+          <div class="book-meta">#B-AY47PKD · (435) 919-3976<br>9:15pm · arrive 5–10 min early · ~30 min from Springdale<br>Download directions before leaving — no cell at site</div>
+        </td>
+        <td class="price-col">$392.08</td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr class="pending">
@@ -157,14 +226,24 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
       </tr>
       <tr>
         <td class="date-col">Thu Jun 25</td>
-        <td><a class="book-link" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank">🧗 Double Crown</a></td>
-        <td class="price-col">$279/pp</td>
+        <td>
+          <a class="book-link" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank">🧗 Double Crown Canyoneering</a>
+          <div class="book-meta">#342219079 · (435) 309-9745 · 8am–3pm<br><span class="book-warn">Sign waiver · Meeting point TBD — they'll call</span></div>
+        </td>
+        <td class="price-col">$332.99
+          <span class="price-due">+$299.51 Jun 23</span>
+        </td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr>
         <td class="date-col">Fri–Sat Jun 26–27</td>
-        <td><a class="book-link" href="https://www.ledges.com" target="_blank">🏨 The Ledges · St. George</a></td>
-        <td class="price-col">—</td>
+        <td>
+          <a class="book-link" href="https://www.ledges.com" target="_blank">🏨 The Ledges · St. George</a>
+          <div class="book-meta">#PARGR · Poolside Oasis · (435) 634-4660<br>Check-in 4pm Fri / out 11am Sun<br>$428.91 balance due Jun 12</div>
+        </td>
+        <td class="price-col">$428.91
+          <span class="price-due">+$428.91 Jun 12</span>
+        </td>
         <td class="status-col status-ok">✅</td>
       </tr>
       <tr class="pending">
@@ -191,7 +270,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 </div>
 
 
-<div class="plan-footer">Last synced from utah-trip.md · April 2026</div>
+<div class="plan-footer">Updated with confirmations · April 2026</div>
 
 </body>
 </html>
