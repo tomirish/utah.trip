@@ -443,6 +443,20 @@ a { color: inherit; text-decoration: none; }
     background: #e8e0d8;
   }
 }
+
+/* ── LANDSCAPE PHONES ── */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    height: 85svh;
+    min-height: 280px;
+  }
+  .chapter-splash {
+    height: 180px;
+  }
+  .chapter-splash--slim {
+    height: 120px;
+  }
+}
 </style>
 </head>
 <body>
@@ -460,7 +474,7 @@ a { color: inherit; text-decoration: none; }
     <div class="hero-content">
       <div class="hero-eyebrow">June 21 – 28, 2026</div>
       <h1 class="hero-title">Utah<br><em>Red Rock</em></h1>
-      <p class="hero-route">Las Vegas → Cedar City → Bryce → Zion → St. George</p>
+      <p class="hero-route">Las Vegas → Bryce → Zion → St. George</p>
       <div class="hero-pill">💍 Wedding Jun 27 · St. George</div>
     </div>
     <div class="hero-scroll">
