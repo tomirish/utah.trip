@@ -1,0 +1,104 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - link "Collections" [ref=e21] [cursor=pointer]:
+          - /url: /login?referrer=%2Fs%2Fphotos%2FBryce-Canyon-hoodoos-sunrise
+          - img [ref=e22]
+        - link "Download History" [ref=e24] [cursor=pointer]:
+          - /url: /login?referrer=%2Fdownloads
+          - img [ref=e25]
+      - link "Bookmarks" [ref=e28] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2FBryce-Canyon-hoodoos-sunrise
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2FBryce-Canyon-hoodoos-sunrise
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: Bryce Canyon hoodoos sunrise
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2FBryce-Canyon-hoodoos-sunrise
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 751":
+                - /url: /s/photos/bryce-canyon-hoodoos-sunrise
+                - img
+                - text: Photos
+                - generic: "751"
+            - listitem [ref=e72]:
+              - link "Illustrations 0" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/bryce-canyon-hoodoos-sunrise
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "0"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Bryce Canyon hoodoos sunrise" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "canyon" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/canyon
+              - link "bryce canyon national park" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/bryce-canyon-national-park
+              - link "landscape" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/landscape
+              - link "nature" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/nature
+              - link "sunrise" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/sunrise
+              - link "hoodoo" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/hoodoo
+              - link "utah" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/utah
+              - link "mountain" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/mountain
+              - link "outdoor" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/outdoor
+              - link "national park" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/national-park
+              - link "rock" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/rock
+              - link "bryce canyon" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/bryce-canyon
+    - generic:
+      - region "Notifications"
