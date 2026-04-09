@@ -446,16 +446,34 @@ a { color: inherit; text-decoration: none; }
 
 /* ── LANDSCAPE PHONES ── */
 @media (orientation: landscape) and (max-height: 500px) {
+  body {
+    max-width: 100%;
+  }
   .hero {
-    height: 85svh;
     min-height: 280px;
   }
-  .chapter-splash {
-    height: 180px;
+  /* Nav: single scrolling row */
+  .date-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 16px;
   }
+  /* Chapters: photo left, content right */
+  .chapter {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .chapter-splash,
   .chapter-splash--slim {
-    height: 120px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    height: auto;
+    min-height: 200px;
   }
+  .chapter-meta { grid-column: 2; grid-row: 1; }
+  .accordion    { grid-column: 2; grid-row: 2; }
 }
 </style>
 </head>
