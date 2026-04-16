@@ -74,8 +74,8 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(
     to bottom,
     rgba(44,24,16,0.1) 0%,
-    rgba(44,24,16,0.2) 40%,
-    rgba(44,24,16,0.85) 100%
+    rgba(44,24,16,0.3) 40%,
+    rgba(44,24,16,0.92) 100%
   );
 }
 .hero-content {
@@ -103,6 +103,8 @@ a { color: inherit; text-decoration: none; }
   animation: fadeUp 0.8s 0.5s forwards;
 }
 .hero-title em { color: var(--amber); font-style: italic; }
+.hero-eyebrow, .hero-route { text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
+.hero-title { text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
 .hero-route {
   font-size: 12px;
   font-weight: 300;
@@ -605,6 +607,19 @@ a { color: inherit; text-decoration: none; }
 
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — Abbey Inn</div>
+        <div class="acc-sub"><span>Pack bags the night before · early start</span></div>
+      </div>
+      <div class="acc-time">8:00 AM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Check out before the 8:30 AM drive. Pack everything the night before — you won't be back.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🚗</div>
       <div class="acc-header-text">
         <div class="acc-name">Drive Cedar City → Kanarraville</div>
@@ -707,6 +722,19 @@ a { color: inherit; text-decoration: none; }
   </div>
 
   <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — Ruby's Inn</div>
+        <div class="acc-sub"><span>Pack bags before the hike · drive straight to Zion after</span></div>
+      </div>
+      <div class="acc-time">6:30 AM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Check out before the 7 AM hike — you'll drive straight to Zion after Rainbow Point and Belly of the Dragon. Load the car first, then hit the trail.</p>
+    </div></div>
+
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🥾</div>
       <div class="acc-header-text">
@@ -1004,7 +1032,20 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Check in at The Ledges of St. George — Poolside Oasis. Relax, decompress, wedding prep. Snow Canyon State Park is a great easy option nearby if you want one more short hike.</p>
+      <p class="acc-desc">Relax, decompress, wedding prep. Snow Canyon State Park nearby if you want one more easy hike.</p>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check in — The Ledges of St. George</div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked</span><span>Poolside Oasis · check-in 4 PM</span></div>
+      </div>
+      <div class="acc-time">4:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Two nights at The Ledges — your base for the wedding weekend. Pool, relax, recharge after the week.</p>
       <a class="acc-btn" href="https://www.ledges.com" target="_blank" rel="noopener">ledges.com</a>
     </div></div>
   </div>
@@ -1049,6 +1090,19 @@ a { color: inherit; text-decoration: none; }
     <div class="chapter-hotel">🌙 Maswik Lodge · Grand Canyon South Rim</div>
   </div>
   <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — The Ledges</div>
+        <div class="acc-sub"><span>Check-out by 11 AM · load up for Grand Canyon</span></div>
+      </div>
+      <div class="acc-time">10:00 AM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Check out of The Ledges and load the car. Grand Canyon is a 3-hour drive — no rush, but get on the road by 10 AM to hit Desert View before check-in.</p>
+    </div></div>
+
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🚗</div>
       <div class="acc-header-text">
@@ -1257,7 +1311,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- CHAPTER: Day 10 — Tue Jun 30 — Fly Home -->
 <article class="chapter fade-up" id="day-10">
-  <div class="chapter-splash chapter-splash--slim" style="background-image:url('images/road-trip.webp')">
+  <div class="chapter-splash chapter-splash--slim" style="background-image:url('images/sunset-mather-point.webp')">
     <div class="chapter-splash-overlay">
       <h2 class="chapter-title">Fly<br><em>Home</em></h2>
     </div>
@@ -1266,6 +1320,19 @@ a { color: inherit; text-decoration: none; }
     <div class="chapter-eyebrow">Day 10 · Tuesday June 30</div>
   </div>
   <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏨</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Check out — Maswik Lodge</div>
+        <div class="acc-sub"><span>Check-out by 11 AM · pack tonight</span></div>
+      </div>
+      <div class="acc-time">7:00 AM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Pack everything the night before. Leave bags at the bell desk if needed — Mather Point is a 5-minute walk and worth one last look before hitting the road.</p>
+    </div></div>
+
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
