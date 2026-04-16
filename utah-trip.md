@@ -1,6 +1,6 @@
-# Utah Red Rock Road Trip — June 21–28, 2026
+# Utah Red Rock Road Trip — June 21–30, 2026
 
-**Route:** Las Vegas (LAS) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Las Vegas (LAS)  
+**Route:** Las Vegas (LAS) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Grand Canyon → Las Vegas (LAS)  
 **Travelers:** 2 adults  
 **Wedding:** Saturday June 27, St. George, Utah
 
@@ -21,7 +21,8 @@
 | Wed Jun 24 | 🚲 E-Bike rental — ~$100/bike | Springdale, UT | [zioncycles.com](https://www.zioncycles.com) | ⬜ PENDING |
 | Thu Jun 25 | 🧗 "The Double Crown" Canyoneering — $279/person | Near Zion NP | [allwaysadventure.com](https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder) | ✅ BOOKED |
 | Fri–Sat Jun 26–27 | 🏨 The Ledges of St. George — Poolside Oasis | St. George, UT | [ledges.com](https://www.ledges.com) | ✅ BOOKED |
-| Sun Jun 28 | ✈️ Flights (LAS out) | Harry Reid International | — | ⬜ PENDING |
+| Sun–Mon Jun 28–29 | 🏨 Maswik Lodge — Standard 1 King South | Grand Canyon South Rim, AZ | [grandcanyonlodges.com](https://www.grandcanyonlodges.com) | ✅ BOOKED · Itinerary #20567409 · $419.02 total · Cancellation penalty after Fri Jun 26 |
+| Tue Jun 30 | ✈️ Flights (LAS out) | Harry Reid International | — | ⬜ PENDING |
 
 ---
 
@@ -121,12 +122,51 @@
 
 ---
 
-### Day 8 — Sunday June 28 · Fly Home
+### Day 8 — Sunday June 28 · St. George → Grand Canyon
+
+**Sleep:** Maswik Lodge, Grand Canyon South Rim ✅ · Check-in after 4 PM
 
 | Time | Stop | Duration / Distance | Notes |
 |------|------|---------------------|-------|
-| Morning | 🚗 Depart St. George | ~120 mi / 2 hrs | I-15 south |
-| — | ✈️ Harry Reid International (LAS) | — | Return rental car · fly home |
+| 10:00 AM | 🚗 Depart St. George | — | US-89 south — scenic route through red rock country |
+| 11:00 AM | 🏜️ Kanab, UT | Brief stop | Last fuel/food before the canyon · grab lunch |
+| 12:30 PM | 🌅 Vermillion Cliffs / House Rock Valley | Roadside | Stunning drive through Grand Staircase-Escalante — pull over for photos |
+| 1:30 PM | 🦅 Marble Canyon / Navajo Bridge | 15 min | Free stop · two historic bridges over the Colorado River · condor sighting spot |
+| 2:30 PM | 🗼 Desert View Watchtower — East Entrance | 45 min | First stop inside the park · Hopi-designed tower at canyon's east rim · stunning first look |
+| 3:30 PM | 🚗 Drive west along South Rim | 30 min / 26 mi | Desert View Drive — multiple overlooks on the way to the village |
+| 4:00 PM | 🏨 Check in — Maswik Lodge | — | Standard 1 King · $195.99/night |
+| 6:30 PM | 🌅 Sunset at Mather Point | 30 min walk | The classic first Grand Canyon sunset — nothing prepares you for it |
+| 8:00 PM | 🍽️ Dinner — El Tovar Dining Room or Bright Angel Restaurant | ~1 hr | El Tovar is the iconic lodge restaurant — worth it · Bright Angel is casual backup |
+
+---
+
+### Day 9 — Monday June 29 · Grand Canyon Full Day
+
+**Sleep:** Maswik Lodge (Night 2)
+
+> ⚠️ **June heat warning:** In summer, the canyon floor reaches 110°F+. NPS strongly advises NOT hiking to the river and back in one day. Go partway down — it's still spectacular.
+
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 5:45 AM | 🌅 Sunrise — Yavapai Point | 15 min walk from lodge | Best sunrise spot on the South Rim · no crowds at this hour |
+| 7:00 AM | 🥾 **Bright Angel Trail → 1.5-Mile Resthouse** | 3 mi / 2 hrs | See hike details below · turnaround at resthouse · back up before 9 AM |
+| 9:00 AM | 🍳 Breakfast at Bright Angel Lodge | 45 min | Trailhead is right here |
+| 10:30 AM | 🏨 Rest at lodge | — | Hottest part of the day — stay out of the sun entirely |
+| 1:00 PM | 🚌 **Hermit Road shuttle** (west rim) | 2–3 hrs | Free Hermit's Rest Route shuttle · 9 overlooks over 7 miles · stop at The Abyss + Pima Point · Mary Colter's Hermit's Rest at the end |
+| 4:30 PM | 🚌 Shuttle to Hopi Point | — | Best sunset spot on the South Rim — arrive 45 min early |
+| 6:30 PM | 🌅 Sunset at Hopi Point | — | One of the most famous sunsets in the American West |
+| 8:00 PM | 🍽️ Dinner in Grand Canyon Village | ~1 hr | Pack tonight — early departure tomorrow |
+
+---
+
+### Day 10 — Tuesday June 30 · Grand Canyon → Fly Home
+
+| Time | Stop | Duration / Distance | Notes |
+|------|------|---------------------|-------|
+| 7:00 AM | 🚗 Depart Maswik Lodge | — | Check-out by 11 AM but leave early for LAS buffer |
+| 7:30 AM | 🌅 Quick sunrise stop — Mather Point | 15 min | Last look at the canyon · worth the 5-min detour |
+| 8:00 AM | 🚗 Grand Canyon → Las Vegas | ~270 mi / 4.5 hrs | AZ-64 north → I-40 west (Williams) → Kingman → US-93 north |
+| 12:30 PM | ✈️ Harry Reid International (LAS) | — | Return rental car · fly home |
 
 ---
 
@@ -281,6 +321,39 @@ Beautiful shaded afternoon hike to a series of pools and small waterfalls tucked
 
 ---
 
+### 🏜️ Grand Canyon — Bright Angel Trail (Partway)
+**Day 9 — Monday June 29 (early morning)**
+
+| | |
+|---|---|
+| **Distance** | 3 miles out-and-back (to 1.5-Mile Resthouse) |
+| **Difficulty** | Moderate (down easy, up harder in heat) |
+| **Time** | 2–2.5 hours |
+| **Elevation** | ~1,130 ft descent to resthouse |
+| **Permit** | None for day hike |
+| **Trailhead** | Bright Angel Trailhead, Grand Canyon Village |
+| **AllTrails** | alltrails.com/trail/us/arizona/bright-angel-trail |
+
+The most iconic trail in the Grand Canyon. Unlike every other hike, you start at the top and hike down into the canyon — the walls close around you and the scale becomes real in a way the rim views can't capture. The 1.5-Mile Resthouse has water, shade, and emergency phone — a perfect turnaround point. NPS strongly discourages hiking below the river-level in summer heat.
+
+**⚠️ Start by 6:30–7 AM maximum. Canyon temps reach 100°F+ by late morning. Carry 2L water minimum, wear a hat, and turn around at the resthouse — the climb back up takes 2x as long.**  
+**⚠️ Do NOT attempt to hike to the Colorado River and back in one day in June.**
+
+---
+
+### 🗼 Desert View Watchtower
+**Day 8 — Sunday June 28 (en route)**
+
+| | |
+|---|---|
+| **Location** | East Rim, Desert View Dr — Grand Canyon East Entrance |
+| **Cost** | Covered by park entrance fee |
+| **Time** | 30–45 minutes |
+
+A 70-foot stone tower designed by architect Mary Colter in 1932, built in the style of ancient Puebloan towers. Climb to the top for a 360° view spanning the Colorado River, the Painted Desert, and the Navajo Nation. The first dramatic canyon view you'll see driving in from the east — genuinely stunning.
+
+---
+
 ### 🔴 Kolob Canyons + Taylor Creek Trail *(optional)*
 **Day 6 — Friday June 26 (morning stop)**
 
@@ -325,6 +398,9 @@ Most visitors have no idea this section exists — it's part of Zion NP but acce
 | [Emerald Pools](https://alltrails.com/trail/us/utah/emerald-pools-trail) | Zion NP | Wed Jun 24 PM | 3.0 | Moderate | 2 hrs | None |
 | ["The Double Crown" Canyoneering](https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder) | Near Zion (guided) | Thu Jun 25 | — | Moderate | 7 hrs | ✅ Booked |
 | [Kolob / Taylor Creek](https://alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4) | Zion NP (Kolob) | Fri Jun 26 | 5.0 | Moderate | 2.5 hrs | None (pass) |
+| [Bright Angel Trail (partway)](https://alltrails.com/trail/us/arizona/bright-angel-trail) | Grand Canyon NP | Mon Jun 29 AM | 3.0 | Moderate | 2.5 hrs | None |
+| Desert View Watchtower | Grand Canyon NP | Sun Jun 28 | — | Easy | 45 min | None |
+| Rim Trail + Hopi Point | Grand Canyon NP | Mon Jun 29 | varies | Easy | 2 hrs | None |
 
 ---
 
@@ -365,4 +441,4 @@ Zion is a designated International Dark Sky Park — on a clear June night with 
 
 ---
 
-*Last updated: April 2026 — rescheduled Zion days: Stargazing → Tue, Narrows + E-Bikes → Wed, Double Crown → Thu (booked); added airport parking*
+*Last updated: April 2026 — added Grand Canyon (2 nights, Maswik Lodge ✅); trip extended to Jun 30; fly home Tuesday from LAS via Williams/I-40*
