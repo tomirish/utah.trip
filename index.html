@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Source of truth: README.md — update both when itinerary changes -->
+<!-- Source of truth: README.md -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -73,9 +73,10 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(44,24,16,0.1) 0%,
-    rgba(44,24,16,0.3) 40%,
-    rgba(44,24,16,0.92) 100%
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.25) 30%,
+    rgba(44,24,16,0.6) 60%,
+    rgba(44,24,16,0.96) 100%
   );
 }
 .hero-content {
@@ -103,8 +104,9 @@ a { color: inherit; text-decoration: none; }
   animation: fadeUp 0.8s 0.5s forwards;
 }
 .hero-title em { color: var(--amber); font-style: italic; }
-.hero-eyebrow, .hero-route { text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
-.hero-title { text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+.hero-eyebrow { text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.8); }
+.hero-route { text-shadow: 0 1px 6px rgba(0,0,0,0.7); }
+.hero-title { text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5); }
 .hero-route {
   font-size: 12px;
   font-weight: 300;
@@ -499,8 +501,8 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">The wild, the wonder, and a wedding</div>
       <h1 class="hero-title">Red Rock<br><em>Road Trip</em></h1>
+      <p class="hero-eyebrow">The wild, the wonder, and a wedding</p>
       <p class="hero-route">Las Vegas → Bryce → Zion → St. George → Grand Canyon</p>
       <div class="hero-pill">💍 Wedding Jun 27 · St. George</div>
     </div>
