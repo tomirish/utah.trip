@@ -71,6 +71,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 .action-icon { flex-shrink: 0; font-size: 15px; line-height: 1.4; }
 .action-text { flex: 1; line-height: 1.5; color: var(--clay); font-weight: 300; }
 .action-text strong { font-weight: 600; color: var(--dusk); }
+.action-text a { color: var(--rust); text-decoration: underline; }
 
 /* Restaurant list */
 .city-label {
@@ -122,20 +123,16 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
       <span class="action-text"><strong>Bring America the Beautiful pass</strong> — covers entry to Bryce Canyon, Zion, and Grand Canyon</span>
     </li>
     <li class="action-item">
-      <span class="action-icon">🅿️</span>
-      <span class="action-text"><strong>Airport parking extended to Jun 30</strong> ✅ — Jun 21 10am – Jun 30 12pm · $209.54 prepaid</span>
-    </li>
-    <li class="action-item">
       <span class="action-icon">✈️</span>
       <span class="action-text"><strong>Book flights</strong> — LAS inbound Jun 21, LAS outbound Jun 30</span>
     </li>
     <li class="action-item">
       <span class="action-icon">🚗</span>
-      <span class="action-text"><strong>Rent car at LAS</strong> — pick up Sun Jun 21, return Tue Jun 30 (~9 days)</span>
+      <span class="action-text"><strong>Rent car</strong> — pick up Sun Jun 21, return Tue Jun 30 (~9 days)</span>
     </li>
     <li class="action-item">
       <span class="action-icon">🚲</span>
-      <span class="action-text"><strong>Reserve e-bikes — Zion Cycles</strong> — Wed Jun 24 afternoon · ~$100/bike · <a href="https://www.zioncycles.com" target="_blank">zioncycles.com</a> · (435) 772-0400</span>
+      <span class="action-text"><strong>Reserve e-bikes — Zion Cycles</strong> — Wed Jun 24 afternoon · ~$100/bike (~$200 total) · <a href="https://www.zioncycles.com" target="_blank">zioncycles.com</a> · (435) 772-0400</span>
     </li>
   </ul>
 </div>
@@ -190,7 +187,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
         <td>
           <a class="book-link" href="https://www.kanarrafalls.com" target="_blank">🌊 Kanarra Falls permits</a>
           <div class="book-conf">#342142422</div>
-          <div class="book-meta">(435) 590-7490 · 2 adults · 385 E 100 N St, Kanarraville · <span class="book-warn">sign waiver</span></div>
+          <div class="book-meta">(435) 590-7490 · 2 adults · 385 E 100 N St, Kanarraville</div>
         </td>
         <td class="price-col">$34.10</td>
         <td class="status-col status-ok">✅</td>
@@ -220,7 +217,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
         <td>
           <a class="book-link" href="https://www.stargazingzion.com" target="_blank">🌟 Stargazing · Zion</a>
           <div class="book-conf">#B-AY47PKD</div>
-          <div class="book-meta">(435) 919-3976 · 9:15pm · arrive 5–10 min early · ~30 min from Springdale<br>Download directions before leaving — no cell at site</div>
+          <div class="book-meta">(435) 919-3976 · 9:00pm · arrive 5–10 min early · ~30 min from Springdale<br>Download directions before leaving — no cell at site</div>
         </td>
         <td class="price-col">$392.08</td>
         <td class="status-col status-ok">✅</td>
@@ -236,7 +233,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
         <td>
           <a class="book-link" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank">🧗 Double Crown Canyoneering</a>
           <div class="book-conf">#342219079</div>
-          <div class="book-meta">(435) 309-9745 · 8am–3pm · 4490 S State St, Mt Carmel · Subway parking lot<br><span class="book-warn">Sign waiver</span></div>
+          <div class="book-meta">(435) 309-9745 · 8am–3pm · 4490 S State St, Mt Carmel · Subway parking lot</div>
         </td>
         <td class="price-col">$632.50</td>
         <td class="status-col status-ok">✅</td>
@@ -256,7 +253,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
         <td>
           <a class="book-link" href="https://www.grandcanyonlodges.com" target="_blank">🏨 Maswik Lodge · Grand Canyon</a>
           <div class="book-conf">#20567409</div>
-          <div class="book-meta">Standard 1 King South · check-in 4pm Sun / out 11am Tue · <span class="book-warn">cancel penalty after Fri Jun 26</span></div>
+          <div class="book-meta">Standard 1 King South · check-in 4pm Sun / out 11am Tue</div>
         </td>
         <td class="price-col">$419.02</td>
         <td class="status-col status-ok">✅</td>
@@ -285,8 +282,8 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   <ul class="restaurant-list">
     <li class="restaurant-item"><a href="https://www.centropizzeria.com/" target="_blank">Centro Woodfired Pizzeria</a> — Neapolitan-style pizza from a wood-fired brick oven, best restaurant in town</li>
     <li class="restaurant-item"><a href="https://www.thepubcedarcity.com" target="_blank">The Pub Spirits + Craft Kitchen</a> — burgers, small plates, craft cocktails, downtown staple since 1999</li>
-    <li class="restaurant-item"><strong>Fire + Smoke BBQ</strong> — Texas-style brisket, ribs, pulled pork · open Wed–Sat only, works perfectly for Sun Jun 21</li>
-    <li class="restaurant-item"><strong>Hermie's Drive In</strong> — Cedar City institution, classic burgers, Navajo tacos, fast and beloved</li>
+    <li class="restaurant-item"><a href="https://www.facebook.com/fire.smokebbqUT/" target="_blank">Fire + Smoke BBQ</a> — Texas-style brisket, ribs, pulled pork · open Wed–Sat only, works perfectly for Sun Jun 21</li>
+    <li class="restaurant-item"><a href="https://www.facebook.com/hermiesdrivein" target="_blank">Hermie's Drive In</a> — Cedar City institution, classic burgers, Navajo tacos, fast and beloved</li>
   </ul>
 
   <div class="city-label">Bryce Canyon Area</div>
@@ -302,7 +299,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
     <li class="restaurant-item"><a href="https://theadvenirehotel.com/wood-ash-rye-restaurant/" target="_blank">Wood. Ash. Rye.</a> — best restaurant in St. George, chef-driven seasonal American, Salt Lake Mag Best Restaurant 2024</li>
     <li class="restaurant-item"><a href="https://www.xetava.com/" target="_blank">Xetava Gardens Cafe</a> — hidden gem in Kayenta Art Village, gorgeous desert setting, eclectic menu · Ivins, ~20 min</li>
     <li class="restaurant-item"><a href="https://www.riggattis.com/" target="_blank">Riggatti's Wood Fired Pizza</a> — local institution, artisan pizza, fresh dough, gelato · closed Sundays</li>
-    <li class="restaurant-item"><strong>Positano</strong> — upscale Italian, house-made pastas, strong wine list, good for wedding-weekend dinners</li>
+    <li class="restaurant-item"><a href="https://www.positanostg.com/" target="_blank">Positano</a> — upscale Italian, house-made pastas, strong wine list, good for wedding-weekend dinners</li>
   </ul>
 
   <div class="city-label">Springdale, UT</div>
@@ -316,10 +313,10 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 
   <div class="city-label">Grand Canyon Village, AZ</div>
   <ul class="restaurant-list">
-    <li class="restaurant-item"><strong>El Tovar Dining Room</strong> — the iconic historic lodge right on the rim, upscale, worth it for the atmosphere</li>
-    <li class="restaurant-item"><strong>Bright Angel Lodge Restaurant</strong> — casual, steps from the trailhead, great for post-hike breakfast</li>
-    <li class="restaurant-item"><strong>Maswik Pizza Patio</strong> — at your lodge, quick and easy for a low-key night</li>
-    <li class="restaurant-item"><strong>Canyon Village Market &amp; Deli</strong> — grab picnic supplies for the rim or road</li>
+    <li class="restaurant-item"><a href="https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/" target="_blank">El Tovar Dining Room</a> — the iconic historic lodge right on the rim, upscale, worth it for the atmosphere</li>
+    <li class="restaurant-item"><a href="https://www.grandcanyonlodges.com/dine/harvey-house-cafe/" target="_blank">Bright Angel Lodge Restaurant</a> — casual, steps from the trailhead, great for post-hike breakfast</li>
+    <li class="restaurant-item"><a href="https://www.grandcanyonlodges.com/dine/maswik-pizza-pub/" target="_blank">Maswik Pizza Patio</a> — at your lodge, quick and easy for a low-key night</li>
+    <li class="restaurant-item"><a href="https://www.nps.gov/places/000/canyon-village-market-deli.htm" target="_blank">Canyon Village Market &amp; Deli</a> — grab picnic supplies for the rim or road</li>
   </ul>
 </div>
 
@@ -358,7 +355,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   </ul>
 </div>
 
-<div class="plan-footer">Updated April 2026 · Added Grand Canyon 2 nights (Maswik Lodge) · trip extended to Jun 30</div>
+<div class="plan-footer">Last updated April 2026</div>
 
 </body>
 </html>
