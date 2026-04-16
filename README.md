@@ -1,28 +1,8 @@
-# Utah Red Rock Road Trip — June 21–30, 2026
+# Red Rock Road Trip — June 21–30, 2026
 
 **Route:** Las Vegas (LAS) → Cedar City → Kanarra Falls → Bryce Canyon → Zion National Park → St. George → Grand Canyon → Las Vegas (LAS)  
 **Travelers:** 2 adults  
 **Wedding:** Saturday June 27, St. George, Utah
-
----
-
-## Bookings
-
-| Date | What | Location | Book At | Status |
-|------|------|----------|---------|--------|
-| Sun Jun 21 | 🅿️ Airport Parking | SeaTac Airport | [cheapairportparking.org](https://www.cheapairportparking.org) | ✅ BOOKED |
-| Sun Jun 21 | ✈️ Flights (LAS in) | Harry Reid International | — | ⬜ PENDING |
-| Sun Jun 21 | 🚗 Rental Car | Las Vegas, NV | — | ⬜ PENDING |
-| Sun Jun 21 | 🏨 Abbey Inn & Suites | Cedar City, UT | [abbeyinnhotel.com](https://www.abbeyinnhotel.com) | ✅ BOOKED |
-| Mon Jun 22 | 🌊 Kanarra Falls permits | Kanarraville, UT | [kanarrafalls.com](https://www.kanarrafalls.com) | ✅ BOOKED |
-| Mon Jun 22 | 🏨 Ruby's Inn | Bryce Canyon City, UT | [rubysinn.com](https://www.rubysinn.com) | ✅ BOOKED |
-| Tue–Thu Jun 23–25 | 🏨 Petty Ranch Inn | Near Zion NP | [pettyranchinn.com](https://www.pettyranchinn.com/) | ✅ BOOKED |
-| Tue Jun 23 | 🌟 Zion Stargazing Tour — $190/person | Kolob Terrace Rd | [stargazingzion.com](https://www.stargazingzion.com) | ✅ BOOKED |
-| Wed Jun 24 | 🚲 E-Bike rental — ~$100/bike | Springdale, UT | [zioncycles.com](https://www.zioncycles.com) | ⬜ PENDING |
-| Thu Jun 25 | 🧗 "The Double Crown" Canyoneering — $279/person | Near Zion NP | [allwaysadventure.com](https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder) | ✅ BOOKED |
-| Fri–Sat Jun 26–27 | 🏨 The Ledges of St. George — Poolside Oasis | St. George, UT | [ledges.com](https://www.ledges.com) | ✅ BOOKED |
-| Sun–Mon Jun 28–29 | 🏨 Maswik Lodge — Standard 1 King South | Grand Canyon South Rim, AZ | [grandcanyonlodges.com](https://www.grandcanyonlodges.com) | ✅ BOOKED · Itinerary #20567409 · $419.02 total · Cancellation penalty after Fri Jun 26 |
-| Tue Jun 30 | ✈️ Flights (LAS out) | Harry Reid International | — | ⬜ PENDING |
 
 ---
 
@@ -68,7 +48,7 @@
 | 2:00 PM | 🚗 Drive to Zion + check in | ~1.5 hrs / 85 mi | Petty Ranch Inn · 3 nights base camp |
 | 3:30 PM | 🏞️ Canyon Overlook Trail | 1 mi / 45 min | See hike details below · easy warm-up |
 | 5:30 PM | 🛍️ Pick up Narrows gear | 20 min | Zion Guru or Zion Outfitter · ~$50/person · neoprene socks + water shoes + pole |
-| 7:00 PM | 🍽️ Dinner in Springdale | ~1 hr | ⭐ **Balcony restaurant** (name TBD) — first night in Zion, best night for it · Spotted Dog Café or Switchback Grille as backup |
+| 7:00 PM | 🍽️ Dinner in Springdale | ~1 hr | ⭐ **Wild Thyme** — nicest spot in town, seasonal menu · Bit & Spur as backup (Southwestern, strong margaritas) |
 | 9:00 PM | 🌟 **Zion Stargazing Tour** | 2 hrs | ~$190/person · zero-gravity pods + telescopes · stargazingzion.com ✅ BOOKED |
 
 ---
@@ -134,7 +114,7 @@
 | 1:30 PM | 🦅 Marble Canyon / Navajo Bridge | 15 min | Free stop · two historic bridges over the Colorado River · condor sighting spot |
 | 2:30 PM | 🗼 Desert View Watchtower — East Entrance | 45 min | First stop inside the park · Hopi-designed tower at canyon's east rim · stunning first look |
 | 3:30 PM | 🚗 Drive west along South Rim | 30 min / 26 mi | Desert View Drive — multiple overlooks on the way to the village |
-| 4:00 PM | 🏨 Check in — Maswik Lodge | — | Standard 1 King · $195.99/night |
+| 4:00 PM | 🏨 Check in — Maswik Lodge | — | Standard 1 King · $209.51/night · Itinerary #20567409 |
 | 6:30 PM | 🌅 Sunset at Mather Point | 30 min walk | The classic first Grand Canyon sunset — nothing prepares you for it |
 | 8:00 PM | 🍽️ Dinner — El Tovar Dining Room or Bright Angel Restaurant | ~1 hr | El Tovar is the iconic lodge restaurant — worth it · Bright Angel is casual backup |
 
@@ -272,36 +252,6 @@ Best easy hike in Zion — highest payoff for least effort. Starts at the east e
 One of the most unique hikes in America. The paved Riverside Walk (1 mile flat) leads to where the trail disappears into the river — from here you hike upstream in the Virgin River through a slot canyon with walls up to 1,000 feet tall and just 20–30 feet wide in places. Water is ankle-to-waist deep. Cold but refreshing in June. Go as far as you feel like and turn back.
 
 **⚠️ Flash flood warning: Always check NOAA forecast. Do not enter if storms are forecast anywhere in the watershed — flash floods arrive with no warning.**
-
----
-
-### 👁️ Observation Point
-**Day 5 — Thursday June 25 (morning) — RECOMMENDED over Angels Landing**
-
-| | |
-|---|---|
-| **Distance** | 8 miles out-and-back |
-| **Difficulty** | Hard |
-| **Time** | 4–5 hours |
-| **Elevation Gain** | 2,148 ft |
-| **Permit** | None required |
-| **AllTrails** | alltrails.com/trail/us/utah/observation-point-trail |
-
-You look DOWN on Angels Landing from the summit — many hikers say this is actually the better view. The trail climbs through Echo Canyon (a beautiful narrow slot) to the mesa rim with 360° views of Zion Canyon. No chains, no exposed ridge scramble, no permit lottery stress. Far fewer crowds than Angels Landing.
-
----
-
-### 🥾 Watchman Trail *(lighter alternative for Day 5)*
-
-| | |
-|---|---|
-| **Distance** | 3.3 miles out-and-back |
-| **Difficulty** | Moderate |
-| **Time** | 2 hours |
-| **Permit** | None |
-| **AllTrails** | alltrails.com/trail/us/utah/watchman-trail |
-
-Great views of Zion Canyon and the iconic Watchman formation. Easier on legs after Wednesday's big day. Good option if the body needs a recovery day.
 
 ---
 
