@@ -474,16 +474,16 @@ a { color: inherit; text-decoration: none; }
 }
 .lightbox.open .lightbox-img { transform: scale(1); }
 .lightbox-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top, 16px));
+  right: max(16px, env(safe-area-inset-right, 16px));
+  width: 44px;
+  height: 44px;
+  display: none;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.18);
   border: none;
   color: white;
   font-size: 22px;
@@ -491,8 +491,10 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: background 0.15s;
   -webkit-tap-highlight-color: transparent;
+  z-index: 1000;
 }
-.lightbox-close:hover { background: rgba(255,255,255,0.22); }
+.lightbox-close.open { display: flex; }
+.lightbox-close:hover { background: rgba(255,255,255,0.3); }
 
 /* ── FADE-UP SCROLL ANIMATION ── */
 .fade-up {
@@ -1511,9 +1513,9 @@ a { color: inherit; text-decoration: none; }
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightbox-close">✕</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
+<button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
 
 <!-- FOOTER -->
 <footer class="site-footer fade-up">
@@ -1588,13 +1590,16 @@ document.querySelectorAll('article.chapter').forEach(a => spyObs.observe(a));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
+const lightboxClose = document.getElementById('lightbox-close');
 function openLightbox(url) {
   lightboxImg.src = url;
   lightbox.classList.add('open');
+  lightboxClose.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
   lightbox.classList.remove('open');
+  lightboxClose.classList.remove('open');
   document.body.style.overflow = '';
 }
 
