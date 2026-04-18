@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 <title>Red Rock Road Trip · Planning</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="favicon.png" type="image/png">
+<link rel="icon" href="images/favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#C4521A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Utah Trip">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -373,5 +378,10 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
 
 <div class="plan-footer">Last updated April 2026</div>
 
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
 </body>
 </html>

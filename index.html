@@ -8,6 +8,11 @@
 <title>Red Rock Road Trip</title>
 <link rel="icon" href="images/favicon.png" type="image/png"/>
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#C4521A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Utah Trip">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -388,6 +393,15 @@ a { color: inherit; text-decoration: none; }
   background: var(--rust);
   border-color: var(--rust);
   color: white;
+}
+.date-nav-pill.today::after {
+  content: 'TODAY';
+  display: block;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: -2px;
+  opacity: 0.85;
 }
 
 /* ── SLIM CHAPTER (Day 1) ── */
@@ -1736,6 +1750,45 @@ const fadeObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
+
+// ── Today highlight ──
+(function() {
+  const now = new Date();
+  const tripStart = new Date('2026-06-21T00:00:00');
+  const tripEnd   = new Date('2026-06-30T23:59:59');
+  if (now >= tripStart && now <= tripEnd) {
+    const dayNum = Math.floor((now - tripStart) / 86400000) + 1;
+    const id = 'day-' + dayNum;
+    navTo(id);
+    const pill = document.querySelector(`.date-nav-pill[data-target="${id}"]`);
+    if (pill) pill.classList.add('today');
+  }
+})();
+
+// ── Swipe between days ──
+(function() {
+  const days = ['day-1','day-2','day-3','day-4','day-5','day-6','day-7','day-8','day-9','day-10'];
+  let startX = 0, startY = 0;
+  document.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < 60 || Math.abs(dy) > Math.abs(dx)) return;
+    const active = document.querySelector('.date-nav-pill.active');
+    if (!active) return;
+    const idx = days.indexOf(active.dataset.target);
+    if (dx < 0 && idx < days.length - 1) navTo(days[idx + 1]);
+    if (dx > 0 && idx > 0) navTo(days[idx - 1]);
+  }, { passive: true });
+})();
+
+// ── Service worker ──
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
 </script>
 </body>
 </html>

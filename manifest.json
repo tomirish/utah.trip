@@ -1,0 +1,13 @@
+{
+  "name": "Red Rock Road Trip",
+  "short_name": "Utah Trip",
+  "description": "June 21–30, 2026 · Las Vegas → Zion → Grand Canyon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF5ED",
+  "theme_color": "#C4521A",
+  "icons": [
+    { "src": "images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "images/favicon.png", "sizes": "any", "type": "image/png" }
+  ]
+}
