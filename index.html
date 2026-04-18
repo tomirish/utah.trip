@@ -339,6 +339,12 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.2s;
 }
 .acc-btn:active { background: var(--clay); }
+.acc-btn-map {
+  background: white;
+  border: 1.5px solid rgba(196,82,26,0.35);
+  color: var(--rust);
+}
+.acc-btn-map:active { background: var(--light); }
 .status-booked { color: #4caf50; }
 .status-pending { color: var(--amber); }
 
@@ -683,6 +689,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Fly into Las Vegas. Pick up the rental car — airport car rental is right in the terminal. Load up and head north on I-15.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Harry+Reid+International+Airport+Las+Vegas+NV" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -709,7 +716,8 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Comfortable basecamp for night one. Hot breakfast included — fuel up for the Kanarra Falls hike tomorrow morning.</p>
-      <a class="acc-btn" href="https://www.abbeyinnhotel.com" target="_blank" rel="noopener">abbeyinnhotel.com</a>
+      <a class="acc-btn" href="https://abbeyinncedar.com/" target="_blank" rel="noopener">abbeyinncedar.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Abbey+Inn+Suites+940+W+200+N+Cedar+City+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -722,7 +730,9 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Best spot in Cedar City for a first-night meal. Craft burgers, local beers, chill vibe. 435-867-1400.</p>
+      <p class="acc-desc">Best spot in Cedar City for a first-night meal. Craft burgers, local beers, chill vibe. 435-867-1400. Online reservations available.</p>
+      <a class="acc-btn" href="https://www.thepubcedarcity.com" target="_blank" rel="noopener">thepubcedarcity.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=86+W+Center+St+Cedar+City+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -785,6 +795,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.kanarrafalls.com" target="_blank" rel="noopener">kanarrafalls.com</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=kanarra+falls+hike+utah" target="_blank" rel="noopener">Kanarra Falls hike</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Kanarra+Falls+Trailhead+Kanarraville+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -812,6 +823,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Classic Bryce Canyon basecamp right at the park entrance. Hot breakfast included. General store on site for any last-minute supplies.</p>
       <a class="acc-btn" href="https://www.rubysinn.com" target="_blank" rel="noopener">rubysinn.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Ruby%27s+Inn+26+S+Main+St+Bryce+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -826,19 +838,26 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/bryce-rim-drive.webp')"></div>
       <p class="acc-desc">Drive the rim road at golden hour. Sunset Point is the classic Thor's Hammer shot — glow is best 45 min before actual sunset. Inspiration Point has the widest panoramic view of the whole amphitheater and fewer crowds.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Sunset+Point+Bryce+Canyon+National+Park+UT" target="_blank" rel="noopener">📍 Sunset Point</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Inspiration+Point+Bryce+Canyon+National+Park+UT" target="_blank" rel="noopener">📍 Inspiration Point</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🍽️</div>
       <div class="acc-header-text">
-        <div class="acc-name">Dinner at Ruby's Inn</div>
-        <div class="acc-sub"><span>On-site · ~1 hr</span></div>
+        <div class="acc-name">Dinner — Bryce Canyon options</div>
+        <div class="acc-sub"><span>On-site or nearby · ~1 hr</span></div>
       </div>
       <div class="acc-time">7:30 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">On-site restaurant — no driving needed. Early bed. 7 AM hike tomorrow.</p>
+      <p class="acc-desc">Three options on-site at Ruby's Inn. Early bed — 7 AM hike tomorrow.</p>
+      <a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Cowboy's Buffet &amp; Steak Room</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Cowboy%27s+Buffet+and+Steak+Room+Ruby%27s+Inn+Bryce+UT" target="_blank" rel="noopener">📍 Map</a>
+      <br><a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Canyon Diner</a>
+      <br><a class="acc-btn" href="https://ebenezersbarnandgrill.com/" target="_blank" rel="noopener">Ebenezer's Barn &amp; Grill</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Ebenezer%27s+Barn+and+Grill+Bryce+Canyon+UT" target="_blank" rel="noopener">📍 Ebenezer's Map</a>
     </div></div>
   </div>
 </article>
@@ -889,6 +908,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/navajo-loop-and-queens-garden-trail" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=navajo+loop+queens+garden+bryce+canyon" target="_blank" rel="noopener">Navajo Loop hike</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Sunset+Point+Trailhead+Bryce+Canyon+National+Park" target="_blank" rel="noopener">📍 Sunset Point Trailhead</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -903,6 +923,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/bryce-rainbow-yovimpa-2.webp')"></div>
       <p class="acc-desc">Highest point in the park on the way out. Sweeping views over the Grand Staircase. Only adds 20 minutes — worth it.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Rainbow+Point+Bryce+Canyon+National+Park" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -919,6 +940,7 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">A drainage tunnel carved under Hwy 89 — erosion has sculpted the sandstone interior into a ribbed, cave-like passage. Completely dark in the middle. Bring a flashlight. Right on the drive to Zion — free, unique, 20 minutes. Do NOT enter if raining, it floods fast.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/the-belly-of-the-dragon" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=belly+of+the+dragon+utah+tunnel" target="_blank" rel="noopener">Belly of the Dragon</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Belly+of+the+Dragon+Utah+Highway+89" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -933,6 +955,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Drive ~85 miles / 1.5 hrs from Bryce via Hwy 89. Petty Ranch Inn is your home base for 3 nights in Zion.</p>
       <a class="acc-btn" href="https://www.pettyranchinn.com" target="_blank" rel="noopener">pettyranchinn.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Petty+Ranch+Inn+904+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -949,6 +972,7 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Best easy hike in Zion. Starts at the east end of the Mt. Carmel Tunnel — almost no elevation, ends at a stunning overlook of lower Zion Canyon and the Great Arch. Perfect first-afternoon hike: gets your legs moving without destroying them before the big days.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/canyon-overlook-trail" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=canyon+overlook+trail+zion" target="_blank" rel="noopener">Canyon Overlook Trail</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Overlook+Trailhead+Zion+National+Park+UT" target="_blank" rel="noopener">📍 Trailhead</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -963,19 +987,22 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Pick up neoprene socks, water shoes, and a trekking pole for tomorrow's Narrows hike. Gear must be picked up the evening before.</p>
       <a class="acc-btn" href="https://www.zionguru.com" target="_blank" rel="noopener">Zion Guru</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Zion+Guru+792+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🍽️</div>
       <div class="acc-header-text">
-        <div class="acc-name">Dinner — Balcony Restaurant</div>
+        <div class="acc-name">Dinner — Porters</div>
         <div class="acc-sub"><span>Best in Springdale · ~1 hr</span></div>
       </div>
       <div class="acc-time">7:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">First night in Zion — treat yourselves. The balcony restaurant in Springdale has great views of the canyon walls at dusk.</p>
+      <p class="acc-desc">First night in Zion — treat yourselves. Porters is the top dinner spot in Springdale, great views of the canyon walls at dusk.</p>
+      <a class="acc-btn" href="https://porterszp.com/" target="_blank" rel="noopener">porterszp.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Porters+Zion+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -997,6 +1024,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.stargazingzion.com" target="_blank" rel="noopener">stargazingzion.com</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+stargazing+tour+milky+way" target="_blank" rel="noopener">Zion Stargazing</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Kolob+Terrace+Road+Virgin+UT" target="_blank" rel="noopener">📍 Kolob Terrace Rd (download offline)</a>
     </div></div>
   </div>
 </article>
@@ -1031,6 +1059,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/zion-narrows-trail-to-imlay-temple-and-big-spring" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+narrows+hike+bottom+up" target="_blank" rel="noopener">The Narrows hike</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Temple+of+Sinawava+Zion+National+Park+UT" target="_blank" rel="noopener">📍 Temple of Sinawava</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1050,6 +1079,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.zioncycles.com" target="_blank" rel="noopener">Zion Cycles</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=zion+national+park+ebike+scenic+drive" target="_blank" rel="noopener">Zion e-bike ride</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Zion+Cycles+868+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Zion Cycles</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1062,7 +1092,9 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Spotted Dog Café or Switchback Grille.</p>
+      <p class="acc-desc">Spotted Dog Café at Flanigan's Inn — great patio, locally sourced menu. Online reservations available.</p>
+      <a class="acc-btn" href="https://flanigans.com/dine/" target="_blank" rel="noopener">flanigans.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Spotted+Dog+Cafe+Flanigans+Inn+428+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1112,7 +1144,9 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Last dinner in Springdale. Pack everything tonight — checking out and heading to St. George tomorrow.</p>
+      <p class="acc-desc">Last dinner in Springdale — Whiptail Grill. Mexican-inspired, great outdoor patio. Pack everything tonight for tomorrow's move to St. George.</p>
+      <a class="acc-btn" href="https://whiptailgrillzion.com/" target="_blank" rel="noopener">whiptailgrillzion.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Whiptail+Grill+445+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1156,6 +1190,7 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Most visitors have no idea this is part of Zion NP — accessed from I-15 Exit 40. Dramatic finger canyons of deep red Navajo sandstone with almost no crowds. Covered by your America the Beautiful Pass. Optional: Taylor Creek Trail (5 mi, 2.5 hrs, double arch at the end).</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/middle-fork-taylor-creek-trail--4" target="_blank" rel="noopener">Taylor Creek AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=kolob+canyons+zion+national+park+drive" target="_blank" rel="noopener">Kolob Canyons</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Kolob+Canyons+Visitor+Center+Zion+National+Park+UT" target="_blank" rel="noopener">📍 Kolob Canyons</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1182,7 +1217,23 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Two nights at The Ledges — your base for the wedding weekend. Pool, relax, recharge after the week.</p>
-      <a class="acc-btn" href="https://www.ledges.com" target="_blank" rel="noopener">ledges.com</a>
+      <a class="acc-btn" href="https://www.ledges.com/vacation-rentals/rental/2051-169660/" target="_blank" rel="noopener">ledges.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=The+Ledges+of+St+George+1835+W+Ledges+Pkwy+St+George+UT" target="_blank" rel="noopener">📍 Map</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍕</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner — Riggatti's Wood Fired Pizza</div>
+        <div class="acc-sub"><span>To go · eat at the house</span></div>
+      </div>
+      <div class="acc-time">7:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Best pizza in St. George — artisan wood-fired, fresh dough, good gelato. Order to go and bring it back to The Ledges.</p>
+      <a class="acc-btn" href="https://www.riggattis.com/" target="_blank" rel="noopener">riggattis.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Riggatti%27s+Wood+Fired+Pizza+St+George+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1266,6 +1317,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/marble-canyon.webp')"></div>
       <p class="acc-desc">Two historic bridges span the Colorado River gorge at Marble Canyon — one open to cars, one pedestrian-only. You can look straight down into the river from the walkway. California condors are frequently spotted soaring overhead — one of the best places in the country to see them.</p>
       <a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=navajo+bridge+marble+canyon+arizona" target="_blank" rel="noopener">Navajo Bridge</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Navajo+Bridge+Marble+Canyon+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1281,6 +1333,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/desert-view-watchtower.webp')"></div>
       <p class="acc-desc">A 70-ft stone tower built in 1932 by architect Mary Colter in the style of ancient Puebloan towers. Climb to the top for a 360° view spanning the Colorado River, the Painted Desert, and the Navajo Nation — your dramatic first look into the Grand Canyon. Drive the Desert View scenic road west toward the village, with multiple overlooks on the way.</p>
       <a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=desert+view+watchtower+grand+canyon" target="_blank" rel="noopener">Desert View Watchtower</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Desert+View+Watchtower+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1295,6 +1348,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Maswik Lodge is right inside Grand Canyon Village — walking distance to the rim, the shuttle, and the Bright Angel trailhead. Standard 1 King, check-in after 4 PM.</p>
       <a class="acc-btn" href="https://www.grandcanyonlodges.com" target="_blank" rel="noopener">grandcanyonlodges.com</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Maswik+Lodge+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1309,6 +1363,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/sunset-mather-point.webp')"></div>
       <p class="acc-desc">The classic first Grand Canyon sunset. Nothing prepares you for the scale of it — the canyon is 10 miles wide and a mile deep, and in the late light the walls shift from orange to deep red to purple. Mather Point is the most iconic overlook on the South Rim.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Mather+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Mather Point</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1321,7 +1376,10 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">El Tovar is the iconic historic lodge restaurant right on the rim — worth it for the atmosphere. Bright Angel Lodge restaurant is the casual backup, also great. Both walking distance from Maswik.</p>
+      <p class="acc-desc">El Tovar is the iconic historic lodge restaurant right on the rim — worth it for the atmosphere. Online reservations available. Bright Angel Lodge restaurant is the casual backup, also great. Both walking distance from Maswik.</p>
+      <a class="acc-btn" href="https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/" target="_blank" rel="noopener">El Tovar reservations</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=El+Tovar+Hotel+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 El Tovar</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Bright+Angel+Lodge+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Bright Angel Lodge</a>
     </div></div>
   </div>
 </article>
@@ -1351,6 +1409,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/sunrise-yavapai-point.webp')"></div>
       <p class="acc-desc">Yavapai Point is the best sunrise spot on the South Rim — a wide, exposed overlook with an unobstructed view east into the canyon. At dawn the walls light up gold and the Colorado River glints far below. Almost no one there at this hour.</p>
       <a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=grand+canyon+sunrise+yavapai+point" target="_blank" rel="noopener">Yavapai Point sunrise</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Yavapai+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Yavapai Point</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1372,6 +1431,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/arizona/bright-angel-trail" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=bright+angel+trail+grand+canyon+hike" target="_blank" rel="noopener">Bright Angel Trail</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Bright+Angel+Trailhead+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Trailhead</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1385,6 +1445,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">The Bright Angel Lodge restaurant is steps from the trailhead. You've earned a full breakfast.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Bright+Angel+Lodge+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1413,6 +1474,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/hermit-road.webp')"></div>
       <p class="acc-desc">The Hermit's Rest Route shuttle runs 7 miles west from the village along the rim with 9 overlooks — closed to private vehicles in summer so it's quieter. Hop on and off as you like. Highlights: The Abyss (sheer 3,000 ft drop), Pima Point (longest unobstructed view), and Hermit's Rest itself, another Mary Colter building at the end of the road.</p>
       <a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=hermit+road+grand+canyon+shuttle+overlooks" target="_blank" rel="noopener">Hermit Road overlooks</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Hermit%27s+Rest+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Hermit's Rest</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1428,19 +1490,22 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-photo" style="background-image:url('images/hopi-point-sunset.webp')"></div>
       <p class="acc-desc">Hopi Point is the most celebrated sunset spot on the South Rim — an exposed promontory that juts into the canyon with views in three directions. Arrive 45 minutes before sunset to get a good spot. The light show as the sun drops below the rim is one of the most famous natural spectacles in America.</p>
       <a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=hopi+point+grand+canyon+sunset" target="_blank" rel="noopener">Hopi Point sunset</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Hopi+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Hopi Point</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🍽️</div>
       <div class="acc-header-text">
-        <div class="acc-name">Dinner — Grand Canyon Village</div>
+        <div class="acc-name">Dinner — Canyon Village Market &amp; Deli</div>
         <div class="acc-sub"><span>Pack tonight · early departure tomorrow</span></div>
       </div>
       <div class="acc-time">8:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Last dinner at the canyon. Pack everything tonight — 7 AM departure tomorrow to make the drive to LAS.</p>
+      <p class="acc-desc">Last dinner at the canyon — grab sandwiches and supplies from the Canyon Village Market &amp; Deli. Pack everything tonight for the 7 AM departure.</p>
+      <a class="acc-btn" href="https://www.nps.gov/places/000/canyon-village-market-deli.htm" target="_blank" rel="noopener">NPS · Market &amp; Deli</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Village+Market+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1481,6 +1546,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/sunset-mather-point.webp')"></div>
       <p class="acc-desc">One last stop at the rim before you leave. The early morning light is spectacular and the canyon will be dead quiet. Say goodbye properly.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Mather+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Mather Point</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1507,6 +1573,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">That's a wrap. Ten days, three national parks, a slot canyon, canyoneering, a wedding, and the Grand Canyon. See you on the next one.</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Harry+Reid+International+Airport+Las+Vegas+NV" target="_blank" rel="noopener">📍 Harry Reid Airport</a>
     </div></div>
   </div>
 </article>
