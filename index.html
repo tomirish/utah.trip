@@ -442,39 +442,30 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: rgba(242,222,196,0.4);
 }
-.footer-plan-link {
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+.footer-plan-link, .print-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   padding: 10px 20px;
   border: 1px solid rgba(242,222,196,0.2);
   border-radius: 24px;
+  font-family: 'Jost', sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: rgba(242,222,196,0.5);
   text-decoration: none;
-  margin-bottom: 28px;
+  background: none;
+  cursor: pointer;
   transition: all 0.2s;
 }
-.footer-plan-link:active { border-color: var(--amber); color: var(--amber); }
-.footer-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-.print-btn {
-  background: none;
-  border: 1px solid rgba(242,222,196,0.2);
-  color: rgba(242,222,196,0.45);
-  border-radius: 20px;
-  font-family: 'Jost', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 7px 16px;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
+.footer-plan-link:active,
 .print-btn:active { border-color: var(--amber); color: var(--amber); }
 
 /* ── LIGHTBOX ── */
