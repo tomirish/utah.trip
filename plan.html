@@ -38,31 +38,11 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   text-transform: uppercase; color: var(--rust); margin-bottom: 14px;
 }
 
-/* Bookings table */
-.bookings { width: 100%; border-collapse: collapse; }
-.bookings th {
-  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--clay);
-  padding: 0 8px 8px 0; text-align: left; border-bottom: 1px solid rgba(139,74,43,0.15);
-}
-.bookings td {
-  font-size: 12px; padding: 10px 8px 10px 0;
-  border-bottom: 1px solid rgba(139,74,43,0.08);
-  vertical-align: top; line-height: 1.4;
-}
-.bookings td.date-col { white-space: nowrap; font-size: 11px; color: var(--clay); width: 1%; }
-.bookings td.status-col, .bookings th.status-col { width: 1%; white-space: nowrap; text-align: center; padding-right: 0; }
-.bookings tr.pending td { background: rgba(224,123,57,0.06); }
-.bookings tr.pending td:first-child { border-left: 3px solid var(--amber); padding-left: 8px; }
-.book-link { color: var(--rust); text-decoration: underline; font-size: 11px; }
-.book-meta { font-size: 10px; color: rgba(139,74,43,0.55); margin-top: 3px; line-height: 1.5; }
-.book-conf { font-size: 11px; font-weight: 600; color: var(--clay); margin-bottom: 2px; }
-.book-meta a[href^="tel"] { color: inherit; text-decoration: none; }
 a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
 .book-warn { color: var(--amber); font-weight: 600; }
 .status-ok { color: #4caf50; }
 .status-no { color: var(--amber); }
-.price-col { text-align: right; white-space: nowrap; font-size: 11px; width: 1%; }
+.price-col { text-align: right; white-space: nowrap; font-size: 13px; width: 1%; }
 .bookings th.price-col { text-align: right; }
 .price-due { display: block; color: var(--amber); font-size: 10px; }
 
@@ -170,160 +150,9 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
   </ul>
 </div>
 
-<!-- BOOKINGS -->
-<div class="plan-section" style="margin-top:24px">
-  <div class="plan-section-title">Bookings</div>
-  <table class="bookings">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>What</th>
-        <th class="price-col">Paid</th>
-        <th class="status-col">✓</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="date-col">Sun Jun 21</td>
-        <td>
-          <a class="book-link" href="https://www.cheapairportparking.org" target="_blank">🅿️ Airport Parking · SeaTac</a>
-          <div class="book-conf">#PI600228</div>
-          <div class="book-meta">Hilton SeaTac Indoor · (206) 244-4800<br>Jun 21 10am – Jun 30 12pm</div>
-        </td>
-        <td class="price-col">$209.54</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Sun Jun 21</td>
-        <td>
-          ✈️ Delta 2922 · SEA→LAS · 7:15AM–9:49AM
-          <div class="book-conf">Delta Comfort Classic (W)</div>
-        </td>
-        <td class="price-col">$883.60</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Sun Jun 21</td>
-        <td>
-          🚗 Hertz · Midsize SUV
-          <div class="book-conf">H-L5624779378GOLD</div>
-          <div class="book-meta">Nissan Rogue or Similar · 7135 Gilespie St, Las Vegas<br>Pick-up Jun 21 10am · Drop-off Jun 30 10am · Unlimited mileage</div>
-        </td>
-        <td class="price-col">$745.54</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Sun Jun 21</td>
-        <td>
-          <a class="book-link" href="https://abbeyinncedar.com/" target="_blank">🏨 Abbey Inn · Cedar City</a>
-          <div class="book-conf">#BB26040520548406</div>
-          <div class="book-meta">(435) 586-9966 · Check-in 3pm · breakfast incl · <span class="book-warn">AAA card</span></div>
-        </td>
-        <td class="price-col">$151.63</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Mon Jun 22</td>
-        <td>
-          <a class="book-link" href="https://www.kanarrafalls.com" target="_blank">🌊 Kanarra Falls permits</a>
-          <div class="book-conf">#342142422</div>
-          <div class="book-meta">(435) 590-7490 · 2 adults · 385 E 100 N St, Kanarraville</div>
-        </td>
-        <td class="price-col">$34.10</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Mon Jun 22</td>
-        <td>
-          <a class="book-link" href="https://www.rubysinn.com" target="_blank">🏨 Ruby's Inn · Bryce</a>
-          <div class="book-conf">#L7W7631SV7</div>
-          <div class="book-meta">(435) 834-5341 · Check-in 3pm · 2 Kings · breakfast incl · <span class="book-warn">AAA card</span></div>
-        </td>
-        <td class="price-col">$200.06</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Tue–Thu Jun 23–25</td>
-        <td>
-          <a class="book-link" href="https://www.pettyranchinn.com" target="_blank">🏨 Petty Ranch Inn · Springdale</a>
-          <div class="book-conf">#9563067610399</div>
-          <div class="book-meta">(435) 599-7930 · King Mountain View · check-in 3pm / out 11am</div>
-        </td>
-        <td class="price-col">$808.35</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Tue Jun 23</td>
-        <td>
-          <a class="book-link" href="https://www.stargazingzion.com" target="_blank">🌟 Stargazing · Zion</a>
-          <div class="book-conf">#B-AY47PKD</div>
-          <div class="book-meta">(435) 919-3976 · 9:00pm · arrive 5–10 min early · ~30 min from Springdale<br>Download directions before leaving — no cell at site</div>
-        </td>
-        <td class="price-col">$392.08</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Wed Jun 24</td>
-        <td>
-          <a class="book-link" href="https://www.zioncycles.com" target="_blank">🚲 Zion Cycles · E-Bikes + Narrows Gear</a>
-          <div class="book-conf">Res. MLGGTR</div>
-          <div class="book-meta">2× Trek Allant+7 (M+L) · Narrows warm-water gear (boot sizes 9+11) · pick up Jun 24</div>
-        </td>
-        <td class="price-col">$290.95</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Thu Jun 25</td>
-        <td>
-          <a class="book-link" href="https://www.allwaysadventure.com/canyoneering/the-double-crown-huntress-ladder" target="_blank">🧗 Double Crown Canyoneering</a>
-          <div class="book-conf">#342219079</div>
-          <div class="book-meta">(435) 309-9745 · 8am–3pm · 4490 S State St, Mt Carmel · Subway parking lot</div>
-        </td>
-        <td class="price-col">$632.50</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Fri–Sat Jun 26–27</td>
-        <td>
-          <a class="book-link" href="https://www.ledges.com/vacation-rentals/rental/2051-169660/" target="_blank">🏨 The Ledges · St. George</a>
-          <div class="book-conf">#PARGR</div>
-          <div class="book-meta">(435) 634-4660 · Poolside Oasis · check-in 4pm Fri / out 11am Sun</div>
-        </td>
-        <td class="price-col">$857.82</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Sun–Mon Jun 28–29</td>
-        <td>
-          <a class="book-link" href="https://www.grandcanyonlodges.com" target="_blank">🏨 Maswik Lodge · Grand Canyon</a>
-          <div class="book-conf">#20567409</div>
-          <div class="book-meta">Standard 1 King South · check-in 4pm Sun / out 11am Tue</div>
-        </td>
-        <td class="price-col">$419.02</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-      <tr>
-        <td class="date-col">Tue Jun 30</td>
-        <td>
-          ✈️ Delta 2880 · LAS→SEA · 2:40PM–5:29PM
-          <div class="book-conf">incl. in RT fare above</div>
-        </td>
-        <td class="price-col">—</td>
-        <td class="status-col status-ok">✅</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="2" style="padding:12px 0 8px; font-size:11px; font-weight:600; color:var(--clay);">Trip cost</td>
-        <td class="price-col" style="padding:12px 0 8px; font-size:14px; font-weight:700; color:var(--dusk);">$5,625.19</td>
-        <td></td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
 
 <!-- RESTAURANTS -->
-<div class="plan-section" style="margin-top:32px">
+<div class="plan-section">
   <div class="plan-section-title">Restaurants</div>
 
   <div class="city-label">Cedar City, UT · Day 1</div>
