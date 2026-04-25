@@ -644,11 +644,90 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+.prep-list { list-style: none; }
+.prep-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid rgba(139,74,43,0.08);
+  font-size: 13px; font-weight: 300; color: var(--clay); line-height: 1.5;
+}
+.prep-item:last-child { border-bottom: none; }
+.prep-item-icon { font-size: 16px; flex-shrink: 0; line-height: 1.4; }
+.prep-item strong { font-weight: 600; color: var(--dusk); }
+
+/* ── TRAIL SAFETY DRAWER ── */
+.rest-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(44,24,16,0);
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.rest-overlay.open { background: rgba(44,24,16,0.55); pointer-events: auto; }
+
+.rest-drawer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  max-width: 480px; margin: 0 auto;
+  max-height: 82svh;
+  background: var(--cream);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden; display: flex; flex-direction: column;
+  z-index: 301;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  box-shadow: 0 -8px 40px rgba(44,24,16,0.2);
+}
+.rest-drawer.open { transform: translateY(0); }
+.rest-drawer-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: rgba(139,74,43,0.2); margin: 10px auto 0; flex-shrink: 0;
+}
+.rest-drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px 12px; flex-shrink: 0;
+}
+.rest-drawer-title {
+  font-family: 'Playfair Display', serif; font-size: 20px;
+  font-weight: 700; color: var(--dusk);
+}
+.rest-close-btn {
+  width: 30px; height: 30px; display: flex; align-items: center;
+  justify-content: center; border-radius: 50%;
+  background: rgba(139,74,43,0.1); border: none;
+  color: var(--clay); font-size: 14px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.rest-drawer-body {
+  overflow-y: auto;
+  padding: 0 20px max(20px, env(safe-area-inset-bottom, 20px));
+  -webkit-overflow-scrolling: touch;
+}
+.rest-city {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--rust); margin: 16px 0 8px;
+}
+.rest-item {
+  padding: 8px 0; border-bottom: 1px solid rgba(139,74,43,0.08);
+  font-size: 13px; line-height: 1.5; color: var(--clay); font-weight: 300;
+}
+.rest-item:last-child { border-bottom: none; }
+.rest-item a { font-weight: 600; color: var(--rust); text-decoration: none; }
+.rest-planned { color: var(--amber); font-size: 10px; font-weight: 700; margin-left: 4px; }
+.rest-more { margin-top: 14px; border-top: 1px solid rgba(139,74,43,0.1); padding-top: 8px; }
+.rest-more > summary {
+  list-style: none; cursor: pointer; user-select: none;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+  color: var(--rust); -webkit-tap-highlight-color: transparent;
+}
+.rest-more > summary::-webkit-details-marker { display: none; }
+.rest-more > summary::after { content: ' ▾'; }
+.rest-more[open] > summary::after { content: ' ▴'; }
+.rest-more .rest-item:first-of-type { margin-top: 8px; }
+
 /* ── PRINT ── */
 @media print {
   /* Hide screen-only chrome */
   .hero, .date-nav, .acc-chevron, .acc-photo, .acc-icon,
   .acc-btn-map, .acc-yt-btn, #lightbox, #lightbox-close,
+  .rest-fab, .rest-overlay, .rest-drawer, #tips-overlay, #tips-drawer,
   .footer-actions, footer { display: none !important; }
 
   /* Reveal fade-up elements (scroll observer never fires in print) */
@@ -758,6 +837,7 @@ a { color: inherit; text-decoration: none; }
   <button class="date-nav-pill" data-target="day-10" onclick="navTo('day-10')"><span>Tue</span><span class="pill-day">30</span></button>
 </nav>
 
+
 <!-- CHAPTER: Cedar City — Arrival -->
 <article class="chapter fade-up" id="day-1">
   <div class="chapter-splash chapter-splash--slim" style="background-image:url('images/smithsoniansunset01.webp')">
@@ -805,7 +885,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-name">Drive to Cedar City</div>
         <div class="acc-sub"><span>170 mi · ~2.5 hrs · I-15 north</span></div>
       </div>
-      <div class="acc-time">—</div>
+      <div class="acc-time">10:30 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -818,7 +898,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-name">Check in — Abbey Inn &amp; Suites</div>
         <div class="acc-sub"><span class="status-booked">✅ Booked · #BB26040520548406</span><span>Hot breakfast included · (435) 586-9966</span></div>
       </div>
-      <div class="acc-time">Evening</div>
+      <div class="acc-time">3:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -840,6 +920,12 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Best spot in Cedar City for a first-night meal. Craft burgers, local beers, chill vibe. 435-867-1400. Online reservations available.</p>
       <a class="acc-btn" href="https://www.thepubcedarcity.com" target="_blank" rel="noopener">thepubcedarcity.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=86+W+Center+St+Cedar+City+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://www.centropizzeria.com/" target="_blank" rel="noopener">Centro Woodfired Pizzeria</a> — Neapolitan-style pizza from a wood-fired brick oven, best restaurant in town</div>
+        <div class="rest-item"><a href="https://www.facebook.com/fire.smokebbqUT/" target="_blank" rel="noopener">Fire + Smoke BBQ</a> — Texas-style brisket, ribs, pulled pork · open Wed–Sat only</div>
+        <div class="rest-item"><a href="https://www.facebook.com/hermiesdrivein" target="_blank" rel="noopener">Hermie's Drive In</a> — Cedar City institution, classic burgers, Navajo tacos</div>
+      </details>
     </div></div>
   </div>
 </article>
@@ -925,7 +1011,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-name">Check in — Ruby's Inn</div>
         <div class="acc-sub"><span class="status-booked">✅ Booked · #L7W7631SV7</span><span>Breakfast included · 2 Kings · (435) 834-5341</span></div>
       </div>
-      <div class="acc-time">2:30 PM</div>
+      <div class="acc-time">4:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -935,12 +1021,34 @@ a { color: inherit; text-decoration: none; }
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner — Ruby's Inn Restaurants</div>
+        <div class="acc-sub"><span>On-site or nearby · ~1 hr</span></div>
+      </div>
+      <div class="acc-time">5:30 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Three options on-site at Ruby's Inn. Early bed — 7 AM hike tomorrow.</p>
+      <a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Cowboy's Buffet &amp; Steak Room</a>
+      <br><a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Canyon Diner</a>
+      <br><a class="acc-btn" href="https://ebenezersbarnandgrill.com/" target="_blank" rel="noopener">Ebenezer's Barn &amp; Grill</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Ruby%27s+Inn+26+S+Main+St+Bryce+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://www.stonehearthgrille.com/" target="_blank" rel="noopener">Stone Hearth Grille</a> — best dinner in the area, locally sourced, reservation recommended · Tropic, ~10 min</div>
+        <div class="rest-item"><a href="https://bcpines.com/bryce-restaurant/" target="_blank" rel="noopener">Bryce Canyon Pines Restaurant</a> — beloved roadside diner, homestyle food, famous homemade pies</div>
+      </details>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
         <div class="acc-name">Bryce Rim Drive — Golden Hour</div>
-        <div class="acc-sub"><span>Sunset Point → Inspiration Point</span><span>~1.5 hrs</span></div>
+        <div class="acc-sub"><span>Sunset Point → Inspiration Point</span><span>~1.5 hrs · golden hour ~7:43 PM · sunset ~8:43 PM</span></div>
       </div>
-      <div class="acc-time">4:30 PM</div>
+      <div class="acc-time">7:30 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -950,23 +1058,6 @@ a { color: inherit; text-decoration: none; }
       <br><a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/lower-mid-and-upper-inspiration-points" target="_blank" rel="noopener">AllTrails · Inspiration Points</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Sunset+Point+Bryce+Canyon+National+Park+UT" target="_blank" rel="noopener">📍 Sunset Point</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Inspiration+Point+Bryce+Canyon+National+Park+UT" target="_blank" rel="noopener">📍 Inspiration Point</a>
-    </div></div>
-
-    <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon">🍽️</div>
-      <div class="acc-header-text">
-        <div class="acc-name">Dinner — Ruby's Inn Restaurants</div>
-        <div class="acc-sub"><span>On-site or nearby · ~1 hr</span></div>
-      </div>
-      <div class="acc-time">7:30 PM</div>
-      <div class="acc-chevron">▼</div>
-    </div>
-    <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Three options on-site at Ruby's Inn. Early bed — 7 AM hike tomorrow.</p>
-      <a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Cowboy's Buffet &amp; Steak Room</a>
-      <br><a class="acc-btn" href="https://www.rubysinn.com/restaurant-in-bryce-canyon/" target="_blank" rel="noopener">Canyon Diner</a>
-      <br><a class="acc-btn" href="https://ebenezersbarnandgrill.com/" target="_blank" rel="noopener">Ebenezer's Barn &amp; Grill</a>
-      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Ruby%27s+Inn+26+S+Main+St+Bryce+UT" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1055,35 +1146,35 @@ a { color: inherit; text-decoration: none; }
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🏞️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Canyon Overlook Trail</div>
+        <div class="acc-sub"><span>1 mi · 45 min · Easy warm-up</span></div>
+      </div>
+      <div class="acc-time">2:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="acc-photo" style="background-image:url('images/canyonoverlook01.webp')"></div>
+      <p class="acc-desc">Best easy hike in Zion. Starts at the east end of the Mt. Carmel Tunnel — almost no elevation, ends at a stunning overlook of lower Zion Canyon and the Great Arch. Stop here on the way in from Bryce — the trailhead is right on Hwy 9 before you reach Springdale.</p>
+      <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/canyon-overlook-trail" target="_blank" rel="noopener">AllTrails</a>
+      <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=canyon+overlook+trail+zion" target="_blank" rel="noopener">Canyon Overlook Trail</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Overlook+Trailhead+Zion+National+Park+UT" target="_blank" rel="noopener">📍 Trailhead</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🏨</div>
       <div class="acc-header-text">
         <div class="acc-name">Check in — Petty Ranch Inn</div>
-        <div class="acc-sub"><span class="status-booked">✅ Booked · #9563067610399</span><span>King Mountain View · check-in 3pm · (435) 599-7930</span></div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked · #9563067610399</span><span>King Mountain View · check-in 4pm · (435) 599-7930</span></div>
       </div>
-      <div class="acc-time">2:00 PM</div>
+      <div class="acc-time">4:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">Drive ~85 miles / 1.5 hrs from Bryce via Hwy 89. Petty Ranch Inn is your home base for 3 nights in Zion.</p>
       <a class="acc-btn" href="https://www.pettyranchinn.com" target="_blank" rel="noopener">pettyranchinn.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Petty+Ranch+Inn+904+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
-    </div></div>
-
-    <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon">🏞️</div>
-      <div class="acc-header-text">
-        <div class="acc-name">Canyon Overlook Trail</div>
-        <div class="acc-sub"><span>1 mi · 45 min · Easy warm-up</span></div>
-      </div>
-      <div class="acc-time">3:30 PM</div>
-      <div class="acc-chevron">▼</div>
-    </div>
-    <div class="acc-body"><div class="acc-body-inner">
-      <div class="acc-photo" style="background-image:url('images/canyonoverlook01.webp')"></div>
-      <p class="acc-desc">Best easy hike in Zion. Starts at the east end of the Mt. Carmel Tunnel — almost no elevation, ends at a stunning overlook of lower Zion Canyon and the Great Arch. Perfect first-afternoon hike: gets your legs moving without destroying them before the big days.</p>
-      <a class="acc-btn" href="https://www.alltrails.com/trail/us/utah/canyon-overlook-trail" target="_blank" rel="noopener">AllTrails</a>
-      <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=canyon+overlook+trail+zion" target="_blank" rel="noopener">Canyon Overlook Trail</a>
-      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Overlook+Trailhead+Zion+National+Park+UT" target="_blank" rel="noopener">📍 Trailhead</a>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1099,6 +1190,15 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">First night in Zion — treat yourselves. Porters is the top dinner spot in Springdale, great views of the canyon walls at dusk.</p>
       <a class="acc-btn" href="https://porterszp.com/" target="_blank" rel="noopener">porterszp.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Porters+Zion+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://wildthymespringdale.com/" target="_blank" rel="noopener">Wild Thyme</a> — upscale-ish, seasonal menu, nicest overall spot in town</div>
+        <div class="rest-item"><a href="https://flanigans.com/dine/" target="_blank" rel="noopener">Spotted Dog Café at Flanigan's</a> — locally sourced, great patio <span class="rest-planned">★ planned Day 4</span></div>
+        <div class="rest-item"><a href="https://whiptailgrillzion.com/" target="_blank" rel="noopener">Whiptail Grill</a> — Mexican-inspired, great outdoor patio <span class="rest-planned">★ planned Day 5</span></div>
+        <div class="rest-item"><a href="https://www.bitandspur.com/" target="_blank" rel="noopener">Bit &amp; Spur</a> — Southwestern, strong margaritas, been there since '85</div>
+        <div class="rest-item"><a href="https://www.cowboysandangelszion.com/" target="_blank" rel="noopener">Cowboys &amp; Angels</a> — eclectic American, lively bar scene</div>
+        <div class="rest-item"><a href="https://zionbrewery.com/zionbrewpub/" target="_blank" rel="noopener">Zion Brew Pub</a> — craft beers, burgers, casual patio</div>
+      </details>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1143,7 +1243,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-name">Pick up Bikes + Narrows Gear</div>
         <div class="acc-sub"><span class="status-booked">✅ Booked · Res. MLGGTR</span><span>17-hr rental · 18.4 mi loop</span></div>
       </div>
-      <div class="acc-time">Pick up Jun 24</div>
+      <div class="acc-time">8:00 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -1229,6 +1329,15 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Spotted Dog Café at Flanigan's Inn — great patio, locally sourced menu. Online reservations available.</p>
       <a class="acc-btn" href="https://flanigans.com/dine/" target="_blank" rel="noopener">flanigans.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Spotted+Dog+Cafe+Flanigans+Inn+428+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://wildthymespringdale.com/" target="_blank" rel="noopener">Wild Thyme</a> — upscale-ish, seasonal menu, nicest overall spot in town</div>
+        <div class="rest-item"><a href="https://porterszp.com/" target="_blank" rel="noopener">Porters</a> — top dinner spot, canyon wall views <span class="rest-planned">★ planned Day 3</span></div>
+        <div class="rest-item"><a href="https://whiptailgrillzion.com/" target="_blank" rel="noopener">Whiptail Grill</a> — Mexican-inspired, great outdoor patio <span class="rest-planned">★ planned Day 5</span></div>
+        <div class="rest-item"><a href="https://www.bitandspur.com/" target="_blank" rel="noopener">Bit &amp; Spur</a> — Southwestern, strong margaritas, been there since '85</div>
+        <div class="rest-item"><a href="https://www.cowboysandangelszion.com/" target="_blank" rel="noopener">Cowboys &amp; Angels</a> — eclectic American, lively bar scene</div>
+        <div class="rest-item"><a href="https://zionbrewery.com/zionbrewpub/" target="_blank" rel="noopener">Zion Brew Pub</a> — craft beers, burgers, casual patio</div>
+      </details>
     </div></div>
   </div>
 </article>
@@ -1249,9 +1358,9 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🧗</div>
       <div class="acc-header-text">
         <div class="acc-name">"The Double Crown" — Huntress + Ladder</div>
-        <div class="acc-sub"><span class="status-booked">✅ Booked · #342219079</span><span>8am–3pm · (435) 309-9745</span></div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked · #342219079</span><span>8am–3pm · leave Petty Ranch by 7:15 AM</span></div>
       </div>
-      <div class="acc-time">9:00 AM</div>
+      <div class="acc-time">8:00 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -1260,7 +1369,8 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-photo" style="background-image:url('images/double-crown-3.webp')"></div>
       </div>
       <p class="acc-desc">Julie's pick. Two of Zion's most coveted slot canyons in one full day — Huntress and Ladder. 10+ rappels up to 80ft free-hanging into narrow sandstone corridors. Private tour, no experience needed. One of the best things on this entire trip.</p>
-      <p class="acc-desc">📍 Meet at 4490 S State St, Mt Carmel (Subway parking lot)</p>
+      <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=4490+S+State+St+Mt+Carmel+UT+84755" target="_blank" rel="noopener">📍 Meet at 4490 S State St, Mt Carmel (Subway parking lot)</a>
+      <br><span style="font-size:0.85em;color:#555;">📞 (435) 309-9745</span>
       <div class="acc-tags">
         <span class="acc-tag acc-tag-dur">7 hours</span>
         <span class="acc-tag acc-tag-dur">Moderate</span>
@@ -1283,6 +1393,15 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Last dinner in Springdale — Whiptail Grill. Mexican-inspired, great outdoor patio. Pack everything tonight for tomorrow's move to St. George.</p>
       <a class="acc-btn" href="https://whiptailgrillzion.com/" target="_blank" rel="noopener">whiptailgrillzion.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Whiptail+Grill+445+Zion+Park+Blvd+Springdale+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://wildthymespringdale.com/" target="_blank" rel="noopener">Wild Thyme</a> — upscale-ish, seasonal menu, nicest overall spot in town</div>
+        <div class="rest-item"><a href="https://porterszp.com/" target="_blank" rel="noopener">Porters</a> — top dinner spot, canyon wall views <span class="rest-planned">★ planned Day 3</span></div>
+        <div class="rest-item"><a href="https://flanigans.com/dine/" target="_blank" rel="noopener">Spotted Dog Café at Flanigan's</a> — locally sourced, great patio <span class="rest-planned">★ planned Day 4</span></div>
+        <div class="rest-item"><a href="https://www.bitandspur.com/" target="_blank" rel="noopener">Bit &amp; Spur</a> — Southwestern, strong margaritas, been there since '85</div>
+        <div class="rest-item"><a href="https://www.cowboysandangelszion.com/" target="_blank" rel="noopener">Cowboys &amp; Angels</a> — eclectic American, lively bar scene</div>
+        <div class="rest-item"><a href="https://zionbrewery.com/zionbrewpub/" target="_blank" rel="noopener">Zion Brew Pub</a> — craft beers, burgers, casual patio</div>
+      </details>
     </div></div>
   </div>
 </article>
@@ -1303,13 +1422,13 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🏨</div>
       <div class="acc-header-text">
         <div class="acc-name">Checkout — Depart Springdale</div>
-        <div class="acc-sub"><span>Petty Ranch Inn · 15 min to Kolob exit</span></div>
+        <div class="acc-sub"><span>Petty Ranch Inn · ~40 min to Kolob Canyons</span></div>
       </div>
       <div class="acc-time">10:00 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Check out of Petty Ranch Inn. Head west on Hwy 9 to I-15 north — Kolob Canyons exit is just 15 minutes up the highway.</p>
+      <p class="acc-desc">Check out of Petty Ranch Inn. Head west on Hwy 9 (~25 min) to I-15 north, then 15 min up to Exit 40 — Kolob Canyons.</p>
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1318,7 +1437,7 @@ a { color: inherit; text-decoration: none; }
         <div class="acc-name">Kolob Canyons</div>
         <div class="acc-sub"><span>5-mi scenic drive · 30–45 min · optional Taylor Creek Trail</span></div>
       </div>
-      <div class="acc-time">10:15 AM</div>
+      <div class="acc-time">10:45 AM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
@@ -1371,6 +1490,12 @@ a { color: inherit; text-decoration: none; }
       <p class="acc-desc">Best pizza in St. George — artisan wood-fired, fresh dough, good gelato. Order to go and bring it back to The Ledges.</p>
       <a class="acc-btn" href="https://www.riggattis.com/" target="_blank" rel="noopener">riggattis.com</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Riggatti%27s+Wood+Fired+Pizza+St+George+UT" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://theadvenirehotel.com/wood-ash-rye-restaurant/" target="_blank" rel="noopener">Wood. Ash. Rye.</a> — best restaurant in St. George, chef-driven seasonal American, Salt Lake Mag Best Restaurant 2024</div>
+        <div class="rest-item"><a href="https://www.xetava.com/" target="_blank" rel="noopener">Xetava Gardens Cafe</a> — hidden gem in Kayenta Art Village, gorgeous desert setting · Ivins, ~20 min</div>
+        <div class="rest-item"><a href="https://www.positanostg.com/" target="_blank" rel="noopener">Positano</a> — upscale Italian, house-made pastas, strong wine list</div>
+      </details>
     </div></div>
   </div>
 </article>
@@ -1494,7 +1619,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
         <div class="acc-name">Sunset — Mather Point</div>
-        <div class="acc-sub"><span>~15 min walk from lodge</span></div>
+        <div class="acc-sub"><span>~15 min walk from lodge · sunset ~7:32 PM</span></div>
       </div>
       <div class="acc-time">6:30 PM</div>
       <div class="acc-chevron">▼</div>
@@ -1520,6 +1645,11 @@ a { color: inherit; text-decoration: none; }
       <a class="acc-btn" href="https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/" target="_blank" rel="noopener">El Tovar reservations</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=El+Tovar+Hotel+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 El Tovar</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Bright+Angel+Lodge+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Bright Angel Lodge</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/harvey-house-cafe/" target="_blank" rel="noopener">Bright Angel Lodge Restaurant</a> — casual, steps from the trailhead · great for breakfast too</div>
+        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/maswik-pizza-pub/" target="_blank" rel="noopener">Maswik Pizza Patio</a> — at your lodge, quick and easy for a low-key night</div>
+      </details>
     </div></div>
   </div>
 </article>
@@ -1540,7 +1670,7 @@ a { color: inherit; text-decoration: none; }
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
         <div class="acc-name">Sunrise — Yavapai Point</div>
-        <div class="acc-sub"><span>15 min walk · best sunrise on South Rim</span></div>
+        <div class="acc-sub"><span>15 min walk · best sunrise on South Rim · sunrise ~5:17 AM</span></div>
       </div>
       <div class="acc-time">5:45 AM</div>
       <div class="acc-chevron">▼</div>
@@ -1623,35 +1753,40 @@ a { color: inherit; text-decoration: none; }
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner — Canyon Village Market &amp; Deli</div>
+        <div class="acc-sub"><span>Grab food to go · take it to Hopi Point</span></div>
+      </div>
+      <div class="acc-time">6:00 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">Swing by Canyon Village Market &amp; Deli and grab sandwiches, snacks, and drinks to go — then head straight to Hopi Point to eat while watching the sunset. Pack everything tonight for the 7 AM departure.</p>
+      <a class="acc-btn" href="https://www.nps.gov/places/000/canyon-village-market-deli.htm" target="_blank" rel="noopener">NPS · Market &amp; Deli</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Village+Market+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Map</a>
+      <details class="rest-more">
+        <summary>More options nearby</summary>
+        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/harvey-house-cafe/" target="_blank" rel="noopener">Bright Angel Lodge Restaurant</a> — casual, steps from the trailhead</div>
+        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/maswik-pizza-pub/" target="_blank" rel="noopener">Maswik Pizza Patio</a> — at your lodge, quick and easy</div>
+      </details>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🌇</div>
       <div class="acc-header-text">
         <div class="acc-name">Sunset — Hopi Point</div>
-        <div class="acc-sub"><span>Best sunset on the South Rim · arrive early</span></div>
+        <div class="acc-sub"><span>Best sunset on the South Rim · sunset ~7:32 PM</span></div>
       </div>
-      <div class="acc-time">4:30 PM</div>
+      <div class="acc-time">6:45 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/hopi-point-sunset.webp')"></div>
-      <p class="acc-desc">Hopi Point is the most celebrated sunset spot on the South Rim — an exposed promontory that juts into the canyon with views in three directions. Arrive 45 minutes before sunset to get a good spot. The light show as the sun drops below the rim is one of the most famous natural spectacles in America.</p>
+      <p class="acc-desc">Hopi Point is the most celebrated sunset spot on the South Rim — an exposed promontory that juts into the canyon with views in three directions. Arrive 45 minutes early to get a good spot. Eat dinner out on the point and watch the light show as the sun drops below the rim.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/arizona/hopi-point-trail" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-yt-btn" href="https://www.youtube.com/results?search_query=hopi+point+grand+canyon+sunset" target="_blank" rel="noopener">Hopi Point sunset</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Hopi+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Hopi Point</a>
-    </div></div>
-
-    <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon">🍽️</div>
-      <div class="acc-header-text">
-        <div class="acc-name">Dinner — Canyon Village Market &amp; Deli</div>
-        <div class="acc-sub"><span>Pack tonight · early departure tomorrow</span></div>
-      </div>
-      <div class="acc-time">8:00 PM</div>
-      <div class="acc-chevron">▼</div>
-    </div>
-    <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">Last dinner at the canyon — grab sandwiches and supplies from the Canyon Village Market &amp; Deli. Pack everything tonight for the 7 AM departure.</p>
-      <a class="acc-btn" href="https://www.nps.gov/places/000/canyon-village-market-deli.htm" target="_blank" rel="noopener">NPS · Market &amp; Deli</a>
-      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Canyon+Village+Market+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Map</a>
     </div></div>
   </div>
 </article>
@@ -1683,7 +1818,7 @@ a { color: inherit; text-decoration: none; }
     <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
-        <div class="acc-name">Last look — Mather Point sunrise</div>
+        <div class="acc-name">Last look — Mather Point</div>
         <div class="acc-sub"><span>5 min detour · worth every second</span></div>
       </div>
       <div class="acc-time">7:00 AM</div>
@@ -1733,7 +1868,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <p class="acc-desc">That's a wrap. Ten days, three national parks, a slot canyon, canyoneering, a wedding, and the Grand Canyon. See you on the next one.</p>
-      <p class="acc-desc">🅿️ Pick up car from Hilton SeaTac Indoor · Conf <strong>#PI600228</strong> · (206) 244-4800 · retrieve by 12pm</p>
+      <p class="acc-desc">🅿️ Pick up car from Hilton SeaTac Indoor · Conf <strong>#PI600228</strong> · (206) 244-4800</p>
       <a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Harry+Reid+International+Airport+Las+Vegas+NV" target="_blank" rel="noopener">📍 Harry Reid Airport</a>
     </div></div>
   </div>
@@ -1774,8 +1909,8 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="footer-actions">
-    <a class="footer-plan-link" href="plan.html">📋 Planning doc</a>
     <button class="print-btn" onclick="window.print()">🖨️ Print itinerary</button>
+    <button class="print-btn" onclick="openTips()">⛰️ Trail Safety</button>
   </div>
 </footer>
 
@@ -1785,14 +1920,24 @@ function toggleAcc(header) {
   const body = header.nextElementSibling;
   const isOpen = header.classList.contains('open');
   header.closest('.accordion').querySelectorAll('.acc-header.open').forEach(h => {
-    if (h !== header) { h.classList.remove('open'); h.nextElementSibling.style.maxHeight = null; }
+    if (h !== header) {
+      h.classList.remove('open');
+      const b = h.nextElementSibling;
+      if (b.style.maxHeight === 'none') { b.style.maxHeight = b.scrollHeight + 'px'; b.offsetHeight; }
+      b.style.maxHeight = null;
+    }
   });
   if (isOpen) {
     header.classList.remove('open');
+    if (body.style.maxHeight === 'none') { body.style.maxHeight = body.scrollHeight + 'px'; body.offsetHeight; }
     body.style.maxHeight = null;
   } else {
     header.classList.add('open');
     body.style.maxHeight = body.scrollHeight + 'px';
+    body.addEventListener('transitionend', function onEnd() {
+      if (header.classList.contains('open')) body.style.maxHeight = 'none';
+      body.removeEventListener('transitionend', onEnd);
+    });
   }
 }
 
@@ -1892,10 +2037,39 @@ document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
   }, { passive: true });
 })();
 
+// ── Trail Safety drawer ──
+function openTips() {
+  document.getElementById('tips-overlay').classList.add('open');
+  document.getElementById('tips-drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeTips() {
+  document.getElementById('tips-overlay').classList.remove('open');
+  document.getElementById('tips-drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // ── Service worker ──
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js');
 }
 </script>
+
+<div id="tips-overlay" class="rest-overlay" onclick="closeTips()"></div>
+<div id="tips-drawer" class="rest-drawer">
+  <div class="rest-drawer-handle"></div>
+  <div class="rest-drawer-header">
+    <div class="rest-drawer-title">⛰️ Trail Safety</div>
+    <button class="rest-close-btn" onclick="closeTips()">✕</button>
+  </div>
+  <div class="rest-drawer-body">
+    <ul class="prep-list">
+      <li class="prep-item"><span class="prep-item-icon">⚡</span><span><strong>Check NOAA before slot canyon hikes</strong> — late June monsoons cause flash floods with no warning. Exit if weather builds</span></li>
+      <li class="prep-item"><span class="prep-item-icon">🌅</span><span><strong>Start every hike by 7 AM</strong> — temps hit 90–95°F by midday, most trails have zero shade</span></li>
+      <li class="prep-item"><span class="prep-item-icon">💧</span><span><strong>2L water per person minimum</strong> — bring electrolyte tablets, water alone isn't enough on big days</span></li>
+      <li class="prep-item"><span class="prep-item-icon">☀️</span><span><strong>SPF 50 sunscreen, reapply every 2 hrs</strong> — high elevation + reflective red rock = brutal UV</span></li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
