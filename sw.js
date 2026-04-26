@@ -65,7 +65,10 @@ self.addEventListener('fetch', e => {
   // Network-first: always fetch fresh when online, fall back to cache when offline
   e.respondWith(
     fetch(e.request).then(res => {
-      if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+      if (res.ok) {
+        const clone = res.clone();
+        caches.open(CACHE).then(c => c.put(e.request, clone));
+      }
       return res;
     }).catch(() => caches.match(e.request))
   );
