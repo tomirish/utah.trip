@@ -1,7 +1,5 @@
-# Red Rock Road Trip — June 21–30, 2026
+[![pages-build-deployment](https://github.com/tomirish/utah.trip/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/tomirish/utah.trip/actions/workflows/pages/pages-build-deployment)
+
+# Red Rock Road Trip
 
 Las Vegas → Cedar City → Kanarra Falls → Bryce Canyon → Zion → St. George → Grand Canyon → Las Vegas
-
-**Wedding:** Saturday June 27, St. George, UT
-
-**[index.html](index.html)** — Day-by-day itinerary
