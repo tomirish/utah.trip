@@ -13,4 +13,5 @@ Before committing, check `sw.js` is current:
 
 ## Branches
 
-Commit directly to `main` — no feature branches needed for this site.
+- **Human dev work** — commit directly to `main`. No feature branches needed.
+- **Claude sessions** — always use a feature branch and open a PR. Never push directly to `main`.
