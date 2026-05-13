@@ -1,0 +1,6 @@
+{"type":"server-started","port":52266,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:52266","screen_dir":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/content","state_dir":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/state"}
+{"type":"screen-added","file":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/content/layout-directions.html"}
+{"type":"screen-added","file":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/content/story-detail.html"}
+{"type":"screen-added","file":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/content/media-options.html"}
+{"type":"screen-added","file":"/Users/tom/GitHub/utah.trip/.superpowers/brainstorm/48468-1775425507/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}

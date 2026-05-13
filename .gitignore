@@ -1,4 +1,3 @@
 .DS_Store
-.claude/
+.claude/worktrees/
 .playwright-mcp/
-.superpowers/
