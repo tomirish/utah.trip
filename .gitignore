@@ -1,6 +1,3 @@
 .DS_Store
-.claude/worktrees/
-.claude/*.local.*
-.claude/**/*.local.*
-.claude/.superpowers/
+.claude/
 .playwright-mcp/
