@@ -11,6 +11,10 @@ Before committing, check `sw.js` is current:
 - Fonts are self-hosted in `fonts/` — do not use Google Fonts CDN, it breaks offline use.
 - Never add `plan.html` back to `ASSETS` — it was merged into `index.html`.
 
+## Local preview
+
+`open index.html` or `python3 -m http.server 8080`
+
 ## Branches
 
 Commit directly to `main`. No feature branches needed.
