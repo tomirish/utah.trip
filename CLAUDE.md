@@ -15,6 +15,12 @@ Before committing, check `sw.js` is current:
 
 `open index.html` or `python3 -m http.server 8080`
 
+## Times and timezones
+
+Utah days (Days 1–7): Mountain Daylight Time (MDT, UTC-6).
+Grand Canyon days (Days 8–10): Arizona uses MST year-round (UTC-7) — no DST.
+In June the canyon runs 1 hour behind Utah, so sunset times jump ~1 hour when crossing the state line.
+
 ## Branches
 
 Commit directly to `main`. No feature branches needed.
