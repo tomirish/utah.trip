@@ -204,11 +204,25 @@ a { color: inherit; text-decoration: none; }
 .chapter-meta {
   background: var(--dusk);
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .chapter-hotel {
   font-size: 11px;
   color: rgba(242,222,196,0.55);
   margin-top: 0;
+}
+.chapter-sun {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 10px;
+  color: rgba(242,222,196,0.38);
+  flex-shrink: 0;
+  padding-left: 10px;
+  line-height: 1.4;
 }
 
 /* ── ACCORDION PHOTO + VIDEO ── */
@@ -761,6 +775,7 @@ a { color: inherit; text-decoration: none; }
   .chapter-meta { background: none; padding: 0; display: inline; }
   .chapter-eyebrow { color: #555; font-size: 8pt; font-family: Arial, sans-serif; display: inline; margin-left: 4pt; }
   .chapter-hotel { display: none; }
+  .chapter-sun { display: none; }
 
   /* Expand all accordions */
   .acc-body { max-height: none !important; overflow: visible !important; }
@@ -845,8 +860,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 1 · Sunday June 21</div>
-    <div class="chapter-hotel">🌙 Abbey Inn &amp; Suites</div>
+    <div>
+      <div class="chapter-eyebrow">Day 1 · Sunday June 21</div>
+      <div class="chapter-hotel">🌙 Abbey Inn &amp; Suites</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:46</span><span>🌇 8:48</span></div>
   </div>
 
   <div class="accordion">
@@ -938,8 +956,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 2 · Monday June 22</div>
-    <div class="chapter-hotel">🌙 Ruby's Inn</div>
+    <div>
+      <div class="chapter-eyebrow">Day 2 · Monday June 22</div>
+      <div class="chapter-hotel">🌙 Ruby's Inn</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:47</span><span>🌇 8:43</span></div>
   </div>
 
   <div class="accordion">
@@ -1070,8 +1091,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 3 · Tuesday June 23</div>
-    <div class="chapter-hotel">🌙 Petty Ranch Inn</div>
+    <div>
+      <div class="chapter-eyebrow">Day 3 · Tuesday June 23</div>
+      <div class="chapter-hotel">🌙 Petty Ranch Inn</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:47</span><span>🌇 8:43</span></div>
   </div>
 
   <div class="accordion">
@@ -1211,8 +1235,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 4 · Wednesday June 24</div>
-    <div class="chapter-hotel">🌙 Petty Ranch Inn</div>
+    <div>
+      <div class="chapter-eyebrow">Day 4 · Wednesday June 24</div>
+      <div class="chapter-hotel">🌙 Petty Ranch Inn</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:48</span><span>🌇 8:42</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1328,8 +1355,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 5 · Thursday June 25</div>
-    <div class="chapter-hotel">🌙 Petty Ranch Inn · Night 3</div>
+    <div>
+      <div class="chapter-eyebrow">Day 5 · Thursday June 25</div>
+      <div class="chapter-hotel">🌙 Petty Ranch Inn · Night 3</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:49</span><span>🌇 8:41</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1392,8 +1422,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 6 · Friday June 26</div>
-    <div class="chapter-hotel">🌙 The Ledges of St. George</div>
+    <div>
+      <div class="chapter-eyebrow">Day 6 · Friday June 26</div>
+      <div class="chapter-hotel">🌙 The Ledges of St. George</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:50</span><span>🌇 8:40</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1486,8 +1519,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 7 · Saturday June 27</div>
-    <div class="chapter-hotel">🌙 The Ledges of St. George</div>
+    <div>
+      <div class="chapter-eyebrow">Day 7 · Saturday June 27</div>
+      <div class="chapter-hotel">🌙 The Ledges of St. George</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:51</span><span>🌇 8:40</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1513,8 +1549,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 8 · Sunday June 28</div>
-    <div class="chapter-hotel">🌙 Maswik Lodge · Grand Canyon South Rim</div>
+    <div>
+      <div class="chapter-eyebrow">Day 8 · Sunday June 28</div>
+      <div class="chapter-hotel">🌙 Maswik Lodge · Grand Canyon South Rim</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:17</span><span>🌇 7:51</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1594,40 +1633,34 @@ a { color: inherit; text-decoration: none; }
     </div></div>
 
     <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon">🍽️</div>
+      <div class="acc-header-text">
+        <div class="acc-name">Dinner — El Tovar Dining Room</div>
+        <div class="acc-sub"><span class="status-booked">✅ Booked · TOCK-R-JYZH9PEF</span><span>Party of 2 · on the rim</span></div>
+      </div>
+      <div class="acc-time">5:30 PM</div>
+      <div class="acc-chevron">▼</div>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="acc-desc">El Tovar is the iconic historic lodge restaurant right on the rim — worth it for the atmosphere. Reservation confirmed for 2 at 5:30 PM. Dinner wraps in time to walk straight to Mather Point for sunset. Questions: el.tovar.dining@xanterra.com</p>
+      <a class="acc-btn" href="https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/" target="_blank" rel="noopener">El Tovar Dining Room</a>
+      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=El+Tovar+Hotel+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 El Tovar</a>
+    </div></div>
+
+    <div class="acc-header" onclick="toggleAcc(this)">
       <div class="acc-icon">🌅</div>
       <div class="acc-header-text">
         <div class="acc-name">Sunset — Mather Point</div>
-        <div class="acc-sub"><span>~15 min walk from lodge · sunset ~7:32 PM</span></div>
+        <div class="acc-sub"><span>~15 min walk from El Tovar · sunset ~7:51 PM</span></div>
       </div>
-      <div class="acc-time">6:30 PM</div>
+      <div class="acc-time">7:00 PM</div>
       <div class="acc-chevron">▼</div>
     </div>
     <div class="acc-body"><div class="acc-body-inner">
       <div class="acc-photo" style="background-image:url('images/sunset-mather-point.webp')"></div>
-      <p class="acc-desc">The classic first Grand Canyon sunset. Nothing prepares you for the scale of it — the canyon is 10 miles wide and a mile deep, and in the late light the walls shift from orange to deep red to purple. Mather Point is the most iconic overlook on the South Rim.</p>
+      <p class="acc-desc">Walk straight from El Tovar to Mather Point after dinner — it's about 15 minutes on foot. Nothing prepares you for the scale of it — the canyon is 10 miles wide and a mile deep, and in the late light the walls shift from orange to deep red to purple. Mather Point is the most iconic overlook on the South Rim.</p>
       <a class="acc-btn" href="https://www.alltrails.com/trail/us/arizona/mather-point-via-visitor-center" target="_blank" rel="noopener">AllTrails</a>
       <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Mather+Point+Grand+Canyon+National+Park+AZ" target="_blank" rel="noopener">📍 Mather Point</a>
-    </div></div>
-
-    <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon">🍽️</div>
-      <div class="acc-header-text">
-        <div class="acc-name">Dinner — El Tovar Restaurant</div>
-        <div class="acc-sub"><span>Grand Canyon Village</span></div>
-      </div>
-      <div class="acc-time">8:00 PM</div>
-      <div class="acc-chevron">▼</div>
-    </div>
-    <div class="acc-body"><div class="acc-body-inner">
-      <p class="acc-desc">El Tovar is the iconic historic lodge restaurant right on the rim — worth it for the atmosphere. Online reservations available. Bright Angel Lodge restaurant is the casual backup, also great. Both walking distance from Maswik.</p>
-      <a class="acc-btn" href="https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/" target="_blank" rel="noopener">El Tovar reservations</a>
-      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=El+Tovar+Hotel+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 El Tovar</a>
-      <br><a class="acc-btn acc-btn-map" href="https://maps.apple.com/?q=Bright+Angel+Lodge+Grand+Canyon+Village+AZ" target="_blank" rel="noopener">📍 Bright Angel Lodge</a>
-      <details class="rest-more">
-        <summary>More options nearby</summary>
-        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/harvey-house-cafe/" target="_blank" rel="noopener">Bright Angel Lodge Restaurant</a> — casual, steps from the trailhead · great for breakfast too</div>
-        <div class="rest-item"><a href="https://www.grandcanyonlodges.com/dine/maswik-pizza-pub/" target="_blank" rel="noopener">Maswik Pizza Patio</a> — at your lodge, quick and easy for a low-key night</div>
-      </details>
     </div></div>
   </div>
 </article>
@@ -1640,8 +1673,11 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 9 · Monday June 29</div>
-    <div class="chapter-hotel">🌙 Maswik Lodge · Night 2</div>
+    <div>
+      <div class="chapter-eyebrow">Day 9 · Monday June 29</div>
+      <div class="chapter-hotel">🌙 Maswik Lodge · Night 2</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:17</span><span>🌇 7:50</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
@@ -1777,7 +1813,10 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   <div class="chapter-meta">
-    <div class="chapter-eyebrow">Day 10 · Tuesday June 30</div>
+    <div>
+      <div class="chapter-eyebrow">Day 10 · Tuesday June 30</div>
+    </div>
+    <div class="chapter-sun"><span>🌅 5:18</span><span>🌇 7:49</span></div>
   </div>
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">
